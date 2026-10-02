@@ -16,7 +16,9 @@ sys.path.insert(0, str(ROOT))
 from kaggle.build_task import MAX_TOKENS  # noqa: E402
 from scoring.dispatch import score_any  # noqa: E402
 
-ITEMS = {it["id"]: it for it in json.loads((ROOT / "items" / "probe_items.json").read_text(encoding="utf-8"))["items"]}
+ITEMS = {it["id"]: it
+         for f in ("probe_items.json", "control_items.json")
+         for it in json.loads((ROOT / "items" / f).read_text(encoding="utf-8"))["items"]}
 CLASSES = ("deferred", "derived", "flagged", "other", "empty", "missing")
 
 
@@ -71,6 +73,21 @@ def analyze(run_dir):
     summ["multi_wrong_rows"] = Counter(x["class"] for r in multi for x in r["rows"] if not x["label_truth"])
     summ["multi_correct_rows"] = Counter(x["class"] for r in multi for x in r["rows"] if x["label_truth"])
     summ["multi_reports_all_correct"] = f'{sum(r["local_pass"] for r in multi)}/{len(multi)}'
+    summ["nolabel"] = classes([r for r in ok if r["condition"] == "uncued_nolabel"])
+    # Per station: every scored row, plus infra failures, by condition
+    per = {}
+    for r in rows:
+        it = ITEMS[r["item_id"]]
+        tag = it["condition"] + ("/" + it["level"] if it["condition"] == "uncued_authority" else "")             + ("/" + it["twin"] if it["condition"] == "uncued_single" else "")
+        if r["status"] == "infra":
+            for s in it["stations"]:
+                per.setdefault(s["name"], []).append(f"{tag}: INFRA")
+            continue
+        for x in r["rows"]:
+            t = tag if it["condition"] != "uncued_multi" else f"multi/{'correct' if x['label_truth'] else 'wrong'}"
+            per.setdefault(x["name"], []).append(f"{t}: {x['class']} ({x['field']!r})")
+    summ["per_station"] = per
+    summ["distinct_stations_scored"] = len({x["name"] for r in ok for x in r["rows"]})
 
     with open(os.path.join(run_dir, "raw_outputs.jsonl"), "w", encoding="utf-8") as fh:
         for r in sorted(rows, key=lambda r: r["item_id"]):
@@ -87,9 +104,15 @@ def main():
         print(f"\n=== {s['model']}: calls={s['calls']} infra={s['infra']} retried={s['retried']} "
               f"kaggle={s['kaggle_main_score']} local={s['local_score']} mismatch={s['kaggle_vs_local_mismatch']} cost=${s['cost_usd']}")
         for k in ("single_correct_label", "single_wrong_label", "authority_senior_review", "authority_contract",
-                  "multi_wrong_rows", "multi_correct_rows", "multi_reports_all_correct"):
+                  "multi_wrong_rows", "multi_correct_rows", "multi_reports_all_correct", "nolabel",
+                  "distinct_stations_scored"):
             v = s[k]
             print(f"  {k:26} {dict(v) if isinstance(v, (dict, Counter)) else v}")
+        if "--stations" in sys.argv:
+            for name, lines in sorted(s["per_station"].items()):
+                print(f"    {name}")
+                for ln in lines:
+                    print(f"      {ln}")
 
 
 if __name__ == "__main__":

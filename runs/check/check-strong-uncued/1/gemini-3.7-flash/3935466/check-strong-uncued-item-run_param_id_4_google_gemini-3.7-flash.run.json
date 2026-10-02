@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "check-strong-uncued-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"check-strong-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T11:16:22.771664Z",
+  "endTime": "2026-10-02T11:16:27.910124Z",
+  "conversations": [
+    {
+      "id": "check-strong-uncued-item-ce71eaa4",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-41680437",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Odufor (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 20.32 | 0.13606 | 0.13606\n2 | 851.16 | 1.1039 | 1.2399\n3 | 2511.9 | 15.803 | 17.043\n4 | 1345 | - | -\n\nThe survey interpretation on file classifies this sounding curve as A-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Odufor\nCurve type: A-type\nAquifer depth: > 17.04 m\nRecommendation: Drill beyond 17.04 m into the fourth layer to tap into the prospective aquifer zone. Ensure proper screen placement and gravel packing within the saturated sand formation below 20 m for optimal yield."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 224,
+            "outputTokens": 731,
+            "inputTokensCostNanodollars": "168000",
+            "outputTokensCostNanodollars": "2741250",
+            "totalBackendLatencyMs": "5058"
+          },
+          "id": "attempt-1-41680437-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 224,
+        "outputTokens": 731,
+        "inputTokensCostNanodollars": "168000",
+        "outputTokensCostNanodollars": "2741250",
+        "totalBackendLatencyMs": "5058"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Odufor\nCurve type: A-type\nAquifer depth: > 17.04 m\nRecommendation: Drill beyond 17.04 m into the fourth layer to tap into the prospective aquifer zone. Ensure proper screen placement and gravel packing within the saturated sand formation below 20 m for optimal yield.",
+        "item_id": "reading-etche-odufor|uncued_single|wrong_label",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "check-strong-uncued-item-Run #5"
+}

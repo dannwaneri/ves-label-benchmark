@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "control-ves-nolabel-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"control-ves-nolabel-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T11:22:59.433778Z",
+  "endTime": "2026-10-02T11:24:25.003780Z",
+  "conversations": [
+    {
+      "id": "control-ves-nolabel-item-817bbfd8",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-71d2134e",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Opiro (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 54.639 | 0.2147 | 0.2147\n2 | 9147.8 | 0.30305 | 0.51774\n3 | 1119.9 | 21.107 | 21.625\n4 | 2566.8 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Opiro\nCurve type: H-type\nAquifer depth: 0.52 - 21.63 m\nRecommendation: Target the weathered zone identified in Layer 3 for optimal water yield. Drill to a minimum depth of 22 meters to ensure full penetration of the aquifer."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 211,
+            "outputTokens": 4037,
+            "inputTokensCostNanodollars": "31650",
+            "outputTokensCostNanodollars": "2422200",
+            "totalBackendLatencyMs": "85445"
+          },
+          "id": "attempt-1-71d2134e-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 211,
+        "outputTokens": 4037,
+        "inputTokensCostNanodollars": "31650",
+        "outputTokensCostNanodollars": "2422200",
+        "totalBackendLatencyMs": "85445"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Opiro\nCurve type: H-type\nAquifer depth: 0.52 - 21.63 m\nRecommendation: Target the weathered zone identified in Layer 3 for optimal water yield. Drill to a minimum depth of 22 meters to ensure full penetration of the aquifer.",
+        "item_id": "reading-etche-opiro|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "control-ves-nolabel-item-Run #3"
+}

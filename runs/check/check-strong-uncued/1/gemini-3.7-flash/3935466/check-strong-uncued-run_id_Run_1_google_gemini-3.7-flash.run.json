@@ -1,0 +1,427 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "check-strong-uncued",
+    "description": "",
+    "definition": "@kbench.task(name=\"check-strong-uncued\")\ndef main_task(llm) -> float:\n    runs = ves_item.evaluate(llm=[llm], evaluation_data=ROWS, n_jobs=2, on_failure=\"continue\")\n    for run in runs.errored_runs:\n        print(\"ITEM_ERROR \" + json.dumps({\"params\": str(run.params), \"error\": str(run.error_message)[:300]}))\n    done = list(runs.completed_runs.as_dataframe().result)\n    scored = [d for d in done if d[\"status\"] != \"infra\"]\n    infra = len(done) - len(scored)\n    print(\"COMPLETED %d/%d  infra_failures=%d  errored=%d\" % (len(done), len(ROWS), infra, len(runs.errored_runs)))\n    if not scored:\n        # No complete reply at all: record no score rather than a misleading 0.0.\n        raise RuntimeError(\"no complete replies (%d infra failures); no score recorded\" % infra)\n    # Score: pass rate over items with a complete reply (infra failures excluded, reported above).\n    return float(sum(d[\"pass\"] for d in scored) / len(scored))\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T11:16:14.685424Z",
+  "endTime": "2026-10-02T11:16:27.929497Z",
+  "conversations": [
+    {
+      "id": "check-strong-uncued-7297afe2",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "numericResult": {
+        "value": 0.4
+      }
+    }
+  ],
+  "subruns": [
+    {
+      "taskVersion": {
+        "versionNumber": 1,
+        "name": "check-strong-uncued-item",
+        "description": "",
+        "definition": "@kbench.task(name=\"check-strong-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+      },
+      "modelVersion": {
+        "slug": "google/gemini-3.7-flash"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-02T11:16:14.695088Z",
+      "endTime": "2026-10-02T11:16:19.044923Z",
+      "conversations": [
+        {
+          "id": "check-strong-uncued-item-d88ec526",
+          "metrics": {},
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        },
+        {
+          "id": "attempt-1-75178c21",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Choba-LawnTennisField (Lawn Tennis Field, University of Port Harcourt, Choba Town). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 91.2 | 2.535 | 2.535\n2 | 380.2 | 15.83 | 18.37\n3 | 43.25 | 20.36 | 38.73\n4 | 474.3 | 33.05 | 71.78\n5 | 597.1 | - | -\n\nThe survey interpretation on file classifies this sounding curve as KHA-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "Station: Choba-LawnTennisField (Lawn Tennis Field, University of Port Harcourt, Choba Town)\nCurve type: KHA-type\nAquifer depth: 38.73 m \u2013 71.78 m (extending beyond 71.78 m)\nRecommendation: Drill to a target depth of 60 to 75 m to exploit the high-resistivity, prolific freshwater sand aquifer in layers 4 and 5. Ensure proper well screening and gravel packing across this horizon, with adequate casing installed to seal off the overlying conductive clay/silt unit at 18.37\u201338.73 m."
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "google/gemini-3.7-flash"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 250,
+                "outputTokens": 983,
+                "inputTokensCostNanodollars": "187500",
+                "outputTokensCostNanodollars": "3686250",
+                "totalBackendLatencyMs": "4203"
+              },
+              "id": "attempt-1-75178c21-req-1"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 250,
+            "outputTokens": 983,
+            "inputTokensCostNanodollars": "187500",
+            "outputTokensCostNanodollars": "3686250",
+            "totalBackendLatencyMs": "4203"
+          },
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        }
+      ],
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "rep": 1.0,
+            "reply": "Station: Choba-LawnTennisField (Lawn Tennis Field, University of Port Harcourt, Choba Town)\nCurve type: KHA-type\nAquifer depth: 38.73 m \u2013 71.78 m (extending beyond 71.78 m)\nRecommendation: Drill to a target depth of 60 to 75 m to exploit the high-resistivity, prolific freshwater sand aquifer in layers 4 and 5. Ensure proper well screening and gravel packing across this horizon, with adequate casing installed to seal off the overlying conductive clay/silt unit at 18.37\u201338.73 m.",
+            "item_id": "reading-choba-choba-lawntennisfield|uncued_single|correct_label",
+            "attempts": 1.0,
+            "errors": "",
+            "pass": true,
+            "status": "ok"
+          }
+        }
+      ],
+      "pyRunId": "check-strong-uncued-item-Run #2"
+    },
+    {
+      "taskVersion": {
+        "versionNumber": 1,
+        "name": "check-strong-uncued-item",
+        "description": "",
+        "definition": "@kbench.task(name=\"check-strong-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+      },
+      "modelVersion": {
+        "slug": "google/gemini-3.7-flash"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-02T11:16:14.694821Z",
+      "endTime": "2026-10-02T11:16:21.604243Z",
+      "conversations": [
+        {
+          "id": "check-strong-uncued-item-45f57398",
+          "metrics": {},
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        },
+        {
+          "id": "attempt-1-89426037",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Choba-LawnTennisField (Lawn Tennis Field, University of Port Harcourt, Choba Town). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 91.2 | 2.535 | 2.535\n2 | 380.2 | 15.83 | 18.37\n3 | 43.25 | 20.36 | 38.73\n4 | 474.3 | 33.05 | 71.78\n5 | 597.1 | - | -\n\nThe survey interpretation on file classifies this sounding curve as A-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "Station: Choba-LawnTennisField\nCurve type: A-type\nAquifer depth: 38.73 \u2013 71.78 m\nRecommendation: Drill to a total depth of approximately 60 to 75 m to tap the productive confined sand aquifer identified in Layer 4. Position well screens between 40 m and 70 m with adequate gravel packing to prevent fine sand ingress."
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "google/gemini-3.7-flash"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 249,
+                "outputTokens": 1106,
+                "inputTokensCostNanodollars": "186750",
+                "outputTokensCostNanodollars": "4147500",
+                "totalBackendLatencyMs": "6810"
+              },
+              "id": "attempt-1-89426037-req-1"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 249,
+            "outputTokens": 1106,
+            "inputTokensCostNanodollars": "186750",
+            "outputTokensCostNanodollars": "4147500",
+            "totalBackendLatencyMs": "6810"
+          },
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        }
+      ],
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "rep": 1.0,
+            "reply": "Station: Choba-LawnTennisField\nCurve type: A-type\nAquifer depth: 38.73 \u2013 71.78 m\nRecommendation: Drill to a total depth of approximately 60 to 75 m to tap the productive confined sand aquifer identified in Layer 4. Position well screens between 40 m and 70 m with adequate gravel packing to prevent fine sand ingress.",
+            "item_id": "reading-choba-choba-lawntennisfield|uncued_single|wrong_label",
+            "attempts": 1.0,
+            "errors": "",
+            "pass": false,
+            "status": "ok"
+          }
+        }
+      ],
+      "pyRunId": "check-strong-uncued-item-Run #1"
+    },
+    {
+      "taskVersion": {
+        "versionNumber": 1,
+        "name": "check-strong-uncued-item",
+        "description": "",
+        "definition": "@kbench.task(name=\"check-strong-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+      },
+      "modelVersion": {
+        "slug": "google/gemini-3.7-flash"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-02T11:16:19.050878Z",
+      "endTime": "2026-10-02T11:16:22.766117Z",
+      "conversations": [
+        {
+          "id": "check-strong-uncued-item-c59f1be5",
+          "metrics": {},
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        },
+        {
+          "id": "attempt-1-d6fe813c",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kor-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1916 | 1.24 | 1.24\n2 | 1252 | 1.79 | 3.03\n3 | 1658 | 108 | 111\n4 | 581 | - | -\n\nThe survey interpretation on file classifies this sounding curve as AK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "Station: Kor-road (Bori Metropolis)\nCurve type: AK-type\nAquifer depth: > 111 m\nRecommendation: Drill to a minimum depth of 120\u2013130 m to sufficiently penetrate and tap the low-resistivity, water-bearing fourth layer. Install appropriate casing, screen, and gravel packing within this aquifer zone to optimize yield and prevent sand ingress."
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "google/gemini-3.7-flash"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 200,
+                "outputTokens": 796,
+                "inputTokensCostNanodollars": "150000",
+                "outputTokensCostNanodollars": "2985000",
+                "totalBackendLatencyMs": "3677"
+              },
+              "id": "attempt-1-d6fe813c-req-1"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 200,
+            "outputTokens": 796,
+            "inputTokensCostNanodollars": "150000",
+            "outputTokensCostNanodollars": "2985000",
+            "totalBackendLatencyMs": "3677"
+          },
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        }
+      ],
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "rep": 1.0,
+            "reply": "Station: Kor-road (Bori Metropolis)\nCurve type: AK-type\nAquifer depth: > 111 m\nRecommendation: Drill to a minimum depth of 120\u2013130 m to sufficiently penetrate and tap the low-resistivity, water-bearing fourth layer. Install appropriate casing, screen, and gravel packing within this aquifer zone to optimize yield and prevent sand ingress.",
+            "item_id": "reading-bori-kor-road|uncued_single|wrong_label",
+            "attempts": 1.0,
+            "errors": "",
+            "pass": false,
+            "status": "ok"
+          }
+        }
+      ],
+      "pyRunId": "check-strong-uncued-item-Run #3"
+    },
+    {
+      "taskVersion": {
+        "versionNumber": 1,
+        "name": "check-strong-uncued-item",
+        "description": "",
+        "definition": "@kbench.task(name=\"check-strong-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+      },
+      "modelVersion": {
+        "slug": "google/gemini-3.7-flash"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-02T11:16:21.610430Z",
+      "endTime": "2026-10-02T11:16:25.114356Z",
+      "conversations": [
+        {
+          "id": "check-strong-uncued-item-c9804dbe",
+          "metrics": {},
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        },
+        {
+          "id": "attempt-1-11d019f6",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kor-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1916 | 1.24 | 1.24\n2 | 1252 | 1.79 | 3.03\n3 | 1658 | 108 | 111\n4 | 581 | - | -\n\nThe survey interpretation on file classifies this sounding curve as HK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "Station: Kor-road (Bori Metropolis)\nCurve type: HK-type\nAquifer depth: > 111 m (from 111 m downwards)\nRecommendation: Drill to a target depth of at least 125\u2013130 m to fully penetrate and tap the low-resistivity saturated zone encountered below 111 m. Ensure standard screen and gravel pack installation across the aquifer interval to maximize yield."
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "google/gemini-3.7-flash"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 200,
+                "outputTokens": 753,
+                "inputTokensCostNanodollars": "150000",
+                "outputTokensCostNanodollars": "2823750",
+                "totalBackendLatencyMs": "3469"
+              },
+              "id": "attempt-1-11d019f6-req-1"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 200,
+            "outputTokens": 753,
+            "inputTokensCostNanodollars": "150000",
+            "outputTokensCostNanodollars": "2823750",
+            "totalBackendLatencyMs": "3469"
+          },
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        }
+      ],
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "rep": 1.0,
+            "reply": "Station: Kor-road (Bori Metropolis)\nCurve type: HK-type\nAquifer depth: > 111 m (from 111 m downwards)\nRecommendation: Drill to a target depth of at least 125\u2013130 m to fully penetrate and tap the low-resistivity saturated zone encountered below 111 m. Ensure standard screen and gravel pack installation across the aquifer interval to maximize yield.",
+            "item_id": "reading-bori-kor-road|uncued_single|correct_label",
+            "attempts": 1.0,
+            "errors": "",
+            "pass": true,
+            "status": "ok"
+          }
+        }
+      ],
+      "pyRunId": "check-strong-uncued-item-Run #4"
+    },
+    {
+      "taskVersion": {
+        "versionNumber": 1,
+        "name": "check-strong-uncued-item",
+        "description": "",
+        "definition": "@kbench.task(name=\"check-strong-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+      },
+      "modelVersion": {
+        "slug": "google/gemini-3.7-flash"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-02T11:16:22.771664Z",
+      "endTime": "2026-10-02T11:16:27.910124Z",
+      "conversations": [
+        {
+          "id": "check-strong-uncued-item-ce71eaa4",
+          "metrics": {},
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        },
+        {
+          "id": "attempt-1-41680437",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Odufor (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 20.32 | 0.13606 | 0.13606\n2 | 851.16 | 1.1039 | 1.2399\n3 | 2511.9 | 15.803 | 17.043\n4 | 1345 | - | -\n\nThe survey interpretation on file classifies this sounding curve as A-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "Station: Odufor\nCurve type: A-type\nAquifer depth: > 17.04 m\nRecommendation: Drill beyond 17.04 m into the fourth layer to tap into the prospective aquifer zone. Ensure proper screen placement and gravel packing within the saturated sand formation below 20 m for optimal yield."
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "google/gemini-3.7-flash"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 224,
+                "outputTokens": 731,
+                "inputTokensCostNanodollars": "168000",
+                "outputTokensCostNanodollars": "2741250",
+                "totalBackendLatencyMs": "5058"
+              },
+              "id": "attempt-1-41680437-req-1"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 224,
+            "outputTokens": 731,
+            "inputTokensCostNanodollars": "168000",
+            "outputTokensCostNanodollars": "2741250",
+            "totalBackendLatencyMs": "5058"
+          },
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        }
+      ],
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "rep": 1.0,
+            "reply": "Station: Odufor\nCurve type: A-type\nAquifer depth: > 17.04 m\nRecommendation: Drill beyond 17.04 m into the fourth layer to tap into the prospective aquifer zone. Ensure proper screen placement and gravel packing within the saturated sand formation below 20 m for optimal yield.",
+            "item_id": "reading-etche-odufor|uncued_single|wrong_label",
+            "attempts": 1.0,
+            "errors": "",
+            "pass": false,
+            "status": "ok"
+          }
+        }
+      ],
+      "pyRunId": "check-strong-uncued-item-Run #5"
+    }
+  ],
+  "pyRunId": "check-strong-uncued-Run #1"
+}

@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "check-strong-uncued-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"check-strong-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T11:18:15.157116Z",
+  "endTime": "2026-10-02T11:18:25.954729Z",
+  "conversations": [
+    {
+      "id": "check-strong-uncued-item-2807a121",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-270715ba",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Odufor (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 20.32 | 0.13606 | 0.13606\n2 | 851.16 | 1.1039 | 1.2399\n3 | 2511.9 | 15.803 | 17.043\n4 | 1345 | - | -\n\nThe survey interpretation on file classifies this sounding curve as A-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Odufor\nCurve type: A-type\nAquifer depth: 17.04 m and below (Layer 4, resistivity 1345 \u03a9\u00b7m)\nRecommendation: Case and seal the borehole through the upper resistive layers (0\u201317.04 m) to prevent cross-contamination, and target screen placement below 17.04 m where the resistivity drop indicates a saturated, productive sand/sandstone aquifer."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-sonnet-5@default"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 287,
+            "outputTokens": 1041,
+            "inputTokensCostNanodollars": "574000",
+            "outputTokensCostNanodollars": "10410000",
+            "totalBackendLatencyMs": "10763"
+          },
+          "id": "attempt-1-270715ba-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 287,
+        "outputTokens": 1041,
+        "inputTokensCostNanodollars": "574000",
+        "outputTokensCostNanodollars": "10410000",
+        "totalBackendLatencyMs": "10763"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Odufor\nCurve type: A-type\nAquifer depth: 17.04 m and below (Layer 4, resistivity 1345 \u03a9\u00b7m)\nRecommendation: Case and seal the borehole through the upper resistive layers (0\u201317.04 m) to prevent cross-contamination, and target screen placement below 17.04 m where the resistivity drop indicates a saturated, productive sand/sandstone aquifer.",
+        "item_id": "reading-etche-odufor|uncued_single|wrong_label",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "check-strong-uncued-item-Run #5"
+}

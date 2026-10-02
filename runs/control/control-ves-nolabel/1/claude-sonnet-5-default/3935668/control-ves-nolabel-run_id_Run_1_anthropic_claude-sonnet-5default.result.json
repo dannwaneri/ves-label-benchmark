@@ -1,0 +1,29 @@
+{
+  "task_name": "control-ves-nolabel",
+  "source": "control-ves-nolabel",
+  "trial_name": "control-ves-nolabel-Run #1",
+  "trial_uri": "kbench://not-a-harbor-trial",
+  "task_id": {
+    "path": "kbench://not-a-harbor-task"
+  },
+  "task_checksum": "unknown (kbench)",
+  "config": {
+    "task": {
+      "path": "kbench://not-a-harbor-task"
+    }
+  },
+  "agent_info": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_info": {
+      "name": "anthropic/claude-sonnet-5@default"
+    }
+  },
+  "verifier_result": {
+    "rewards": {
+      "score": 0.6
+    }
+  },
+  "started_at": "2026-10-02T11:21:54.906535Z",
+  "finished_at": "2026-10-02T11:22:57.172441Z"
+}

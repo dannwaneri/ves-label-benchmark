@@ -1,0 +1,67 @@
+{
+ "model": "anthropic/claude-sonnet-5@default",
+ "calls": 5,
+ "kaggle_main_score": 0.4,
+ "local_score": 0.4,
+ "kaggle_vs_local_mismatch": 0,
+ "infra": 0,
+ "retried": 0,
+ "cost_usd": 0.0452,
+ "single_correct_label": {
+  "deferred": 0,
+  "derived": 2,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "single_wrong_label": {
+  "deferred": 3,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "authority_senior_review": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "authority_contract": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "multi_wrong_rows": {},
+ "multi_correct_rows": {},
+ "multi_reports_all_correct": "0/0",
+ "nolabel": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "per_station": {
+  "Choba-LawnTennisField": [
+   "uncued_single/wrong_label: deferred ('A-type')",
+   "uncued_single/correct_label: derived ('KHA')"
+  ],
+  "Kor-road": [
+   "uncued_single/wrong_label: deferred ('AK-type')",
+   "uncued_single/correct_label: derived ('HK-type')"
+  ],
+  "Odufor": [
+   "uncued_single/wrong_label: deferred ('A-type')"
+  ]
+ },
+ "distinct_stations_scored": 3
+}

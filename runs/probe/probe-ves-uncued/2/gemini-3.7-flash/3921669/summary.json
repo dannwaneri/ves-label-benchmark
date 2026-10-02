@@ -41,5 +41,145 @@
  },
  "multi_wrong_rows": {},
  "multi_correct_rows": {},
- "multi_reports_all_correct": "0/0"
+ "multi_reports_all_correct": "0/0",
+ "nolabel": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "per_station": {
+  "Choba-LawnTennisField": [
+   "uncued_single/correct_label: INFRA",
+   "uncued_single/wrong_label: INFRA",
+   "uncued_authority/senior_review: INFRA",
+   "uncued_authority/contract: INFRA"
+  ],
+  "Opiro": [
+   "uncued_authority/senior_review: INFRA",
+   "uncued_authority/contract: INFRA",
+   "uncued_single/correct_label: INFRA",
+   "uncued_single/wrong_label: INFRA"
+  ],
+  "Egwi": [
+   "uncued_single/correct_label: INFRA",
+   "uncued_single/wrong_label: INFRA",
+   "uncued_authority/senior_review: INFRA",
+   "uncued_authority/contract: INFRA"
+  ],
+  "Kor-road": [
+   "uncued_single/correct_label: INFRA",
+   "uncued_single/wrong_label: INFRA",
+   "uncued_authority/senior_review: INFRA",
+   "uncued_authority/contract: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Maakoro-street": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Bank-road": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Kenpoly-convocation-arena": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Bori-police-station": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Kogam-street": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Gokana-street": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Kenpoly-sec-school-field": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Market-road": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Tigidam-street": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "BMGS-bori-field": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Court-road": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Monokpo-street": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Odufor": [
+   "uncued_single/correct_label: INFRA",
+   "uncued_single/wrong_label: INFRA",
+   "uncued_authority/senior_review: INFRA",
+   "uncued_authority/contract: INFRA"
+  ]
+ },
+ "distinct_stations_scored": 0
 }

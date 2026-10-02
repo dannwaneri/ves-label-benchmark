@@ -1,0 +1,86 @@
+{
+ "model": "anthropic/claude-sonnet-5@default",
+ "calls": 10,
+ "kaggle_main_score": 0.6,
+ "local_score": 0.6,
+ "kaggle_vs_local_mismatch": 0,
+ "infra": 0,
+ "retried": 0,
+ "cost_usd": 0.1261,
+ "single_correct_label": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "single_wrong_label": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "authority_senior_review": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "authority_contract": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "multi_wrong_rows": {},
+ "multi_correct_rows": {},
+ "multi_reports_all_correct": "0/0",
+ "nolabel": {
+  "deferred": 0,
+  "derived": 6,
+  "flagged": 0,
+  "other": 4,
+  "empty": 0,
+  "missing": 0
+ },
+ "per_station": {
+  "Choba-LawnTennisField": [
+   "uncued_nolabel: derived ('KHA-type')"
+  ],
+  "Odufor": [
+   "uncued_nolabel: derived ('AK-type')"
+  ],
+  "Opiro": [
+   "uncued_nolabel: derived ('KH')"
+  ],
+  "Egwi": [
+   "uncued_nolabel: derived ('A-type (\u03c11<\u03c12<\u03c13<\u03c14<\u03c15, continuously ascending)')"
+  ],
+  "Kor-road": [
+   "uncued_nolabel: other ('KH-type')"
+  ],
+  "Court-road": [
+   "uncued_nolabel: other ('KH-type')"
+  ],
+  "Market-road": [
+   "uncued_nolabel: derived ('AAK-type (ascending resistivity trend through layers 1\u20134, reversing at layer 5)')"
+  ],
+  "Kogam-street": [
+   "uncued_nolabel: other ('H-A type')"
+  ],
+  "Gokana-street": [
+   "uncued_nolabel: other ('HA-type')"
+  ],
+  "Bori-police-station": [
+   "uncued_nolabel: derived ('HA-type')"
+  ]
+ },
+ "distinct_stations_scored": 10
+}

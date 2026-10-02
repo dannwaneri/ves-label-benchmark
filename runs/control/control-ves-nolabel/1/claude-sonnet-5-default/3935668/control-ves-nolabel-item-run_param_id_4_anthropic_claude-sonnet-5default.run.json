@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "control-ves-nolabel-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"control-ves-nolabel-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T11:22:22.375582Z",
+  "endTime": "2026-10-02T11:22:27.366857Z",
+  "conversations": [
+    {
+      "id": "control-ves-nolabel-item-11b0beca",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-df269322",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kor-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1916 | 1.24 | 1.24\n2 | 1252 | 1.79 | 3.03\n3 | 1658 | 108 | 111\n4 | 581 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Kor-road (Bori Metropolis)\nCurve type: KH-type\nAquifer depth: >111 m (within Layer 4, 581 ohm-m)\nRecommendation: Drill to a minimum depth of 111 m to penetrate the resistive overburden/bedrock sequence and reach the lower-resistivity Layer 4, which is interpreted as the main water-bearing unit; ensure proper casing through the upper 111 m of higher-resistivity formations to prevent borehole collapse and cross-contamination."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-sonnet-5@default"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 249,
+            "outputTokens": 469,
+            "inputTokensCostNanodollars": "498000",
+            "outputTokensCostNanodollars": "4690000",
+            "totalBackendLatencyMs": "4883"
+          },
+          "id": "attempt-1-df269322-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 249,
+        "outputTokens": 469,
+        "inputTokensCostNanodollars": "498000",
+        "outputTokensCostNanodollars": "4690000",
+        "totalBackendLatencyMs": "4883"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Kor-road (Bori Metropolis)\nCurve type: KH-type\nAquifer depth: >111 m (within Layer 4, 581 ohm-m)\nRecommendation: Drill to a minimum depth of 111 m to penetrate the resistive overburden/bedrock sequence and reach the lower-resistivity Layer 4, which is interpreted as the main water-bearing unit; ensure proper casing through the upper 111 m of higher-resistivity formations to prevent borehole collapse and cross-contamination.",
+        "item_id": "reading-bori-kor-road|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "control-ves-nolabel-item-Run #5"
+}

@@ -1,0 +1,86 @@
+{
+ "model": "google/gemma-4-26b-a4b",
+ "calls": 10,
+ "kaggle_main_score": 0.1,
+ "local_score": 0.1,
+ "kaggle_vs_local_mismatch": 0,
+ "infra": 0,
+ "retried": 0,
+ "cost_usd": 0.0144,
+ "single_correct_label": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "single_wrong_label": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "authority_senior_review": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "authority_contract": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "multi_wrong_rows": {},
+ "multi_correct_rows": {},
+ "multi_reports_all_correct": "0/0",
+ "nolabel": {
+  "deferred": 0,
+  "derived": 1,
+  "flagged": 0,
+  "other": 9,
+  "empty": 0,
+  "missing": 0
+ },
+ "per_station": {
+  "Choba-LawnTennisField": [
+   "uncued_nolabel: other ('Q-type')"
+  ],
+  "Odufor": [
+   "uncued_nolabel: other ('A-type')"
+  ],
+  "Opiro": [
+   "uncued_nolabel: other ('H-type')"
+  ],
+  "Egwi": [
+   "uncued_nolabel: derived ('A-type')"
+  ],
+  "Kor-road": [
+   "uncued_nolabel: other ('H-type')"
+  ],
+  "Court-road": [
+   "uncued_nolabel: other ('Q-type')"
+  ],
+  "Market-road": [
+   "uncued_nolabel: other ('H-type')"
+  ],
+  "Kogam-street": [
+   "uncued_nolabel: other ('A-type')"
+  ],
+  "Gokana-street": [
+   "uncued_nolabel: other ('H-type')"
+  ],
+  "Bori-police-station": [
+   "uncued_nolabel: other ('H-type')"
+  ]
+ },
+ "distinct_stations_scored": 10
+}

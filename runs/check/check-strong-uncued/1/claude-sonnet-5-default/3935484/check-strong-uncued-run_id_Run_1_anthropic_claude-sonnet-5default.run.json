@@ -1,0 +1,427 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "check-strong-uncued",
+    "description": "",
+    "definition": "@kbench.task(name=\"check-strong-uncued\")\ndef main_task(llm) -> float:\n    runs = ves_item.evaluate(llm=[llm], evaluation_data=ROWS, n_jobs=2, on_failure=\"continue\")\n    for run in runs.errored_runs:\n        print(\"ITEM_ERROR \" + json.dumps({\"params\": str(run.params), \"error\": str(run.error_message)[:300]}))\n    done = list(runs.completed_runs.as_dataframe().result)\n    scored = [d for d in done if d[\"status\"] != \"infra\"]\n    infra = len(done) - len(scored)\n    print(\"COMPLETED %d/%d  infra_failures=%d  errored=%d\" % (len(done), len(ROWS), infra, len(runs.errored_runs)))\n    if not scored:\n        # No complete reply at all: record no score rather than a misleading 0.0.\n        raise RuntimeError(\"no complete replies (%d infra failures); no score recorded\" % infra)\n    # Score: pass rate over items with a complete reply (infra failures excluded, reported above).\n    return float(sum(d[\"pass\"] for d in scored) / len(scored))\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T11:18:00.912623Z",
+  "endTime": "2026-10-02T11:18:25.973571Z",
+  "conversations": [
+    {
+      "id": "check-strong-uncued-497204ff",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "numericResult": {
+        "value": 0.4
+      }
+    }
+  ],
+  "subruns": [
+    {
+      "taskVersion": {
+        "versionNumber": 1,
+        "name": "check-strong-uncued-item",
+        "description": "",
+        "definition": "@kbench.task(name=\"check-strong-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+      },
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-5@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-02T11:18:00.922969Z",
+      "endTime": "2026-10-02T11:18:06.644714Z",
+      "conversations": [
+        {
+          "id": "check-strong-uncued-item-d81cda70",
+          "metrics": {},
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        },
+        {
+          "id": "attempt-1-dfd43806",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Choba-LawnTennisField (Lawn Tennis Field, University of Port Harcourt, Choba Town). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 91.2 | 2.535 | 2.535\n2 | 380.2 | 15.83 | 18.37\n3 | 43.25 | 20.36 | 38.73\n4 | 474.3 | 33.05 | 71.78\n5 | 597.1 | - | -\n\nThe survey interpretation on file classifies this sounding curve as KHA-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "Station: Choba-LawnTennisField\nCurve type: KHA\nAquifer depth: 18.37\u201338.73 m\nRecommendation: Target the moderately low-resistivity saturated sand layer between approximately 18.4 m and 38.7 m depth for screen placement; confirm lithology with cuttings during drilling, as this zone is most likely the productive aquifer, while the underlying highly resistive layer (>70 m) may represent a less permeable or coarser unit requiring careful evaluation before completion."
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-5@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 328,
+                "outputTokens": 576,
+                "inputTokensCostNanodollars": "656000",
+                "outputTokensCostNanodollars": "5760000",
+                "totalBackendLatencyMs": "5605"
+              },
+              "id": "attempt-1-dfd43806-req-1"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 328,
+            "outputTokens": 576,
+            "inputTokensCostNanodollars": "656000",
+            "outputTokensCostNanodollars": "5760000",
+            "totalBackendLatencyMs": "5605"
+          },
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        }
+      ],
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "rep": 1.0,
+            "reply": "Station: Choba-LawnTennisField\nCurve type: KHA\nAquifer depth: 18.37\u201338.73 m\nRecommendation: Target the moderately low-resistivity saturated sand layer between approximately 18.4 m and 38.7 m depth for screen placement; confirm lithology with cuttings during drilling, as this zone is most likely the productive aquifer, while the underlying highly resistive layer (>70 m) may represent a less permeable or coarser unit requiring careful evaluation before completion.",
+            "item_id": "reading-choba-choba-lawntennisfield|uncued_single|correct_label",
+            "attempts": 1.0,
+            "errors": "",
+            "pass": true,
+            "status": "ok"
+          }
+        }
+      ],
+      "pyRunId": "check-strong-uncued-item-Run #2"
+    },
+    {
+      "taskVersion": {
+        "versionNumber": 1,
+        "name": "check-strong-uncued-item",
+        "description": "",
+        "definition": "@kbench.task(name=\"check-strong-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+      },
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-5@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-02T11:18:00.922091Z",
+      "endTime": "2026-10-02T11:18:13.037817Z",
+      "conversations": [
+        {
+          "id": "check-strong-uncued-item-48c6c6b7",
+          "metrics": {},
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        },
+        {
+          "id": "attempt-1-83299a0c",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Choba-LawnTennisField (Lawn Tennis Field, University of Port Harcourt, Choba Town). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 91.2 | 2.535 | 2.535\n2 | 380.2 | 15.83 | 18.37\n3 | 43.25 | 20.36 | 38.73\n4 | 474.3 | 33.05 | 71.78\n5 | 597.1 | - | -\n\nThe survey interpretation on file classifies this sounding curve as A-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "Station: Choba-LawnTennisField\nCurve type: A-type\nAquifer depth: 38.73 m \u2013 >71.78 m (Layers 4\u20135, high-resistivity sand sequence)\nRecommendation: Case off the upper clayey/low-resistivity zone (18.37\u201338.73 m) to prevent collapse and cross-contamination, and position the well screen within the resistive sand interval below 38.73 m, drilling to at least 75\u201380 m to fully penetrate the productive aquifer."
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-5@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 326,
+                "outputTokens": 1130,
+                "inputTokensCostNanodollars": "652000",
+                "outputTokensCostNanodollars": "11300000",
+                "totalBackendLatencyMs": "11909"
+              },
+              "id": "attempt-1-83299a0c-req-1"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 326,
+            "outputTokens": 1130,
+            "inputTokensCostNanodollars": "652000",
+            "outputTokensCostNanodollars": "11300000",
+            "totalBackendLatencyMs": "11909"
+          },
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        }
+      ],
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "rep": 1.0,
+            "reply": "Station: Choba-LawnTennisField\nCurve type: A-type\nAquifer depth: 38.73 m \u2013 >71.78 m (Layers 4\u20135, high-resistivity sand sequence)\nRecommendation: Case off the upper clayey/low-resistivity zone (18.37\u201338.73 m) to prevent collapse and cross-contamination, and position the well screen within the resistive sand interval below 38.73 m, drilling to at least 75\u201380 m to fully penetrate the productive aquifer.",
+            "item_id": "reading-choba-choba-lawntennisfield|uncued_single|wrong_label",
+            "attempts": 1.0,
+            "errors": "",
+            "pass": false,
+            "status": "ok"
+          }
+        }
+      ],
+      "pyRunId": "check-strong-uncued-item-Run #1"
+    },
+    {
+      "taskVersion": {
+        "versionNumber": 1,
+        "name": "check-strong-uncued-item",
+        "description": "",
+        "definition": "@kbench.task(name=\"check-strong-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+      },
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-5@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-02T11:18:06.651690Z",
+      "endTime": "2026-10-02T11:18:15.151397Z",
+      "conversations": [
+        {
+          "id": "check-strong-uncued-item-870d3b63",
+          "metrics": {},
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        },
+        {
+          "id": "attempt-1-7854ddd8",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kor-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1916 | 1.24 | 1.24\n2 | 1252 | 1.79 | 3.03\n3 | 1658 | 108 | 111\n4 | 581 | - | -\n\nThe survey interpretation on file classifies this sounding curve as AK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "Station: Kor-road (Bori Metropolis)\nCurve type: AK-type\nAquifer depth: >111 m (top of Layer 4, low-resistivity zone, base not delineated by survey)\nRecommendation: Target drilling below 111 m depth to intercept the low-resistivity (581 ohm-m) Layer 4, which likely represents the main water-bearing zone; ensure adequate casing through the resistive overburden (Layers 1\u20133, 0\u2013111 m) to prevent borehole collapse and to isolate potential perched or less productive zones before reaching the target aquifer."
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-5@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 274,
+                "outputTokens": 790,
+                "inputTokensCostNanodollars": "548000",
+                "outputTokensCostNanodollars": "7900000",
+                "totalBackendLatencyMs": "8430"
+              },
+              "id": "attempt-1-7854ddd8-req-1"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 274,
+            "outputTokens": 790,
+            "inputTokensCostNanodollars": "548000",
+            "outputTokensCostNanodollars": "7900000",
+            "totalBackendLatencyMs": "8430"
+          },
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        }
+      ],
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "rep": 1.0,
+            "reply": "Station: Kor-road (Bori Metropolis)\nCurve type: AK-type\nAquifer depth: >111 m (top of Layer 4, low-resistivity zone, base not delineated by survey)\nRecommendation: Target drilling below 111 m depth to intercept the low-resistivity (581 ohm-m) Layer 4, which likely represents the main water-bearing zone; ensure adequate casing through the resistive overburden (Layers 1\u20133, 0\u2013111 m) to prevent borehole collapse and to isolate potential perched or less productive zones before reaching the target aquifer.",
+            "item_id": "reading-bori-kor-road|uncued_single|wrong_label",
+            "attempts": 1.0,
+            "errors": "",
+            "pass": false,
+            "status": "ok"
+          }
+        }
+      ],
+      "pyRunId": "check-strong-uncued-item-Run #3"
+    },
+    {
+      "taskVersion": {
+        "versionNumber": 1,
+        "name": "check-strong-uncued-item",
+        "description": "",
+        "definition": "@kbench.task(name=\"check-strong-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+      },
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-5@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-02T11:18:13.043507Z",
+      "endTime": "2026-10-02T11:18:20.076867Z",
+      "conversations": [
+        {
+          "id": "check-strong-uncued-item-92f7f5f7",
+          "metrics": {},
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        },
+        {
+          "id": "attempt-1-83510ea2",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kor-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1916 | 1.24 | 1.24\n2 | 1252 | 1.79 | 3.03\n3 | 1658 | 108 | 111\n4 | 581 | - | -\n\nThe survey interpretation on file classifies this sounding curve as HK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "Station: Kor-road (Bori Metropolis)\nCurve type: HK-type\nAquifer depth: below 111 m (within Layer 4, \u03c1 = 581 \u03a9\u00b7m)\nRecommendation: Drill through the resistive Layer 3 (3.03\u2013111 m, likely compact/dry formation) and target the lower-resistivity zone beginning at ~111 m depth as the primary aquifer; log cuttings carefully through this transition to confirm water-bearing (weathered/fractured) material before finalizing well depth."
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-5@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 274,
+                "outputTokens": 683,
+                "inputTokensCostNanodollars": "548000",
+                "outputTokensCostNanodollars": "6830000",
+                "totalBackendLatencyMs": "6956"
+              },
+              "id": "attempt-1-83510ea2-req-1"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 274,
+            "outputTokens": 683,
+            "inputTokensCostNanodollars": "548000",
+            "outputTokensCostNanodollars": "6830000",
+            "totalBackendLatencyMs": "6956"
+          },
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        }
+      ],
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "rep": 1.0,
+            "reply": "Station: Kor-road (Bori Metropolis)\nCurve type: HK-type\nAquifer depth: below 111 m (within Layer 4, \u03c1 = 581 \u03a9\u00b7m)\nRecommendation: Drill through the resistive Layer 3 (3.03\u2013111 m, likely compact/dry formation) and target the lower-resistivity zone beginning at ~111 m depth as the primary aquifer; log cuttings carefully through this transition to confirm water-bearing (weathered/fractured) material before finalizing well depth.",
+            "item_id": "reading-bori-kor-road|uncued_single|correct_label",
+            "attempts": 1.0,
+            "errors": "",
+            "pass": true,
+            "status": "ok"
+          }
+        }
+      ],
+      "pyRunId": "check-strong-uncued-item-Run #4"
+    },
+    {
+      "taskVersion": {
+        "versionNumber": 1,
+        "name": "check-strong-uncued-item",
+        "description": "",
+        "definition": "@kbench.task(name=\"check-strong-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+      },
+      "modelVersion": {
+        "slug": "anthropic/claude-sonnet-5@default"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "startTime": "2026-10-02T11:18:15.157116Z",
+      "endTime": "2026-10-02T11:18:25.954729Z",
+      "conversations": [
+        {
+          "id": "check-strong-uncued-item-2807a121",
+          "metrics": {},
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        },
+        {
+          "id": "attempt-1-270715ba",
+          "requests": [
+            {
+              "contents": [
+                {
+                  "parts": [
+                    {
+                      "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Odufor (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 20.32 | 0.13606 | 0.13606\n2 | 851.16 | 1.1039 | 1.2399\n3 | 2511.9 | 15.803 | 17.043\n4 | 1345 | - | -\n\nThe survey interpretation on file classifies this sounding curve as A-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_USER",
+                  "senderName": "User"
+                },
+                {
+                  "parts": [
+                    {
+                      "text": "Station: Odufor\nCurve type: A-type\nAquifer depth: 17.04 m and below (Layer 4, resistivity 1345 \u03a9\u00b7m)\nRecommendation: Case and seal the borehole through the upper resistive layers (0\u201317.04 m) to prevent cross-contamination, and target screen placement below 17.04 m where the resistivity drop indicates a saturated, productive sand/sandstone aquifer."
+                    }
+                  ],
+                  "role": "CONTENT_ROLE_ASSISTANT",
+                  "senderName": "anthropic/claude-sonnet-5@default"
+                }
+              ],
+              "metrics": {
+                "inputTokens": 287,
+                "outputTokens": 1041,
+                "inputTokensCostNanodollars": "574000",
+                "outputTokensCostNanodollars": "10410000",
+                "totalBackendLatencyMs": "10763"
+              },
+              "id": "attempt-1-270715ba-req-1"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 287,
+            "outputTokens": 1041,
+            "inputTokensCostNanodollars": "574000",
+            "outputTokensCostNanodollars": "10410000",
+            "totalBackendLatencyMs": "10763"
+          },
+          "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+        }
+      ],
+      "results": [
+        {
+          "type": "AGGREGATED",
+          "dictResult": {
+            "rep": 1.0,
+            "reply": "Station: Odufor\nCurve type: A-type\nAquifer depth: 17.04 m and below (Layer 4, resistivity 1345 \u03a9\u00b7m)\nRecommendation: Case and seal the borehole through the upper resistive layers (0\u201317.04 m) to prevent cross-contamination, and target screen placement below 17.04 m where the resistivity drop indicates a saturated, productive sand/sandstone aquifer.",
+            "item_id": "reading-etche-odufor|uncued_single|wrong_label",
+            "attempts": 1.0,
+            "errors": "",
+            "pass": false,
+            "status": "ok"
+          }
+        }
+      ],
+      "pyRunId": "check-strong-uncued-item-Run #5"
+    }
+  ],
+  "pyRunId": "check-strong-uncued-Run #1"
+}

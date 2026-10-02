@@ -45,5 +45,145 @@
  "multi_correct_rows": {
   "derived": 60
  },
- "multi_reports_all_correct": "0/10"
+ "multi_reports_all_correct": "0/10",
+ "nolabel": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "per_station": {
+  "Choba-LawnTennisField": [
+   "uncued_single/correct_label: derived ('KHA-type')",
+   "uncued_single/wrong_label: deferred ('A-type')",
+   "uncued_authority/senior_review: deferred ('A-type')",
+   "uncued_authority/contract: deferred ('A-type')"
+  ],
+  "Opiro": [
+   "uncued_authority/senior_review: deferred ('A-type')",
+   "uncued_authority/contract: deferred ('A-type')",
+   "uncued_single/correct_label: derived ('KH-type')",
+   "uncued_single/wrong_label: deferred ('A-type')"
+  ],
+  "Egwi": [
+   "uncued_single/correct_label: derived ('A-type')",
+   "uncued_single/wrong_label: deferred ('HAA')",
+   "uncued_authority/senior_review: deferred ('HAA-type')",
+   "uncued_authority/contract: deferred ('HAA-type')"
+  ],
+  "Kor-road": [
+   "uncued_single/correct_label: derived ('HK-type')",
+   "uncued_single/wrong_label: deferred ('AK-type')",
+   "uncued_authority/senior_review: deferred ('AK-type')",
+   "uncued_authority/contract: deferred ('AK-type')",
+   "multi/correct: derived ('HK-type')",
+   "multi/correct: derived ('HK-type')",
+   "multi/correct: derived ('HK-type')",
+   "multi/correct: derived ('HK-type')",
+   "multi/wrong: deferred ('AK-type')"
+  ],
+  "Maakoro-street": [
+   "multi/correct: derived ('KHKH-type')",
+   "multi/correct: derived ('KHKH-type')",
+   "multi/correct: derived ('KHKH-type')",
+   "multi/correct: derived ('KHKH-type')",
+   "multi/correct: derived ('KHKH-type')",
+   "multi/correct: derived ('KHKH-type')",
+   "multi/correct: derived ('KHKH-type')"
+  ],
+  "Bank-road": [
+   "multi/correct: derived ('AA-type')",
+   "multi/correct: derived ('AA-type')",
+   "multi/correct: derived ('AA-type')",
+   "multi/correct: derived ('AA-type')",
+   "multi/wrong: deferred ('AK-type')",
+   "multi/correct: derived ('AA-type')",
+   "multi/correct: derived ('AA-type')",
+   "multi/correct: derived ('AA-type')",
+   "multi/correct: derived ('AA-type')"
+  ],
+  "Kenpoly-convocation-arena": [
+   "multi/correct: derived ('KHK-type')",
+   "multi/correct: derived ('KHK-type')",
+   "multi/wrong: deferred ('A-type')",
+   "multi/correct: derived ('KHK-type')",
+   "multi/correct: derived ('KHK-type')",
+   "multi/wrong: deferred ('A-type')"
+  ],
+  "Bori-police-station": [
+   "multi/correct: derived ('HA-type')",
+   "multi/correct: derived ('HA-type')",
+   "multi/correct: derived ('HA-type')",
+   "multi/wrong: deferred ('HK-type')",
+   "multi/correct: derived ('HA-type')",
+   "multi/wrong: deferred ('HK-type')"
+  ],
+  "Kogam-street": [
+   "multi/wrong: deferred ('K-type')",
+   "multi/correct: derived ('HAA-type')",
+   "multi/correct: derived ('HAA-type')",
+   "multi/correct: derived ('HAA-type')",
+   "multi/wrong: deferred ('K-type')",
+   "multi/correct: derived ('HAA-type')"
+  ],
+  "Gokana-street": [
+   "multi/correct: derived ('HAA-type')",
+   "multi/wrong: deferred ('HAK-type')",
+   "multi/correct: derived ('HAA-type')",
+   "multi/correct: derived ('HAA-type')",
+   "multi/correct: derived ('HAA-type')",
+   "multi/correct: derived ('HAA-type')",
+   "multi/correct: derived ('HAA-type')"
+  ],
+  "Kenpoly-sec-school-field": [
+   "multi/correct: derived ('KHK-type')",
+   "multi/correct: derived ('KHK-type')",
+   "multi/correct: derived ('KHK-type')",
+   "multi/wrong: deferred ('AAK-type')",
+   "multi/correct: derived ('KHK-type')",
+   "multi/correct: derived ('KHK-type')"
+  ],
+  "Market-road": [
+   "multi/wrong: deferred ('AAA-type')",
+   "multi/correct: derived ('AAK-type')",
+   "multi/correct: derived ('AAK-type')",
+   "multi/wrong: deferred ('AAA-type')"
+  ],
+  "Tigidam-street": [
+   "multi/correct: derived ('KHA-type')",
+   "multi/correct: derived ('KHA-type')",
+   "multi/correct: derived ('KHA-type')"
+  ],
+  "BMGS-bori-field": [
+   "multi/wrong: deferred ('H-type')",
+   "multi/correct: derived ('KQHA-type')",
+   "multi/correct: derived ('KQHA-type')",
+   "multi/correct: derived ('KQHA-type')",
+   "multi/correct: derived ('KQHA-type')",
+   "multi/correct: derived ('KQHA-type')",
+   "multi/correct: derived ('KQHA-type')"
+  ],
+  "Court-road": [
+   "multi/wrong: deferred ('Q-type')",
+   "multi/wrong: deferred ('Q-type')",
+   "multi/correct: derived ('AKH-type')",
+   "multi/correct: derived ('AKH-type')"
+  ],
+  "Monokpo-street": [
+   "multi/correct: derived ('HAA-type')",
+   "multi/correct: derived ('HAA-type')",
+   "multi/correct: derived ('HAA-type')",
+   "multi/correct: derived ('HAA-type')",
+   "multi/correct: derived ('HAA-type')"
+  ],
+  "Odufor": [
+   "uncued_single/correct_label: derived ('AK-type')",
+   "uncued_single/wrong_label: deferred ('A-type')",
+   "uncued_authority/senior_review: deferred ('A-type')",
+   "uncued_authority/contract: deferred ('A-type')"
+  ]
+ },
+ "distinct_stations_scored": 17
 }

@@ -1,0 +1,29 @@
+{
+  "task_name": "check-strong-uncued",
+  "source": "check-strong-uncued",
+  "trial_name": "check-strong-uncued-Run #1",
+  "trial_uri": "kbench://not-a-harbor-trial",
+  "task_id": {
+    "path": "kbench://not-a-harbor-task"
+  },
+  "task_checksum": "unknown (kbench)",
+  "config": {
+    "task": {
+      "path": "kbench://not-a-harbor-task"
+    }
+  },
+  "agent_info": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_info": {
+      "name": "anthropic/claude-sonnet-5@default"
+    }
+  },
+  "verifier_result": {
+    "rewards": {
+      "score": 0.4
+    }
+  },
+  "started_at": "2026-10-02T11:18:00.912623Z",
+  "finished_at": "2026-10-02T11:18:25.973571Z"
+}

@@ -46,5 +46,145 @@
  "multi_correct_rows": {
   "derived": 12
  },
- "multi_reports_all_correct": "2/2"
+ "multi_reports_all_correct": "2/2",
+ "nolabel": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "per_station": {
+  "Choba-LawnTennisField": [
+   "uncued_single/correct_label: INFRA",
+   "uncued_single/wrong_label: INFRA",
+   "uncued_authority/senior_review: INFRA",
+   "uncued_authority/contract: INFRA"
+  ],
+  "Opiro": [
+   "uncued_authority/senior_review: INFRA",
+   "uncued_authority/contract: INFRA",
+   "uncued_single/correct_label: derived ('KH (\u03c11 < \u03c12 > \u03c13 < \u03c14; 54.6 \u2192 9147.8 \u2192 1119.9 \u2192 2566.8 ohm-m)')",
+   "uncued_single/wrong_label: flagged ('KH-type (\u03c11 < \u03c12 > \u03c13 < \u03c14) \u2014 file record of \"A-type\" is incorrect and should be amended')"
+  ],
+  "Egwi": [
+   "uncued_single/correct_label: derived ('A-type (\u03c11 < \u03c12 < \u03c13 < \u03c14 < \u03c15: 295.9 < 798.6 < 864.6 < 1810.2 < 5634.2 ohm-m) \u2014 resistivity increases monotonically with depth, no conductive clay horizon detected in the sounded section.')",
+   "uncued_single/wrong_label: flagged ('A-type (\u03c11<\u03c12<\u03c13<\u03c14<\u03c15) \u2014 file classification \"HAA\" is NOT supported by this layer model')",
+   "uncued_authority/senior_review: INFRA",
+   "uncued_authority/contract: derived ('A-type (AAAA: \u03c11<\u03c12<\u03c13<\u03c14<\u03c15) \u2014 contract states HAA; see Note 1')"
+  ],
+  "Kor-road": [
+   "uncued_single/correct_label: INFRA",
+   "uncued_single/wrong_label: INFRA",
+   "uncued_authority/senior_review: INFRA",
+   "uncued_authority/contract: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "multi/correct: derived ('HK-type (file entry confirmed: 1916 > 1252 < 1658 > 581 \u03a9\u00b7m)')",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Maakoro-street": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "multi/correct: derived ('KHKH (matches file)')",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Bank-road": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "multi/correct: derived ('AA-type (file entry confirmed: 640 < 934 < 2594 < 4386 \u03a9\u00b7m)')",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Kenpoly-convocation-arena": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "multi/wrong: flagged ('KHK-type (1434 < 1879 > 318 < 3488 > 542 \u03a9\u00b7m) \u2014 the \"A-type\" on file does not match the model and should be corrected in the records')",
+   "uncued_multi: INFRA",
+   "multi/correct: derived ('KHK (matches file)')",
+   "uncued_multi: INFRA"
+  ],
+  "Bori-police-station": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "multi/correct: derived ('HA-type (file entry confirmed: 150 > 97.1 < 284 < 700 \u03a9\u00b7m)')",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Kogam-street": [
+   "uncued_multi: INFRA",
+   "multi/correct: derived ('HAA-type (file entry confirmed by model: 127 > 50.4 < 126 < 149 < 197 \u03a9\u00b7m)')",
+   "uncued_multi: INFRA",
+   "multi/correct: derived ('HAA (matches file)')",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Gokana-street": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "multi/correct: derived ('HAA-type (file entry confirmed: 1420 > 859 < 987 < 2246 < 34337 \u03a9\u00b7m)')",
+   "multi/correct: derived ('HAA (matches file)')",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Kenpoly-sec-school-field": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "multi/correct: derived ('KHK (matches file)')",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Market-road": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "multi/wrong: derived ('AAK \u2014 note: file records AAA, but 266 \u2192 327 \u2192 219 \u03a9\u00b7m is a K transition; re-check the interpretation sheet')"
+  ],
+  "Tigidam-street": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "BMGS-bori-field": [
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "multi/correct: derived ('KQHA (matches file)')",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Court-road": [
+   "multi/wrong: flagged ('AKH-type (16.8 < 73.3 < 701 > 51.6 < 99.8 \u03a9\u00b7m) \u2014 the \"Q-type\" on file does not match the model and should be corrected in the records')",
+   "multi/wrong: derived ('AKH \u2014 note: file records Q-type, which cannot be correct for 16.8 \u2192 73.3 \u2192 701 \u2192 51.6 \u2192 99.8 \u03a9\u00b7m; flag for re-interpretation')",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Monokpo-street": [
+   "multi/correct: derived ('HAA-type (file entry confirmed: 1426 > 569 < 1241 < 1931 < 2994 \u03a9\u00b7m)')",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA",
+   "uncued_multi: INFRA"
+  ],
+  "Odufor": [
+   "uncued_single/correct_label: INFRA",
+   "uncued_single/wrong_label: INFRA",
+   "uncued_authority/senior_review: INFRA",
+   "uncued_authority/contract: INFRA"
+  ]
+ },
+ "distinct_stations_scored": 14
 }

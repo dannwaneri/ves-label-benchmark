@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "control-ves-nolabel-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"control-ves-nolabel-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T11:24:25.012517Z",
+  "endTime": "2026-10-02T11:24:45.065423Z",
+  "conversations": [
+    {
+      "id": "control-ves-nolabel-item-5d491287",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-ea0683da",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Court-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 16.8 | 2.56 | 2.56\n2 | 73.3 | 10.4 | 12.9\n3 | 701 | 49.9 | 62.9\n4 | 51.6 | 51.4 | 114\n5 | 99.8 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Station Court-road (Bori Metropolis)\nCurve type: Q-type\nAquifer depth: 62.9 - 114 m\nRecommendation: Target the fractured zone identified between 63 m and 114 m. Ensure well screens are properly installed within this interval to optimize yield."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 206,
+            "outputTokens": 934,
+            "inputTokensCostNanodollars": "30900",
+            "outputTokensCostNanodollars": "560400",
+            "totalBackendLatencyMs": "19962"
+          },
+          "id": "attempt-1-ea0683da-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 206,
+        "outputTokens": 934,
+        "inputTokensCostNanodollars": "30900",
+        "outputTokensCostNanodollars": "560400",
+        "totalBackendLatencyMs": "19962"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Station Court-road (Bori Metropolis)\nCurve type: Q-type\nAquifer depth: 62.9 - 114 m\nRecommendation: Target the fractured zone identified between 63 m and 114 m. Ensure well screens are properly installed within this interval to optimize yield.",
+        "item_id": "reading-bori-court-road|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "control-ves-nolabel-item-Run #6"
+}

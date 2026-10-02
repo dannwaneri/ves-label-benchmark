@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "control-ves-nolabel-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"control-ves-nolabel-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T11:25:23.271673Z",
+  "endTime": "2026-10-02T11:26:24.128105Z",
+  "conversations": [
+    {
+      "id": "control-ves-nolabel-item-e896cbea",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-10aa6c7e",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Gokana-street (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1420 | 1.44 | 1.44\n2 | 859 | 1.49 | 2.93\n3 | 987 | 14.5 | 17.4\n4 | 2246 | 33.5 | 50.9\n5 | 34337 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Gokana-street (Bori Metropolis)\nCurve type: H-type\nAquifer depth: 1.44 - 50.9 m\nRecommendation: Target the sedimentary sequence by drilling to a depth of approximately 50m to intercept the potential aquifer before reaching the basement rock."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 208,
+            "outputTokens": 2847,
+            "inputTokensCostNanodollars": "31200",
+            "outputTokensCostNanodollars": "1708200",
+            "totalBackendLatencyMs": "60780"
+          },
+          "id": "attempt-1-10aa6c7e-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 208,
+        "outputTokens": 2847,
+        "inputTokensCostNanodollars": "31200",
+        "outputTokensCostNanodollars": "1708200",
+        "totalBackendLatencyMs": "60780"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Gokana-street (Bori Metropolis)\nCurve type: H-type\nAquifer depth: 1.44 - 50.9 m\nRecommendation: Target the sedimentary sequence by drilling to a depth of approximately 50m to intercept the potential aquifer before reaching the basement rock.",
+        "item_id": "reading-bori-gokana-street|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "control-ves-nolabel-item-Run #9"
+}

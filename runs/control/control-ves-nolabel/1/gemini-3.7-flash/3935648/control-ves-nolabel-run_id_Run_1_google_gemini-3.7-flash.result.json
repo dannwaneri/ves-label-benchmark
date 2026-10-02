@@ -1,0 +1,29 @@
+{
+  "task_name": "control-ves-nolabel",
+  "source": "control-ves-nolabel",
+  "trial_name": "control-ves-nolabel-Run #1",
+  "trial_uri": "kbench://not-a-harbor-trial",
+  "task_id": {
+    "path": "kbench://not-a-harbor-task"
+  },
+  "task_checksum": "unknown (kbench)",
+  "config": {
+    "task": {
+      "path": "kbench://not-a-harbor-task"
+    }
+  },
+  "agent_info": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_info": {
+      "name": "google/gemini-3.7-flash"
+    }
+  },
+  "verifier_result": {
+    "rewards": {
+      "score": 1.0
+    }
+  },
+  "started_at": "2026-10-02T11:20:09.215494Z",
+  "finished_at": "2026-10-02T11:20:37.647562Z"
+}
