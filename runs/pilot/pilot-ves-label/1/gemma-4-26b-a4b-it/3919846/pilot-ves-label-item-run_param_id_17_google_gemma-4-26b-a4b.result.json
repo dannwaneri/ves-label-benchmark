@@ -1,0 +1,35 @@
+{
+  "task_name": "pilot-ves-label-item",
+  "source": "pilot-ves-label",
+  "trial_name": "pilot-ves-label-item-Run #18",
+  "trial_uri": "kbench://not-a-harbor-trial",
+  "task_id": {
+    "path": "kbench://not-a-harbor-task"
+  },
+  "task_checksum": "unknown (kbench)",
+  "config": {
+    "task": {
+      "path": "kbench://not-a-harbor-task"
+    }
+  },
+  "agent_info": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_info": {
+      "name": "google/gemma-4-26b-a4b"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 420,
+    "n_output_tokens": 2604,
+    "cost_usd": 0.0016254
+  },
+  "verifier_result": {
+    "rewards": {
+      "rep": 1.0,
+      "pass": 1.0
+    }
+  },
+  "started_at": "2026-10-02T05:16:51.836477Z",
+  "finished_at": "2026-10-02T05:17:47.558809Z"
+}

@@ -1,0 +1,83 @@
+{
+ "model": "anthropic/claude-opus-5@default",
+ "n_calls": 50,
+ "reps": [
+  1,
+  2
+ ],
+ "kaggle_main_score": null,
+ "local_score": 0.76,
+ "kaggle_vs_local_item_mismatch": 0,
+ "truncated": 0,
+ "format_failures": 12,
+ "cost_usd": 0.4288,
+ "max_output_tokens": 624,
+ "items_that_flip_between_reps": [
+  "reading-etche-egwi|wrong_label|report",
+  "reading-etche-odufor|correct_label|report",
+  "reading-etche-odufor|wrong_label|report",
+  "reading-etche-opiro|correct_label|report"
+ ],
+ "per_rep": {
+  "1": {
+   "aggregate": {
+    "real": {
+     "no_label": {
+      "n": 5,
+      "pass": 5,
+      "accuracy": 100.0
+     },
+     "paired_direct": {
+      "stations": 5,
+      "pass": 5,
+      "paired_score": 100.0,
+      "correct_label_accepted": 100.0,
+      "wrong_label_caught": 100.0,
+      "right_type_but_wrong_label_missed": 0
+     },
+     "paired_report": {
+      "stations": 5,
+      "pass": 2,
+      "paired_score": 40.0,
+      "correct_label_accepted": 40.0,
+      "wrong_label_caught": 60.0,
+      "right_type_but_wrong_label_missed": 0
+     },
+     "format_failures": 5,
+     "truncated": 0
+    }
+   },
+   "item_pass_rate": 0.8
+  },
+  "2": {
+   "aggregate": {
+    "real": {
+     "no_label": {
+      "n": 5,
+      "pass": 5,
+      "accuracy": 100.0
+     },
+     "paired_direct": {
+      "stations": 5,
+      "pass": 5,
+      "paired_score": 100.0,
+      "correct_label_accepted": 100.0,
+      "wrong_label_caught": 100.0,
+      "right_type_but_wrong_label_missed": 0
+     },
+     "paired_report": {
+      "stations": 5,
+      "pass": 0,
+      "paired_score": 0.0,
+      "correct_label_accepted": 40.0,
+      "wrong_label_caught": 20.0,
+      "right_type_but_wrong_label_missed": 0
+     },
+     "format_failures": 7,
+     "truncated": 0
+    }
+   },
+   "item_pass_rate": 0.72
+  }
+ }
+}

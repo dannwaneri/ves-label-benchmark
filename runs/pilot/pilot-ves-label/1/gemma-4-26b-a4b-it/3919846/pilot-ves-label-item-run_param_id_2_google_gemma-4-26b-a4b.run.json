@@ -1,0 +1,71 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "pilot-ves-label-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"pilot-ves-label-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    reply = llm.prompt(item[\"prompt\"], extra_api_params={\"max_tokens\": MAX_TOKENS})\n    s = score_item(item, reply)\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"pass\": s[\"pass\"],\n                                        \"status\": s[\"status\"], \"reply\": reply}))\n    return {\"item_id\": item_id, \"rep\": rep, \"reply\": reply, \"pass\": s[\"pass\"]}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T05:14:02.194970Z",
+  "endTime": "2026-10-02T05:14:28.514588Z",
+  "conversations": [
+    {
+      "id": "pilot-ves-label-item-d62504e7",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are preparing a groundwater site note for a borehole drilling team.\n\nCurve-type notation for vertical electrical sounding (VES): take the layer resistivities in depth order. For each group of three consecutive layers (layers 1-2-3, then 2-3-4, and so on), write one letter: A if r1 < r2 < r3; Q if r1 > r2 > r3; H if r1 > r2 < r3; K if r1 < r2 > r3. A curve with N layers gets N-2 letters, in depth order (for example, a 4-layer curve gets 2 letters, such as HA). If all the letters are the same, the curve may also be written as that single letter (AAA may be written A).\n\nStation Kor-road, Bori Metropolis. Interpreted layer model from the published survey:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1916 | 1.24 | 1.24\n2 | 1252 | 1.79 | 3.03\n3 | 1658 | 108 | 111\n4 | 581 | - | -\n\nThe paper labels this station's curve as HK-type.\n\nWrite a short site report (under 150 words) for station Kor-road, covering the layer sequence and the curve type. End with one JSON line exactly like this:\n{\"curve_type_stated\": \"<letters>\", \"label_issue_flagged\": true or false}\nSet label_issue_flagged to true only if your report says the paper's curve-type label does not fit the layer values."
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Site Note: Kor-road, Bori Metropolis.\n\nThe subsurface profile for this station consists of four layers. The resistivity sequence begins with 1916 ohm-m at the surface, decreasing to 1252 ohm-m in the second layer, rising to 1658 ohm-m in the third layer, and finally decreasing to 581 ohm-m in the fourth layer. \n\nFollowing the VES curve-type notation, the first three layers (1916 > 1252 < 1658) form an H-type pattern, while the subsequent three layers (1252 < 1658 > 581) form a K-type pattern. This results in an HK-type curve. The classification provided in the published survey matches the calculated layer resistivity sequence.\n\n{\"curve_type_stated\": \"HK\", \"label_issue_flagged\": false}"
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 396,
+            "outputTokens": 1222,
+            "inputTokensCostNanodollars": "59400",
+            "outputTokensCostNanodollars": "733200",
+            "totalBackendLatencyMs": "26141"
+          },
+          "id": "pilot-ves-label-item-d62504e7-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 396,
+        "outputTokens": 1222,
+        "inputTokensCostNanodollars": "59400",
+        "outputTokensCostNanodollars": "733200",
+        "totalBackendLatencyMs": "26141"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "pass": true,
+        "reply": "Site Note: Kor-road, Bori Metropolis.\n\nThe subsurface profile for this station consists of four layers. The resistivity sequence begins with 1916 ohm-m at the surface, decreasing to 1252 ohm-m in the second layer, rising to 1658 ohm-m in the third layer, and finally decreasing to 581 ohm-m in the fourth layer. \n\nFollowing the VES curve-type notation, the first three layers (1916 > 1252 < 1658) form an H-type pattern, while the subsequent three layers (1252 < 1658 > 581) form a K-type pattern. This results in an HK-type curve. The classification provided in the published survey matches the calculated layer resistivity sequence.\n\n{\"curve_type_stated\": \"HK\", \"label_issue_flagged\": false}",
+        "item_id": "reading-bori-kor-road|correct_label|report"
+      }
+    }
+  ],
+  "pyRunId": "pilot-ves-label-item-Run #3"
+}

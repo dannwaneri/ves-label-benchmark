@@ -1,0 +1,78 @@
+{
+ "model": "google/gemini-3.7-flash",
+ "n_calls": 50,
+ "reps": [
+  1,
+  2
+ ],
+ "kaggle_main_score": 1.0,
+ "local_score": 1.0,
+ "kaggle_vs_local_item_mismatch": 0,
+ "truncated": 0,
+ "format_failures": 0,
+ "cost_usd": 0.1595,
+ "max_output_tokens": 1411,
+ "items_that_flip_between_reps": [],
+ "per_rep": {
+  "1": {
+   "aggregate": {
+    "real": {
+     "no_label": {
+      "n": 5,
+      "pass": 5,
+      "accuracy": 100.0
+     },
+     "paired_direct": {
+      "stations": 5,
+      "pass": 5,
+      "paired_score": 100.0,
+      "correct_label_accepted": 100.0,
+      "wrong_label_caught": 100.0,
+      "right_type_but_wrong_label_missed": 0
+     },
+     "paired_report": {
+      "stations": 5,
+      "pass": 5,
+      "paired_score": 100.0,
+      "correct_label_accepted": 100.0,
+      "wrong_label_caught": 100.0,
+      "right_type_but_wrong_label_missed": 0
+     },
+     "format_failures": 0,
+     "truncated": 0
+    }
+   },
+   "item_pass_rate": 1.0
+  },
+  "2": {
+   "aggregate": {
+    "real": {
+     "no_label": {
+      "n": 5,
+      "pass": 5,
+      "accuracy": 100.0
+     },
+     "paired_direct": {
+      "stations": 5,
+      "pass": 5,
+      "paired_score": 100.0,
+      "correct_label_accepted": 100.0,
+      "wrong_label_caught": 100.0,
+      "right_type_but_wrong_label_missed": 0
+     },
+     "paired_report": {
+      "stations": 5,
+      "pass": 5,
+      "paired_score": 100.0,
+      "correct_label_accepted": 100.0,
+      "wrong_label_caught": 100.0,
+      "right_type_but_wrong_label_missed": 0
+     },
+     "format_failures": 0,
+     "truncated": 0
+    }
+   },
+   "item_pass_rate": 1.0
+  }
+ }
+}

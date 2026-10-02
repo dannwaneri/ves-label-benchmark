@@ -1,0 +1,1257 @@
+{
+  "schema_version": "ATIF-v1.7",
+  "session_id": "pilot-ves-label-Run #1",
+  "trajectory_id": "pilot-ves-label-Run #1",
+  "agent": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_name": "google/gemma-4-26b-a4b"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "source": "system",
+      "message": "[placeholder] Run failed before any model turn: Traceback (most recent call last):\n  File \"/benchmarks/src/kaggle_benchmarks/tasks.py\", line 171, in run\n    run.result = self.func(*args, **kwargs)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ipykernel_15/2124250973.py\", line 25, in main_task\n    agg = aggregate([ITEMS_BY_ID[d[\"item_id\"]] for d in ds], scored)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ipykernel_15/806496564.py\", line 169, in aggregate\n    knows_not_acts = sum(v[\"wrong_label\"][\"type_correct\"] and not v[\"wrong_label\"][\"pass\"]\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: unsupported operand type(s) for +: 'int' and 'NoneType'\n No conversation recorded.",
+      "timestamp": "2026-10-02T05:14:02.183743Z"
+    },
+    {
+      "step_id": 2,
+      "source": "system",
+      "message": "[delegated] Other trajectories from this run: 50 rows.",
+      "observation": {
+        "results": [
+          {
+            "subagent_trajectory_ref": [
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_1_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #2"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_2_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #3"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_3_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #4"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_0_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #1"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_5_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #6"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_6_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #7"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_7_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #8"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_4_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #5"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_8_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #9"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_9_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #10"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_11_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #12"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_10_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #11"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_15_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #16"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_14_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #15"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_12_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #13"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_13_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #14"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_16_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #17"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_18_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #19"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_20_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #21"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_17_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #18"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_21_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #22"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_19_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #20"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_23_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #24"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_22_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #23"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_24_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #25"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_25_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #26"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_26_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #27"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_28_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #29"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_29_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #30"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_30_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #31"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_27_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #28"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_31_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #32"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_33_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #34"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_35_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #36"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_34_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #35"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_36_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #37"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_32_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #33"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_40_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #41"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_37_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #38"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_38_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #39"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_39_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #40"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_42_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #43"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_41_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #42"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_43_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #44"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_45_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #46"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_46_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #47"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_47_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #48"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_44_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #45"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_48_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #49"
+                }
+              },
+              {
+                "trajectory_path": "pilot-ves-label-item-run_param_id_49_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "pilot-ves-label-item-Run #50"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "notes": "Converted from kbench run.json for task 'pilot-ves-label'. No model turn was recorded, so total_steps is 0 and the first step below is a placeholder.",
+  "final_metrics": {
+    "total_steps": 0,
+    "extra": {
+      "kbench_result": {
+        "score": 0.0
+      }
+    }
+  },
+  "extra": {
+    "kbench": {
+      "task_version": {
+        "version_number": 1,
+        "name": "pilot-ves-label",
+        "description": "",
+        "definition": "@kbench.task(name=\"pilot-ves-label\")\ndef main_task(llm) -> float:\n    runs = ves_item.evaluate(llm=[llm], evaluation_data=ROWS, n_jobs=4,\n                             on_failure=\"continue\", max_attempts=2, retry_delay=10)\n    for run in runs.errored_runs:\n        print(\"ITEM_ERROR \" + json.dumps({\"params\": str(run.params), \"error\": str(run.error_message)[:300]}))\n    done = [r for r in runs.completed_runs.as_dataframe().result]\n    # Score = mean item pass rate over all items, averaged over repeats\n    by_rep = {}\n    for d in done:\n        by_rep.setdefault(d[\"rep\"], []).append(d)\n    per_rep = []\n    for rep, ds in sorted(by_rep.items()):\n        scored = [score_item(ITEMS_BY_ID[d[\"item_id\"]], d[\"reply\"]) for d in ds]\n        agg = aggregate([ITEMS_BY_ID[d[\"item_id\"]] for d in ds], scored)\n        print(\"SUMMARY rep=%d %s\" % (rep, json.dumps(agg)))\n        per_rep.append(sum(s[\"pass\"] for s in scored) / len(ITEMS))\n    n_expected = len(ROWS)\n    print(\"COMPLETED %d/%d\" % (len(done), n_expected))\n    # Missing (errored) items count as failures: divide by the expected count.\n    return float(sum(per_rep) / REPEATS) if per_rep else 0.0\n"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_ERRORED",
+      "end_time": "2026-10-02T05:23:24.495385Z",
+      "error_message": "Traceback (most recent call last):\n  File \"/benchmarks/src/kaggle_benchmarks/tasks.py\", line 171, in run\n    run.result = self.func(*args, **kwargs)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ipykernel_15/2124250973.py\", line 25, in main_task\n    agg = aggregate([ITEMS_BY_ID[d[\"item_id\"]] for d in ds], scored)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ipykernel_15/806496564.py\", line 169, in aggregate\n    knows_not_acts = sum(v[\"wrong_label\"][\"type_correct\"] and not v[\"wrong_label\"][\"pass\"]\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: unsupported operand type(s) for +: 'int' and 'NoneType'\n",
+      "subruns": [
+        {
+          "py_run_id": "pilot-ves-label-item-Run #2",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #3",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #4",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #1",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #6",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #7",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #8",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #5",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #9",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #10",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #12",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #11",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #16",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #15",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #13",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #14",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #17",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #19",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #21",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #18",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #22",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #20",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #24",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #23",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #25",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #26",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #27",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #29",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #30",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #31",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #28",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #32",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #34",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #36",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #35",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #37",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #33",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #41",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #38",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #39",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #40",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #43",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #42",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #44",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #46",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #47",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #48",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #45",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #49",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "pilot-ves-label-item-Run #50",
+          "task_name": "pilot-ves-label-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "pass": 1.0
+          }
+        }
+      ],
+      "conversion_warnings": [
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        }
+      ]
+    }
+  }
+}

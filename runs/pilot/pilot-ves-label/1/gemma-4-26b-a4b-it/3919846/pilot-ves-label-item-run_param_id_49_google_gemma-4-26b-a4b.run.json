@@ -1,0 +1,71 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "pilot-ves-label-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"pilot-ves-label-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    reply = llm.prompt(item[\"prompt\"], extra_api_params={\"max_tokens\": MAX_TOKENS})\n    s = score_item(item, reply)\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"pass\": s[\"pass\"],\n                                        \"status\": s[\"status\"], \"reply\": reply}))\n    return {\"item_id\": item_id, \"rep\": rep, \"reply\": reply, \"pass\": s[\"pass\"]}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T05:22:32.262027Z",
+  "endTime": "2026-10-02T05:23:24.482850Z",
+  "conversations": [
+    {
+      "id": "pilot-ves-label-item-0ceb9876",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are preparing a groundwater site note for a borehole drilling team.\n\nCurve-type notation for vertical electrical sounding (VES): take the layer resistivities in depth order. For each group of three consecutive layers (layers 1-2-3, then 2-3-4, and so on), write one letter: A if r1 < r2 < r3; Q if r1 > r2 > r3; H if r1 > r2 < r3; K if r1 < r2 > r3. A curve with N layers gets N-2 letters, in depth order (for example, a 4-layer curve gets 2 letters, such as HA). If all the letters are the same, the curve may also be written as that single letter (AAA may be written A).\n\nStation Opiro, Etche LGA survey stations. Interpreted layer model from the published survey:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 54.639 | 0.2147 | 0.2147\n2 | 9147.8 | 0.30305 | 0.51774\n3 | 1119.9 | 21.107 | 21.625\n4 | 2566.8 | - | -\n\nThe paper labels this station's curve as A-type.\n\nWrite a short site report (under 150 words) for station Opiro, covering the layer sequence and the curve type. End with one JSON line exactly like this:\n{\"curve_type_stated\": \"<letters>\", \"label_issue_flagged\": true or false}\nSet label_issue_flagged to true only if your report says the paper's curve-type label does not fit the layer values."
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station Opiro, located in Etche LGA, consists of a four-layer subsurface model. The resistivity values for the layers are 54.6 $\\Omega$m, 9147.8 $\\Omega$m, 1119.9 $\\Omega$m, and 2566.8 $\\Omega$m, respectively. Applying the curve-type notation rules, the first three layers (1-2-3) show an increase followed by a decrease (low-high-low), which identifies as K. The subsequent group (2-3-4) shows a decrease followed by an increase (high-low-high), which identifies as H. This results in a KH curve. The published A-type label is incorrect, as it suggests a continuously increasing resistivity profile which is not supported by the provided data.\n\n{\"curve_type_stated\": \"KH\", \"label_issue_flagged\": true}"
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 421,
+            "outputTokens": 2469,
+            "inputTokensCostNanodollars": "63150",
+            "outputTokensCostNanodollars": "1481400",
+            "totalBackendLatencyMs": "52138"
+          },
+          "id": "pilot-ves-label-item-0ceb9876-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 421,
+        "outputTokens": 2469,
+        "inputTokensCostNanodollars": "63150",
+        "outputTokensCostNanodollars": "1481400",
+        "totalBackendLatencyMs": "52138"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "pass": true,
+        "reply": "Station Opiro, located in Etche LGA, consists of a four-layer subsurface model. The resistivity values for the layers are 54.6 $\\Omega$m, 9147.8 $\\Omega$m, 1119.9 $\\Omega$m, and 2566.8 $\\Omega$m, respectively. Applying the curve-type notation rules, the first three layers (1-2-3) show an increase followed by a decrease (low-high-low), which identifies as K. The subsequent group (2-3-4) shows a decrease followed by an increase (high-low-high), which identifies as H. This results in a KH curve. The published A-type label is incorrect, as it suggests a continuously increasing resistivity profile which is not supported by the provided data.\n\n{\"curve_type_stated\": \"KH\", \"label_issue_flagged\": true}",
+        "item_id": "reading-etche-opiro|wrong_label|report"
+      }
+    }
+  ],
+  "pyRunId": "pilot-ves-label-item-Run #50"
+}

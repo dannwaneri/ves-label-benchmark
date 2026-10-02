@@ -1,0 +1,35 @@
+{
+  "task_name": "pilot-ves-label",
+  "source": "pilot-ves-label",
+  "trial_name": "pilot-ves-label-Run #1",
+  "trial_uri": "kbench://not-a-harbor-trial",
+  "task_id": {
+    "path": "kbench://not-a-harbor-task"
+  },
+  "task_checksum": "unknown (kbench)",
+  "config": {
+    "task": {
+      "path": "kbench://not-a-harbor-task"
+    }
+  },
+  "agent_info": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_info": {
+      "name": "google/gemma-4-26b-a4b"
+    }
+  },
+  "verifier_result": {
+    "rewards": {
+      "score": 0.0
+    }
+  },
+  "exception_info": {
+    "exception_type": "TypeError",
+    "exception_message": "unsupported operand type(s) for +: 'int' and 'NoneType'",
+    "exception_traceback": "Traceback (most recent call last):\n  File \"/benchmarks/src/kaggle_benchmarks/tasks.py\", line 171, in run\n    run.result = self.func(*args, **kwargs)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ipykernel_15/2124250973.py\", line 25, in main_task\n    agg = aggregate([ITEMS_BY_ID[d[\"item_id\"]] for d in ds], scored)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/ipykernel_15/806496564.py\", line 169, in aggregate\n    knows_not_acts = sum(v[\"wrong_label\"][\"type_correct\"] and not v[\"wrong_label\"][\"pass\"]\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: unsupported operand type(s) for +: 'int' and 'NoneType'\n",
+    "occurred_at": "2026-10-02T05:23:24.495385Z"
+  },
+  "started_at": "2026-10-02T05:14:02.183743Z",
+  "finished_at": "2026-10-02T05:23:24.495385Z"
+}
