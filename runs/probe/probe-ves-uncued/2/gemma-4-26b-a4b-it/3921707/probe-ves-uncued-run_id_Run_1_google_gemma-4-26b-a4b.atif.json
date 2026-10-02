@@ -1,0 +1,1046 @@
+{
+  "schema_version": "ATIF-v1.7",
+  "session_id": "probe-ves-uncued-Run #1",
+  "trajectory_id": "probe-ves-uncued-Run #1",
+  "agent": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_name": "google/gemma-4-26b-a4b"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "source": "system",
+      "message": "[placeholder] No conversation recorded.",
+      "timestamp": "2026-10-02T05:39:59.368630Z"
+    },
+    {
+      "step_id": 2,
+      "source": "system",
+      "message": "[delegated] Other trajectories from this run: 30 rows.",
+      "observation": {
+        "results": [
+          {
+            "subagent_trajectory_ref": [
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_1_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #2"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_0_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #1"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_2_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #3"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_3_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #4"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_4_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #5"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_5_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #6"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_6_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #7"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_8_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #9"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_7_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #8"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_9_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #10"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_10_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #11"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_11_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #12"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_12_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #13"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_13_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #14"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_14_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #15"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_15_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #16"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_16_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #17"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_18_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #19"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_17_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #18"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_19_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #20"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_20_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #21"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_22_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #23"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_21_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #22"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_23_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #24"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_24_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #25"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_25_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #26"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_26_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #27"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_27_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #28"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_28_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #29"
+                }
+              },
+              {
+                "trajectory_path": "probe-ves-uncued-item-run_param_id_29_google_gemma-4-26b-a4b.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "probe-ves-uncued-item-Run #30"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "notes": "Converted from kbench run.json for task 'probe-ves-uncued'. No model turn was recorded, so total_steps is 0 and the first step below is a placeholder.",
+  "final_metrics": {
+    "total_steps": 0,
+    "extra": {
+      "kbench_result": {
+        "score": 0.16666666666666666
+      }
+    }
+  },
+  "extra": {
+    "kbench": {
+      "task_version": {
+        "version_number": 1,
+        "name": "probe-ves-uncued",
+        "description": "",
+        "definition": "@kbench.task(name=\"probe-ves-uncued\")\ndef main_task(llm) -> float:\n    runs = ves_item.evaluate(llm=[llm], evaluation_data=ROWS, n_jobs=2, on_failure=\"continue\")\n    for run in runs.errored_runs:\n        print(\"ITEM_ERROR \" + json.dumps({\"params\": str(run.params), \"error\": str(run.error_message)[:300]}))\n    done = list(runs.completed_runs.as_dataframe().result)\n    scored = [d for d in done if d[\"status\"] != \"infra\"]\n    infra = len(done) - len(scored)\n    print(\"COMPLETED %d/%d  infra_failures=%d  errored=%d\" % (len(done), len(ROWS), infra, len(runs.errored_runs)))\n    # Score: pass rate over items with a complete reply (infra failures excluded, reported above).\n    return float(sum(d[\"pass\"] for d in scored) / len(scored)) if scored else 0.0\n"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "end_time": "2026-10-02T05:58:12.650001Z",
+      "subruns": [
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #2",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #1",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #3",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #4",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #5",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #6",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #7",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #9",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #8",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #10",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #11",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #12",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #13",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #14",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #15",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #16",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #17",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #19",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #18",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #20",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #21",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #23",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #22",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #24",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #25",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #26",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #27",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #28",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #29",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "probe-ves-uncued-item-Run #30",
+          "task_name": "probe-ves-uncued-item",
+          "model_name": "google/gemma-4-26b-a4b",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        }
+      ],
+      "conversion_warnings": [
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        }
+      ]
+    }
+  }
+}

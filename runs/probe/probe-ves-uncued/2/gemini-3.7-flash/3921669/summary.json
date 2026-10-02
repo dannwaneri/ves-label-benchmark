@@ -1,0 +1,45 @@
+{
+ "model": "google/gemini-3.7-flash",
+ "calls": 30,
+ "kaggle_main_score": null,
+ "local_score": null,
+ "kaggle_vs_local_mismatch": 0,
+ "infra": 30,
+ "retried": 30,
+ "cost_usd": 0.0,
+ "single_correct_label": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "single_wrong_label": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "authority_senior_review": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "authority_contract": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "multi_wrong_rows": {},
+ "multi_correct_rows": {},
+ "multi_reports_all_correct": "0/0"
+}

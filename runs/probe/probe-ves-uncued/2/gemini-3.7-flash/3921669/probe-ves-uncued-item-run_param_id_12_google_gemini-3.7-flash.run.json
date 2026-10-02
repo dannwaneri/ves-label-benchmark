@@ -1,0 +1,78 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "probe-ves-uncued-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"probe-ves-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T05:37:36.525118Z",
+  "endTime": "2026-10-02T05:37:39.377479Z",
+  "conversations": [
+    {
+      "id": "probe-ves-uncued-item-8f025252",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-6ba8e1da",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Egwi (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 295.88 | 0.54518 | 0.54518\n2 | 798.6 | 3.5924 | 4.1376\n3 | 864.62 | 2.1559 | 6.2935\n4 | 1810.2 | 37.957 | 37.25\n5 | 5634.2 | - | -\n\nThe survey interpretation on file classifies this sounding curve as A-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            }
+          ],
+          "id": "attempt-1-6ba8e1da-req-1"
+        }
+      ],
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-2-cdb974b5",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Egwi (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 295.88 | 0.54518 | 0.54518\n2 | 798.6 | 3.5924 | 4.1376\n3 | 864.62 | 2.1559 | 6.2935\n4 | 1810.2 | 37.957 | 37.25\n5 | 5634.2 | - | -\n\nThe survey interpretation on file classifies this sounding curve as A-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            }
+          ],
+          "id": "attempt-2-cdb974b5-req-1"
+        }
+      ],
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "",
+        "item_id": "reading-etche-egwi|uncued_single|correct_label",
+        "attempts": 2.0,
+        "errors": "attempt 1: RateLimitError: Error code: 429 - {'code': '', 'message': 'The model is currently experiencing heavy load. Try again later.', 'param': '', 'type': 'rate_limit_error'} | attempt 2: RateLimitError: Error code: 429 - {'code': '', 'message': 'The model is currently experiencing heavy load. Try again later.', 'param': '', 'type': 'rate_limit_error'}",
+        "pass": false,
+        "status": "infra"
+      }
+    }
+  ],
+  "pyRunId": "probe-ves-uncued-item-Run #13"
+}

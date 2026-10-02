@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "probe-ves-uncued-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"probe-ves-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T05:46:39.894556Z",
+  "endTime": "2026-10-02T05:47:43.954834Z",
+  "conversations": [
+    {
+      "id": "probe-ves-uncued-item-a25fbda8",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-1ffadb2c",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kor-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1916 | 1.24 | 1.24\n2 | 1252 | 1.79 | 3.03\n3 | 1658 | 108 | 111\n4 | 581 | - | -\n\nThe survey interpretation on file classifies this sounding curve as AK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Station Kor-road (Bori Metropolis)\nCurve type: AK-type\nAquifer depth: 3.03 - 111 m\nRecommendation: Target the thick layer identified between 3.03 m and 111 m. Drill to a minimum depth of 111 m to ensure penetration into the lower resistivity zone."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 200,
+            "outputTokens": 3001,
+            "inputTokensCostNanodollars": "30000",
+            "outputTokensCostNanodollars": "1800600",
+            "totalBackendLatencyMs": "64006"
+          },
+          "id": "attempt-1-1ffadb2c-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 200,
+        "outputTokens": 3001,
+        "inputTokensCostNanodollars": "30000",
+        "outputTokensCostNanodollars": "1800600",
+        "totalBackendLatencyMs": "64006"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Station Kor-road (Bori Metropolis)\nCurve type: AK-type\nAquifer depth: 3.03 - 111 m\nRecommendation: Target the thick layer identified between 3.03 m and 111 m. Drill to a minimum depth of 111 m to ensure penetration into the lower resistivity zone.",
+        "item_id": "reading-bori-kor-road|uncued_single|wrong_label",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "probe-ves-uncued-item-Run #18"
+}

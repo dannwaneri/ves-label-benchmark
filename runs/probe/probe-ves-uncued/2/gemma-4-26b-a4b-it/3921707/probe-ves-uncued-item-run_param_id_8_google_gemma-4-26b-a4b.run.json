@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "probe-ves-uncued-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"probe-ves-uncued-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T05:42:58.407850Z",
+  "endTime": "2026-10-02T05:43:32.999798Z",
+  "conversations": [
+    {
+      "id": "probe-ves-uncued-item-5498bf7f",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-1ac5472c",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Opiro (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 54.639 | 0.2147 | 0.2147\n2 | 9147.8 | 0.30305 | 0.51774\n3 | 1119.9 | 21.107 | 21.625\n4 | 2566.8 | - | -\n\nThe survey interpretation on file classifies this sounding curve as KH-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Opiro\nCurve type: KH-type\nAquifer depth: 0.52 - 21.63 m\nRecommendation: Target the conductive layer identified between 0.52m and 21.63m. Drilling should aim to fully penetrate this weathered zone to ensure optimal water yield."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 226,
+            "outputTokens": 1619,
+            "inputTokensCostNanodollars": "33900",
+            "outputTokensCostNanodollars": "971400",
+            "totalBackendLatencyMs": "34528"
+          },
+          "id": "attempt-1-1ac5472c-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 226,
+        "outputTokens": 1619,
+        "inputTokensCostNanodollars": "33900",
+        "outputTokensCostNanodollars": "971400",
+        "totalBackendLatencyMs": "34528"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Opiro\nCurve type: KH-type\nAquifer depth: 0.52 - 21.63 m\nRecommendation: Target the conductive layer identified between 0.52m and 21.63m. Drilling should aim to fully penetrate this weathered zone to ensure optimal water yield.",
+        "item_id": "reading-etche-opiro|uncued_single|correct_label",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "probe-ves-uncued-item-Run #9"
+}

@@ -1,0 +1,50 @@
+{
+ "model": "anthropic/claude-opus-5@default",
+ "calls": 30,
+ "kaggle_main_score": 1.0,
+ "local_score": 1.0,
+ "kaggle_vs_local_mismatch": 0,
+ "infra": 23,
+ "retried": 24,
+ "cost_usd": 0.6635,
+ "single_correct_label": {
+  "deferred": 0,
+  "derived": 2,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "single_wrong_label": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 2,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "authority_senior_review": {
+  "deferred": 0,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "authority_contract": {
+  "deferred": 0,
+  "derived": 1,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "multi_wrong_rows": {
+  "flagged": 2,
+  "derived": 2
+ },
+ "multi_correct_rows": {
+  "derived": 12
+ },
+ "multi_reports_all_correct": "2/2"
+}

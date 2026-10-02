@@ -1,0 +1,36 @@
+{
+  "task_name": "probe-ves-uncued-item",
+  "source": "probe-ves-uncued",
+  "trial_name": "probe-ves-uncued-item-Run #13",
+  "trial_uri": "kbench://not-a-harbor-trial",
+  "task_id": {
+    "path": "kbench://not-a-harbor-task"
+  },
+  "task_checksum": "unknown (kbench)",
+  "config": {
+    "task": {
+      "path": "kbench://not-a-harbor-task"
+    }
+  },
+  "agent_info": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_info": {
+      "name": "anthropic/claude-opus-5@default"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 311,
+    "n_output_tokens": 1161,
+    "cost_usd": 0.03058
+  },
+  "verifier_result": {
+    "rewards": {
+      "rep": 1.0,
+      "attempts": 1.0,
+      "pass": 1.0
+    }
+  },
+  "started_at": "2026-10-02T05:40:22.614528Z",
+  "finished_at": "2026-10-02T05:40:39.325072Z"
+}

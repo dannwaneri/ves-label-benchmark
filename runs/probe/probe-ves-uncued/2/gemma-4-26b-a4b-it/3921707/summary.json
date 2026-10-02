@@ -1,0 +1,49 @@
+{
+ "model": "google/gemma-4-26b-a4b",
+ "calls": 30,
+ "kaggle_main_score": 0.16666666666666666,
+ "local_score": 0.1667,
+ "kaggle_vs_local_mismatch": 0,
+ "infra": 0,
+ "retried": 0,
+ "cost_usd": 0.0622,
+ "single_correct_label": {
+  "deferred": 0,
+  "derived": 5,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "single_wrong_label": {
+  "deferred": 5,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "authority_senior_review": {
+  "deferred": 5,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "authority_contract": {
+  "deferred": 5,
+  "derived": 0,
+  "flagged": 0,
+  "other": 0,
+  "empty": 0,
+  "missing": 0
+ },
+ "multi_wrong_rows": {
+  "deferred": 15
+ },
+ "multi_correct_rows": {
+  "derived": 60
+ },
+ "multi_reports_all_correct": "0/10"
+}
