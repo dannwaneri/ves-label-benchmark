@@ -42,7 +42,7 @@ ROWS = pd.DataFrame([{{"item_id": it["id"], "rep": r}} for r in range(1, REPEATS
 
 
 # %%
-@kbench.task(name=TASK_NAME + "-item", store_task=False)
+@kbench.task(name="{name}-item", store_task=False)
 def ves_item(llm, item_id: str, rep: int) -> dict:
     item = ITEMS_BY_ID[item_id]
     reply = llm.prompt(item["prompt"], extra_api_params={{"max_tokens": MAX_TOKENS}})
@@ -52,7 +52,7 @@ def ves_item(llm, item_id: str, rep: int) -> dict:
     return {{"item_id": item_id, "rep": rep, "reply": reply, "pass": s["pass"]}}
 
 
-@kbench.task(name=TASK_NAME)
+@kbench.task(name="{name}")
 def main_task(llm) -> float:
     runs = ves_item.evaluate(llm=[llm], evaluation_data=ROWS, n_jobs=4,
                              on_failure="continue", max_attempts=2, retry_delay=10)
