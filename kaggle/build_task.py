@@ -126,12 +126,16 @@ def main():
     ap.add_argument("--items", default="items/items.json")
     ap.add_argument("--stations")
     ap.add_argument("--task")
+    ap.add_argument("--ids", help="comma-separated item ids, in this order")
     ap.add_argument("--repeats", type=int, default=1)
     args = ap.parse_args()
     items = json.loads((ROOT / args.items).read_text(encoding="utf-8"))["items"]
     if args.stations:
         keep = set(args.stations.split(","))
         items = [it for it in items if it.get("station_id") in keep]
+    if args.ids:
+        by_id = {it["id"]: it for it in items}
+        items = [by_id[i] for i in args.ids.split(",")]
     if args.task:
         items = [it for it in items if it.get("task") == args.task]
     assert items, "no items selected"

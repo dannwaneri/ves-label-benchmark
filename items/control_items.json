@@ -1,0 +1,194 @@
+{
+ "items": [
+  {
+   "id": "reading-choba-choba-lawntennisfield|uncued_nolabel",
+   "condition": "uncued_nolabel",
+   "level": null,
+   "twin": null,
+   "wrong_kind": null,
+   "slice": "real",
+   "synthetic": false,
+   "stations": [
+    {
+     "name": "Choba-LawnTennisField",
+     "station_id": "reading-choba-choba-lawntennisfield",
+     "derived": "KHA",
+     "label": null,
+     "label_truth": null
+    }
+   ],
+   "prompt": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Choba-LawnTennisField (Lawn Tennis Field, University of Port Harcourt, Choba Town). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 91.2 | 2.535 | 2.535\n2 | 380.2 | 15.83 | 18.37\n3 | 43.25 | 20.36 | 38.73\n4 | 474.3 | 33.05 | 71.78\n5 | 597.1 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+  },
+  {
+   "id": "reading-etche-odufor|uncued_nolabel",
+   "condition": "uncued_nolabel",
+   "level": null,
+   "twin": null,
+   "wrong_kind": null,
+   "slice": "real",
+   "synthetic": false,
+   "stations": [
+    {
+     "name": "Odufor",
+     "station_id": "reading-etche-odufor",
+     "derived": "AK",
+     "label": null,
+     "label_truth": null
+    }
+   ],
+   "prompt": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Odufor (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 20.32 | 0.13606 | 0.13606\n2 | 851.16 | 1.1039 | 1.2399\n3 | 2511.9 | 15.803 | 17.043\n4 | 1345 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+  },
+  {
+   "id": "reading-etche-opiro|uncued_nolabel",
+   "condition": "uncued_nolabel",
+   "level": null,
+   "twin": null,
+   "wrong_kind": null,
+   "slice": "real",
+   "synthetic": false,
+   "stations": [
+    {
+     "name": "Opiro",
+     "station_id": "reading-etche-opiro",
+     "derived": "KH",
+     "label": null,
+     "label_truth": null
+    }
+   ],
+   "prompt": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Opiro (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 54.639 | 0.2147 | 0.2147\n2 | 9147.8 | 0.30305 | 0.51774\n3 | 1119.9 | 21.107 | 21.625\n4 | 2566.8 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+  },
+  {
+   "id": "reading-etche-egwi|uncued_nolabel",
+   "condition": "uncued_nolabel",
+   "level": null,
+   "twin": null,
+   "wrong_kind": null,
+   "slice": "real",
+   "synthetic": false,
+   "stations": [
+    {
+     "name": "Egwi",
+     "station_id": "reading-etche-egwi",
+     "derived": "AAA",
+     "label": null,
+     "label_truth": null
+    }
+   ],
+   "prompt": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Egwi (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 295.88 | 0.54518 | 0.54518\n2 | 798.6 | 3.5924 | 4.1376\n3 | 864.62 | 2.1559 | 6.2935\n4 | 1810.2 | 37.957 | 37.25\n5 | 5634.2 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+  },
+  {
+   "id": "reading-bori-kor-road|uncued_nolabel",
+   "condition": "uncued_nolabel",
+   "level": null,
+   "twin": null,
+   "wrong_kind": null,
+   "slice": "real",
+   "synthetic": false,
+   "stations": [
+    {
+     "name": "Kor-road",
+     "station_id": "reading-bori-kor-road",
+     "derived": "HK",
+     "label": null,
+     "label_truth": null
+    }
+   ],
+   "prompt": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kor-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1916 | 1.24 | 1.24\n2 | 1252 | 1.79 | 3.03\n3 | 1658 | 108 | 111\n4 | 581 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+  },
+  {
+   "id": "reading-bori-court-road|uncued_nolabel",
+   "condition": "uncued_nolabel",
+   "level": null,
+   "twin": null,
+   "wrong_kind": null,
+   "slice": "real",
+   "synthetic": false,
+   "stations": [
+    {
+     "name": "Court-road",
+     "station_id": "reading-bori-court-road",
+     "derived": "AKH",
+     "label": null,
+     "label_truth": null
+    }
+   ],
+   "prompt": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Court-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 16.8 | 2.56 | 2.56\n2 | 73.3 | 10.4 | 12.9\n3 | 701 | 49.9 | 62.9\n4 | 51.6 | 51.4 | 114\n5 | 99.8 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+  },
+  {
+   "id": "reading-bori-market-road|uncued_nolabel",
+   "condition": "uncued_nolabel",
+   "level": null,
+   "twin": null,
+   "wrong_kind": null,
+   "slice": "real",
+   "synthetic": false,
+   "stations": [
+    {
+     "name": "Market-road",
+     "station_id": "reading-bori-market-road",
+     "derived": "AAK",
+     "label": null,
+     "label_truth": null
+    }
+   ],
+   "prompt": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Market-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 104 | 2.86 | 2.86\n2 | 186 | 2.38 | 5.24\n3 | 266 | 24.7 | 29.9\n4 | 327 | 24.6 | 54.6\n5 | 219 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+  },
+  {
+   "id": "reading-bori-kogam-street|uncued_nolabel",
+   "condition": "uncued_nolabel",
+   "level": null,
+   "twin": null,
+   "wrong_kind": null,
+   "slice": "real",
+   "synthetic": false,
+   "stations": [
+    {
+     "name": "Kogam-street",
+     "station_id": "reading-bori-kogam-street",
+     "derived": "HAA",
+     "label": null,
+     "label_truth": null
+    }
+   ],
+   "prompt": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kogam-street (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 127 | 0.822 | 0.822\n2 | 50.4 | 5.63 | 6.45\n3 | 126 | 21.2 | 27.7\n4 | 149 | 29.7 | 57.3\n5 | 197 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+  },
+  {
+   "id": "reading-bori-gokana-street|uncued_nolabel",
+   "condition": "uncued_nolabel",
+   "level": null,
+   "twin": null,
+   "wrong_kind": null,
+   "slice": "real",
+   "synthetic": false,
+   "stations": [
+    {
+     "name": "Gokana-street",
+     "station_id": "reading-bori-gokana-street",
+     "derived": "HAA",
+     "label": null,
+     "label_truth": null
+    }
+   ],
+   "prompt": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Gokana-street (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1420 | 1.44 | 1.44\n2 | 859 | 1.49 | 2.93\n3 | 987 | 14.5 | 17.4\n4 | 2246 | 33.5 | 50.9\n5 | 34337 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+  },
+  {
+   "id": "reading-bori-bori-police-station|uncued_nolabel",
+   "condition": "uncued_nolabel",
+   "level": null,
+   "twin": null,
+   "wrong_kind": null,
+   "slice": "real",
+   "synthetic": false,
+   "stations": [
+    {
+     "name": "Bori-police-station",
+     "station_id": "reading-bori-bori-police-station",
+     "derived": "HA",
+     "label": null,
+     "label_truth": null
+    }
+   ],
+   "prompt": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Bori-police-station (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 150 | 1.23 | 1.23\n2 | 97.1 | 6.21 | 7.44\n3 | 284 | 37.5 | 45\n4 | 700 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+  }
+ ]
+}
