@@ -145,6 +145,9 @@ def test_end_to_end_retry_and_infra_exclusion(monkeypatch, capsys):
 
 
 def test_end_to_end_provider_error_is_retried_then_infra(monkeypatch, capsys):
+    import time
+    slept = []
+    monkeypatch.setattr(time, "sleep", lambda s: slept.append(s))
     a, b = PROBE[0], PROBE[1]
     good = (f"Station: {b['stations'][0]['name']}\nCurve type: {b['stations'][0]['derived']}\n"
             "Aquifer depth: 10-20 m\nRecommendation: drill")
@@ -160,3 +163,27 @@ def test_end_to_end_provider_error_is_retried_then_infra(monkeypatch, capsys):
     assert res[a["id"]]["status"] == "infra" and len(res[a["id"]]["errors"]) == 2
     assert "429" in res[a["id"]]["errors"][0]
     assert res[b["id"]]["attempts"] == 2 and res[b["id"]]["pass"] is True
+    assert slept == [30, 30]          # backoff before each retry that follows an error
+
+
+def test_end_to_end_empty_reply_retry_has_no_backoff(monkeypatch, capsys):
+    import time
+    slept = []
+    monkeypatch.setattr(time, "sleep", lambda s: slept.append(s))
+    a = PROBE[0]
+    good = (f"Station: {a['stations'][0]['name']}\nCurve type: {a['stations'][0]['derived']}\n"
+            "Aquifer depth: 1 m\nRecommendation: go")
+    monkeypatch.setitem(sys.modules, "kaggle_benchmarks", _stub_kbench({a["prompt"]: ["", good]}, []))
+    exec(compile(build("e2e", [a]), "<generated>", "exec"), {})
+    assert sys.modules["kaggle_benchmarks"].result == 1.0 and slept == []
+
+
+def test_end_to_end_all_infra_records_no_score(monkeypatch, capsys):
+    import time
+    monkeypatch.setattr(time, "sleep", lambda s: None)
+    a, b = PROBE[0], PROBE[1]
+    err = RuntimeError("Error code: 429")
+    monkeypatch.setitem(sys.modules, "kaggle_benchmarks", _stub_kbench({a["prompt"]: [err], b["prompt"]: [""]}, []))
+    with pytest.raises(RuntimeError, match="no score recorded"):
+        exec(compile(build("e2e", [a, b]), "<generated>", "exec"), {})
+    assert not hasattr(sys.modules["kaggle_benchmarks"], "result")

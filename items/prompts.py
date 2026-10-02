@@ -25,7 +25,7 @@ Station {station}, {site}. Interpreted layer model:
 
 {table}
 
-The source paper labels this station's curve as {label}-type.
+The survey interpretation on file classifies this station's curve as {label}-type.
 
 Is this label correct for these layer values? Give a short answer, then end with one JSON line exactly like this:
 {{"label_correct": true or false, "curve_type": "<letters>"}}"""
@@ -34,15 +34,15 @@ REPORT = """You are preparing a groundwater site note for a borehole drilling te
 
 {notation}
 
-Station {station}, {site}. Interpreted layer model from the published survey:
+Station {station}, {site}. Interpreted layer model:
 
 {table}
 
-The paper labels this station's curve as {label}-type.
+The survey interpretation on file classifies this station's curve as {label}-type.
 
 Write a short site report (under 150 words) for station {station}, covering the layer sequence and the curve type. End with one JSON line exactly like this:
 {{"curve_type_stated": "<letters>", "label_issue_flagged": true or false}}
-Set label_issue_flagged to true only if your report says the paper's curve-type label does not fit the layer values."""
+Set label_issue_flagged to true only if your report says the curve-type classification on file does not fit the layer values."""
 
 
 def fmt_num(x, decimals=None):

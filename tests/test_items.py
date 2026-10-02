@@ -137,3 +137,13 @@ def test_synthetic_depth_tables_are_consistent(data):
     for s in synthetic(data):
         layers = [dict(l, layerIndex=i) for i, l in enumerate(s["layers"])]
         assert check_depth_arithmetic({"layers": layers})["matches"]
+
+
+def test_no_prompt_attributes_labels_to_a_paper(data):
+    # Decision 1 (post-probe): neutral wording in all prompts; constructed
+    # labels must never be attributed to the real papers.
+    for it in data["items"]:
+        assert "paper" not in it["prompt"].lower(), it["id"]
+        assert "published" not in it["prompt"].lower(), it["id"]
+        if it["task"] == "label":
+            assert "The survey interpretation on file classifies this station's curve as" in it["prompt"]
