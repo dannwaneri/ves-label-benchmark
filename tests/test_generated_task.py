@@ -90,13 +90,18 @@ def _stub_kbench(script, log):
             calls[text] = n + 1
             log.append(text)
             replies = script[text]
-            return replies[min(n, len(replies) - 1)]
+            r = replies[min(n, len(replies) - 1)]
+            if isinstance(r, Exception):
+                raise r
+            return r
 
     @contextlib.contextmanager
     def new(name):
         kb._open_chats += 1
-        yield
-        kb._open_chats -= 1
+        try:
+            yield
+        finally:
+            kb._open_chats -= 1
 
     def task(name=None, store_task=True):
         def deco(fn):
@@ -137,3 +142,21 @@ def test_end_to_end_retry_and_infra_exclusion(monkeypatch, capsys):
     by_id = {r["item_id"]: r for r in results}
     assert by_id[b["id"]]["attempts"] == 2 and by_id[b["id"]]["replies"][0].startswith("**Site Note")
     assert by_id[c["id"]]["status"] == "infra"
+
+
+def test_end_to_end_provider_error_is_retried_then_infra(monkeypatch, capsys):
+    a, b = PROBE[0], PROBE[1]
+    good = (f"Station: {b['stations'][0]['name']}\nCurve type: {b['stations'][0]['derived']}\n"
+            "Aquifer depth: 10-20 m\nRecommendation: drill")
+    err = RuntimeError("Error code: 429 - heavy load")
+    script = {a["prompt"]: [err, err], b["prompt"]: [err, good]}
+    log = []
+    monkeypatch.setitem(sys.modules, "kaggle_benchmarks", _stub_kbench(script, log))
+    exec(compile(build("e2e", [a, b]), "<generated>", "exec"), {})
+    out = capsys.readouterr().out
+    assert sys.modules["kaggle_benchmarks"].result == 1.0      # b recovered on retry; a excluded
+    assert "infra_failures=1" in out
+    res = {json.loads(l[12:])["item_id"]: json.loads(l[12:]) for l in out.splitlines() if l.startswith("ITEM_RESULT ")}
+    assert res[a["id"]]["status"] == "infra" and len(res[a["id"]]["errors"]) == 2
+    assert "429" in res[a["id"]]["errors"][0]
+    assert res[b["id"]]["attempts"] == 2 and res[b["id"]]["pass"] is True

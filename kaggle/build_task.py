@@ -47,32 +47,38 @@ ROWS = pd.DataFrame([{{"item_id": it["id"], "rep": r}} for r in range(1, REPEATS
 
 
 def ask(llm, item):
-    """Fresh chat per attempt; at most one retry for an incomplete reply."""
-    replies = []
+    """Fresh chat per attempt; at most one retry for an incomplete reply.
+    A provider error (e.g. 429 heavy load) counts as an empty reply."""
+    replies, errors = [], []
     for attempt in (1, 2):
-        with kbench.chats.new(f"attempt-{{attempt}}"):
-            reply = llm.prompt(item["prompt"], extra_api_params={{"max_tokens": MAX_TOKENS}})
+        try:
+            with kbench.chats.new(f"attempt-{{attempt}}"):
+                reply = llm.prompt(item["prompt"], extra_api_params={{"max_tokens": MAX_TOKENS}})
+        except Exception as e:  # noqa: BLE001 - recorded, then treated as infra
+            reply = ""
+            errors.append(f"attempt {{attempt}}: {{type(e).__name__}}: {{str(e)[:200]}}")
         replies.append(reply)
         if not incomplete(item, reply):
             break
-    return replies
+    return replies, errors
 
 
 # %%
 @kbench.task(name="{name}-item", store_task=False)
 def ves_item(llm, item_id: str, rep: int) -> dict:
     item = ITEMS_BY_ID[item_id]
-    replies = ask(llm, item)
+    replies, errors = ask(llm, item)
     s = score_any(item, replies[-1])
     print("ITEM_RESULT " + json.dumps({{"item_id": item_id, "rep": rep, "attempts": len(replies),
-                                        "status": s["status"], "pass": s["pass"], "replies": replies}}))
+                                        "status": s["status"], "pass": s["pass"], "errors": errors,
+                                        "replies": replies}}))
     return {{"item_id": item_id, "rep": rep, "attempts": len(replies), "reply": replies[-1],
-            "status": s["status"], "pass": s["pass"]}}
+            "status": s["status"], "pass": s["pass"], "errors": " | ".join(errors)}}
 
 
 @kbench.task(name="{name}")
 def main_task(llm) -> float:
-    runs = ves_item.evaluate(llm=[llm], evaluation_data=ROWS, n_jobs=4, on_failure="continue")
+    runs = ves_item.evaluate(llm=[llm], evaluation_data=ROWS, n_jobs=2, on_failure="continue")
     for run in runs.errored_runs:
         print("ITEM_ERROR " + json.dumps({{"params": str(run.params), "error": str(run.error_message)[:300]}}))
     done = list(runs.completed_runs.as_dataframe().result)
