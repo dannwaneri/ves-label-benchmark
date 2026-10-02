@@ -1,0 +1,33 @@
+{
+  "task_name": "ves-smoke-test-2",
+  "trial_name": "ves-smoke-test-2-Run #1",
+  "trial_uri": "kbench://not-a-harbor-trial",
+  "task_id": {
+    "path": "kbench://not-a-harbor-task"
+  },
+  "task_checksum": "unknown (kbench)",
+  "config": {
+    "task": {
+      "path": "kbench://not-a-harbor-task"
+    }
+  },
+  "agent_info": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_info": {
+      "name": "google/gemma-4-26b-a4b"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 8,
+    "n_output_tokens": 49,
+    "cost_usd": 3.06e-05
+  },
+  "verifier_result": {
+    "rewards": {
+      "score": 1.0
+    }
+  },
+  "started_at": "2026-10-02T04:53:30.635398Z",
+  "finished_at": "2026-10-02T04:53:32.317611Z"
+}

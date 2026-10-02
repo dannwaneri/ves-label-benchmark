@@ -1,0 +1,5 @@
+{
+  "versionNumber": 1,
+  "name": "ves-smoke-test-2",
+  "definition": "@kbench.task(name=\"ves-smoke-test-2\")\ndef ves_smoke_test(llm) -> bool:\n    reply = llm.prompt(\"Reply with the single word: ready\")\n    return \"ready\" in reply.lower()\n"
+}

@@ -1,0 +1,62 @@
+{
+  "schema_version": "ATIF-v1.7",
+  "session_id": "ves-smoke-test-2-Run #1",
+  "trajectory_id": "ves-smoke-test-2-Run #1",
+  "agent": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_name": "google/gemini-3.7-flash"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "source": "user",
+      "message": "Reply with the single word: ready",
+      "extra": {
+        "sender_name": "User"
+      },
+      "timestamp": "2026-10-02T04:52:01.005495Z"
+    },
+    {
+      "step_id": 2,
+      "source": "agent",
+      "message": "ready",
+      "extra": {
+        "sender_name": "google/gemini-3.7-flash"
+      },
+      "model_name": "google/gemini-3.7-flash",
+      "metrics": {
+        "prompt_tokens": 8,
+        "completion_tokens": 100,
+        "cost_usd": 0.000381,
+        "extra": {
+          "total_backend_latency_ms": 1461
+        }
+      }
+    }
+  ],
+  "notes": "Converted from kbench run.json for task 'ves-smoke-test-2'.",
+  "final_metrics": {
+    "total_prompt_tokens": 8,
+    "total_completion_tokens": 100,
+    "total_cost_usd": 0.000381,
+    "total_steps": 2,
+    "extra": {
+      "kbench_result": {
+        "score": 1.0
+      }
+    }
+  },
+  "extra": {
+    "kbench": {
+      "task_version": {
+        "version_number": 1,
+        "name": "ves-smoke-test-2",
+        "description": "",
+        "definition": "@kbench.task(name=\"ves-smoke-test-2\")\ndef ves_smoke_test(llm) -> bool:\n    reply = llm.prompt(\"Reply with the single word: ready\")\n    return \"ready\" in reply.lower()\n"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "end_time": "2026-10-02T04:52:02.783262Z"
+    }
+  }
+}

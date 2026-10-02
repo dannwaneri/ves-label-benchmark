@@ -1,0 +1,66 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-smoke-test-2",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-smoke-test-2\")\ndef ves_smoke_test(llm) -> bool:\n    reply = llm.prompt(\"Reply with the single word: ready\")\n    return \"ready\" in reply.lower()\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T04:52:01.005495Z",
+  "endTime": "2026-10-02T04:52:02.783262Z",
+  "conversations": [
+    {
+      "id": "ves-smoke-test-2-ab068e54",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "Reply with the single word: ready"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "ready"
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 8,
+            "outputTokens": 100,
+            "inputTokensCostNanodollars": "6000",
+            "outputTokensCostNanodollars": "375000",
+            "totalBackendLatencyMs": "1461"
+          },
+          "id": "ves-smoke-test-2-ab068e54-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 8,
+        "outputTokens": 100,
+        "inputTokensCostNanodollars": "6000",
+        "outputTokensCostNanodollars": "375000",
+        "totalBackendLatencyMs": "1461"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "booleanResult": true
+    }
+  ],
+  "pyRunId": "ves-smoke-test-2-Run #1"
+}

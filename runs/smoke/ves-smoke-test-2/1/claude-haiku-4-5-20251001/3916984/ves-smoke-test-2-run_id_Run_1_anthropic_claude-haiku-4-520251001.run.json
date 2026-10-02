@@ -1,0 +1,66 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-smoke-test-2",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-smoke-test-2\")\ndef ves_smoke_test(llm) -> bool:\n    reply = llm.prompt(\"Reply with the single word: ready\")\n    return \"ready\" in reply.lower()\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-haiku-4-5@20251001"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T04:53:38.925844Z",
+  "endTime": "2026-10-02T04:53:39.755691Z",
+  "conversations": [
+    {
+      "id": "ves-smoke-test-2-4784f3a8",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "Reply with the single word: ready"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "ready"
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-haiku-4-5@20251001"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 14,
+            "outputTokens": 4,
+            "inputTokensCostNanodollars": "14000",
+            "outputTokensCostNanodollars": "20000",
+            "totalBackendLatencyMs": "249"
+          },
+          "id": "ves-smoke-test-2-4784f3a8-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 14,
+        "outputTokens": 4,
+        "inputTokensCostNanodollars": "14000",
+        "outputTokensCostNanodollars": "20000",
+        "totalBackendLatencyMs": "249"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "booleanResult": true
+    }
+  ],
+  "pyRunId": "ves-smoke-test-2-Run #1"
+}

@@ -1,0 +1,66 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-smoke-test-2",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-smoke-test-2\")\ndef ves_smoke_test(llm) -> bool:\n    reply = llm.prompt(\"Reply with the single word: ready\")\n    return \"ready\" in reply.lower()\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-02T04:53:30.635398Z",
+  "endTime": "2026-10-02T04:53:32.317611Z",
+  "conversations": [
+    {
+      "id": "ves-smoke-test-2-98c35535",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "Reply with the single word: ready"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "ready"
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 8,
+            "outputTokens": 49,
+            "inputTokensCostNanodollars": "1200",
+            "outputTokensCostNanodollars": "29400",
+            "totalBackendLatencyMs": "1491"
+          },
+          "id": "ves-smoke-test-2-98c35535-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 8,
+        "outputTokens": 49,
+        "inputTokensCostNanodollars": "1200",
+        "outputTokensCostNanodollars": "29400",
+        "totalBackendLatencyMs": "1491"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "booleanResult": true
+    }
+  ],
+  "pyRunId": "ves-smoke-test-2-Run #1"
+}
