@@ -140,3 +140,16 @@ def test_slices_are_kept_separate():
     agg = aggregate([a, b], [score_item(a, '{"curve_type": "KHA"}'), score_item(b, "none")])
     assert agg["real"]["no_label"]["accuracy"] == 100.0
     assert agg["synthetic"]["no_label"]["accuracy"] == 0.0
+
+
+def test_no_json_on_wrong_label_twin_does_not_crash_aggregate():
+    # Found in the pilot: a reply with no JSON left type_correct as None and
+    # the knowing-vs-acting count raised TypeError.
+    agg = run({NL["id"]: '{"curve_type": "KHA"}',
+               D_OK["id"]: '{"label_correct": true, "curve_type": "KHA"}',
+               D_BAD["id"]: "The label is wrong.",
+               R_OK["id"]: '{"curve_type_stated": "KHA", "label_issue_flagged": false}',
+               R_BAD["id"]: "Report without the JSON line."})
+    assert agg["paired_direct"]["paired_score"] == 0.0
+    assert agg["paired_report"]["right_type_but_wrong_label_missed"] == 0
+    assert agg["format_failures"] == 2

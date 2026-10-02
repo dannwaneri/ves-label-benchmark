@@ -61,7 +61,7 @@ def score_item(item, reply, truncated=False):
     field, ftype = SCORED_FIELD[key]
     obj, last_line = extract_last_json(reply)
     out = {"id": item["id"], "pass": False, "status": "ok", "json_last_line": last_line,
-           "truncated": bool(truncated), "type_correct": None, "value": None}
+           "truncated": bool(truncated), "type_correct": False, "value": None}
 
     if obj is None:
         out["status"] = "no_json"
