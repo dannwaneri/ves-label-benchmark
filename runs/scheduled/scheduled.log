@@ -1,0 +1,9 @@
+2026-10-04 03:45:09 UTC  SKIP ves-real / claude-sonnet-5-default [dry-run]: now is before not-before 2026-10-05 03:10 UTC
+2026-10-04 03:45:09 UTC  SKIP ves-real / gemini-3.7-flash [dry-run]: status check failed: C:\Python314\python.exe: No module named kaggle.__main__; 'kaggle' is a package and cannot be directly executed
+2026-10-04 03:45:09 UTC  SKIP ves-real / claude-sonnet-5-default [dry-run]: status check failed: C:\Python314\python.exe: No module named kaggle.__main__; 'kaggle' is a package and cannot be directly executed
+2026-10-04 03:45:09 UTC  SKIP ves-real / claude-sonnet-5-default [dry-run]: status check failed: C:\Python314\python.exe: No module named kaggle.__main__; 'kaggle' is a package and cannot be directly executed
+2026-10-04 03:45:10 UTC  SKIP ves-real / claude-sonnet-5-default [dry-run]: status check failed: C:\Python314\python.exe: No module named kaggle.__main__; 'kaggle' is a package and cannot be directly executed
+2026-10-04 03:45:25 UTC  SKIP ves-real / gemini-3.7-flash [dry-run]: model already has a run on this task
+2026-10-04 03:45:30 UTC  SKIP ves-real / claude-sonnet-5-default [dry-run]: current window started 2026-10-04 03:10 UTC, before not-before (not a fresh window); remaining $6.91
+2026-10-04 03:45:36 UTC  SKIP ves-real / claude-sonnet-5-default [dry-run]: daily remaining $6.89 < $8.50
+2026-10-04 03:45:42 UTC  DRY-RUN ves-real / claude-sonnet-5-default [dry-run]: all guards passed (remaining $6.88); would start the run now
