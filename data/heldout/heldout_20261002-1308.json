@@ -1,0 +1,277 @@
+{
+  "frozen_at": "2026-10-04 14:00 WAT",
+  "site": "survey area H",
+  "instructions": "Fill expected_type, correct_label, wrong_label for every station by hand. Then set frozen_at, save, and send the path + SHA256 hash.",
+  "stations": [
+    {
+      "name": "H-01",
+      "layers": [
+        {
+          "resistivityOhmM": 332.5,
+          "thicknessM": 0.52,
+          "cumulativeDepthM": 0.52
+        },
+        {
+          "resistivityOhmM": 601.3,
+          "thicknessM": 6.89,
+          "cumulativeDepthM": 7.41
+        },
+        {
+          "resistivityOhmM": 359.9,
+          "thicknessM": 16.01,
+          "cumulativeDepthM": 23.42
+        },
+        {
+          "resistivityOhmM": 286.0,
+          "thicknessM": null,
+          "cumulativeDepthM": null
+        }
+      ],
+      "expected_type": "KQ",
+      "correct_label": "KQ",
+      "wrong_label": "K"
+    },
+    {
+      "name": "H-02",
+      "layers": [
+        {
+          "resistivityOhmM": 364.5,
+          "thicknessM": 0.81,
+          "cumulativeDepthM": 0.81
+        },
+        {
+          "resistivityOhmM": 257.8,
+          "thicknessM": 2.53,
+          "cumulativeDepthM": 3.34
+        },
+        {
+          "resistivityOhmM": 745.5,
+          "thicknessM": 12.65,
+          "cumulativeDepthM": 15.99
+        },
+        {
+          "resistivityOhmM": 1146.1,
+          "thicknessM": null,
+          "cumulativeDepthM": null
+        }
+      ],
+      "expected_type": "HA",
+      "correct_label": "HA",
+      "wrong_label": "H"
+    },
+    {
+      "name": "H-03",
+      "layers": [
+        {
+          "resistivityOhmM": 193.6,
+          "thicknessM": 0.9,
+          "cumulativeDepthM": 0.9
+        },
+        {
+          "resistivityOhmM": 129.1,
+          "thicknessM": 3.18,
+          "cumulativeDepthM": 4.08
+        },
+        {
+          "resistivityOhmM": 29.1,
+          "thicknessM": 0.79,
+          "cumulativeDepthM": 4.87
+        },
+        {
+          "resistivityOhmM": 29.8,
+          "thicknessM": 26.64,
+          "cumulativeDepthM": 31.51
+        },
+        {
+          "resistivityOhmM": 165.4,
+          "thicknessM": null,
+          "cumulativeDepthM": null
+        }
+      ],
+      "expected_type": "QHA",
+      "correct_label": "QHA",
+      "wrong_label": "QQA"
+    },
+    {
+      "name": "H-04",
+      "layers": [
+        {
+          "resistivityOhmM": 133.9,
+          "thicknessM": 19.46,
+          "cumulativeDepthM": 19.46
+        },
+        {
+          "resistivityOhmM": 50.7,
+          "thicknessM": 19.69,
+          "cumulativeDepthM": 39.15
+        },
+        {
+          "resistivityOhmM": 23.0,
+          "thicknessM": 4.0,
+          "cumulativeDepthM": 43.15
+        },
+        {
+          "resistivityOhmM": 61.9,
+          "thicknessM": 4.32,
+          "cumulativeDepthM": 47.47
+        },
+        {
+          "resistivityOhmM": 20.8,
+          "thicknessM": null,
+          "cumulativeDepthM": null
+        }
+      ],
+      "expected_type": "QHK",
+      "correct_label": "QHK",
+      "wrong_label": "QHA"
+    },
+    {
+      "name": "H-05",
+      "layers": [
+        {
+          "resistivityOhmM": 26.6,
+          "thicknessM": 4.3,
+          "cumulativeDepthM": 4.3
+        },
+        {
+          "resistivityOhmM": 119.1,
+          "thicknessM": 2.37,
+          "cumulativeDepthM": 6.67
+        },
+        {
+          "resistivityOhmM": 340.4,
+          "thicknessM": 0.77,
+          "cumulativeDepthM": 7.44
+        },
+        {
+          "resistivityOhmM": 640.3,
+          "thicknessM": 0.77,
+          "cumulativeDepthM": 8.21
+        },
+        {
+          "resistivityOhmM": 2441.4,
+          "thicknessM": null,
+          "cumulativeDepthM": null
+        }
+      ],
+      "expected_type": "AAA",
+      "correct_label": "AAA",
+      "wrong_label": "AA"
+    
+    },
+    {
+      "name": "H-06",
+      "layers": [
+        {
+          "resistivityOhmM": 609.8,
+          "thicknessM": 18.27,
+          "cumulativeDepthM": 18.27
+        },
+        {
+          "resistivityOhmM": 213.6,
+          "thicknessM": 1.05,
+          "cumulativeDepthM": 19.32
+        },
+        {
+          "resistivityOhmM": 1311.8,
+          "thicknessM": 4.54,
+          "cumulativeDepthM": 23.86
+        },
+        {
+          "resistivityOhmM": 278.0,
+          "thicknessM": 3.1,
+          "cumulativeDepthM": 26.96
+        },
+        {
+          "resistivityOhmM": 1124.7,
+          "thicknessM": 1.46,
+          "cumulativeDepthM": 28.42
+        },
+        {
+          "resistivityOhmM": 291.6,
+          "thicknessM": null,
+          "cumulativeDepthM": null
+        }
+      ],
+      "expected_type": "HKHK",
+      "correct_label": "HKHK",
+      "wrong_label": "HK"
+    },
+    {
+      "name": "H-07",
+      "layers": [
+        {
+          "resistivityOhmM": 1790.5, 
+          "thicknessM": 0.52, 
+          "cumulativeDepthM": 0.52
+        },
+        {
+          "resistivityOhmM": 384.0, 
+          "thicknessM": 1.63,
+          "cumulativeDepthM": 2.15
+        },
+        {
+          "resistivityOhmM": 73.0,
+          "thicknessM": 22.7,
+          "cumulativeDepthM": 24.85
+        },
+        {
+          "resistivityOhmM": 103.4,
+          "thicknessM": 11.48,
+          "cumulativeDepthM": 36.33
+        },
+        {
+          "resistivityOhmM": 540.2,
+          "thicknessM": 1.37,
+          "cumulativeDepthM": 37.7
+        },
+        {
+          "resistivityOhmM": 520.8,
+          "thicknessM": null,
+          "cumulativeDepthM": null
+        }
+      ],
+      "expected_type": "QHAK",
+      "correct_label": "QHAK",
+      "wrong_label": "QHAA"
+    },
+    {
+      "name": "H-08",
+      "layers": [
+        {
+          "resistivityOhmM": 218.1,
+          "thicknessM": 18.02,
+          "cumulativeDepthM": 18.02
+        },
+        {
+          "resistivityOhmM": 105.0,
+          "thicknessM": 1.05,
+          "cumulativeDepthM": 19.07
+        },
+        {
+          "resistivityOhmM": 60.0,
+          "thicknessM": 1.04,
+          "cumulativeDepthM": 20.11
+        },
+        {
+          "resistivityOhmM": 317.3,
+          "thicknessM": 0.57,
+          "cumulativeDepthM": 20.68
+        },
+        {
+          "resistivityOhmM": 1743.2,
+          "thicknessM": 5.17,
+          "cumulativeDepthM": 25.85
+        },
+        {
+          "resistivityOhmM": 2231.3,
+          "thicknessM": null,
+          "cumulativeDepthM": null
+        }
+      ],
+      "expected_type": "QHAA",
+      "correct_label": "QHAA",
+      "wrong_label": "QHA"
+    }
+  ]
+}
