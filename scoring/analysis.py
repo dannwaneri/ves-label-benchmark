@@ -69,3 +69,26 @@ def cued_pairs(items_by_id, scored):
         out[f"paired_{framing}"] = {"pass": sum(bool(p["correct_label"]["pass"] and p["wrong_label"]["pass"])
                                                 for p in done), "complete": len(done)}
     return out
+
+
+def agreement(items_by_id, scored):
+    """Run-to-run agreement: share of items whose outcome is identical in
+    every repeat. Outcome = scored class for uncued/rule items, pass/fail
+    for cued items. Only items complete (no infra) in all repeats count."""
+    reps = sorted({s["rep"] for s in scored})
+    by_item = defaultdict(dict)
+    for s in scored:
+        if s["status"] == "infra":
+            continue
+        it = items_by_id[s["item_id"]]
+        cond = it.get("condition", "")
+        outcome = _cls(s) if cond.startswith(("uncued_", "rule_")) else bool(s["pass"])
+        by_item[s["item_id"]][s["rep"]] = outcome
+    out = defaultdict(lambda: [0, 0])  # family -> [identical, complete]
+    for iid, o in by_item.items():
+        if len(o) != len(reps) or not reps:
+            continue
+        fam = items_by_id[iid].get("condition", "").split("_")[0]
+        out[fam][1] += 1
+        out[fam][0] += len(set(o.values())) == 1
+    return {fam: {"identical": a, "items": b} for fam, (a, b) in out.items()}

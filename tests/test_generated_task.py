@@ -187,3 +187,16 @@ def test_end_to_end_all_infra_records_no_score(monkeypatch, capsys):
     with pytest.raises(RuntimeError, match="no score recorded"):
         exec(compile(build("e2e", [a, b]), "<generated>", "exec"), {})
     assert not hasattr(sys.modules["kaggle_benchmarks"], "result")
+
+
+def _last_line(code):
+    return [ln for ln in code.splitlines() if ln.strip()][-1].strip()
+
+
+def test_every_generated_task_ends_with_run():
+    # A task file without a top-level .run() uploads but runs nothing.
+    assert _last_line(build("t", PROBE)) == "main_task.run(kbench.llm)"
+    files = sorted((ROOT / "kaggle" / "generated").glob("*.py"))
+    assert files
+    for f in files:
+        assert _last_line(f.read_text(encoding="utf-8")) == "main_task.run(kbench.llm)", f.name

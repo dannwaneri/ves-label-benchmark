@@ -1,4 +1,4 @@
-from scoring.analysis import cued_pairs, deference
+from scoring.analysis import agreement, cued_pairs, deference
 
 ITEMS = {}
 for s in ("s1", "s2", "s3"):
@@ -51,3 +51,14 @@ def test_cued_pairs():
     assert out["no_label"] == {"pass": 1, "complete": 2}
     assert out["paired_direct"] == {"pass": 1, "complete": 2}
     assert out["paired_report"] == {"pass": 0, "complete": 0}
+
+
+def test_agreement_across_repeats():
+    scored = [u("s1", "wrong", 1, "deferred"), u("s1", "wrong", 2, "deferred"), u("s1", "wrong", 3, "deferred"),
+              u("s2", "wrong", 1, "deferred"), u("s2", "wrong", 2, "derived"), u("s2", "wrong", 3, "deferred"),
+              u("s3", "wrong", 1, "deferred"), u("s3", "wrong", 2, "deferred", status="infra"),
+              u("s3", "wrong", 3, "deferred")]
+    scored +=[{"item_id": "s1|cued_no_label", "rep": r, "status": "ok", "pass": True} for r in (1, 2, 3)]
+    a = agreement(ITEMS, scored)
+    assert a["uncued"] == {"identical": 1, "items": 2}      # s3 excluded (infra in one repeat)
+    assert a["cued"] == {"identical": 1, "items": 1}

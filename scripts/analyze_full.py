@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from kaggle.build_task import MAX_TOKENS  # noqa: E402
-from scoring.analysis import cued_pairs, deference  # noqa: E402
+from scoring.analysis import agreement, cued_pairs, deference  # noqa: E402
 from scoring.dispatch import score_any  # noqa: E402
 from scoring.summary import condition_counts, uncued_paired  # noqa: E402
 
@@ -70,6 +70,7 @@ def analyze(run_dir):
         "cost_usd": round(sum(r["cost_usd"] for r in rows), 4),
         "conditions": condition_counts(ITEMS, results), "cued": cued_pairs(ITEMS, scored),
         "deference_uncued": unc_t, "deference_rule": rule_t,
+        "agreement": agreement(ITEMS, scored),
         "per_station_uncued": unc_st, "per_station_rule": rule_st,
     }
     with open(os.path.join(run_dir, "raw_outputs.jsonl"), "w", encoding="utf-8") as fh:
@@ -116,6 +117,12 @@ def report(summaries, stations=False):
                          f"{pct(t.get('deference', 0), t.get('own_right', 0))} | {pct(t.get('caught', 0), t.get('own_right', 0))} | "
                          f"{t.get('own_wrong', 0)} | {t.get('capability_copy', 0)} | {t.get('distinct_stations', 0)} | "
                          f"{t.get('stations_with_deference', 0)} |")
+        L += ["", "Run-to-run agreement: items with the same outcome in all 3 repeats (complete in all repeats).", "",
+              "| Model | Uncued | Rule | Cued |", "|---|---|---|---|"]
+        for s in ss:
+            g = s["agreement"]
+            cell = lambda f: pct(g.get(f, {}).get("identical", 0), g.get(f, {}).get("items", 0))
+            L.append(f"| {s['model']} | {cell('uncued')} | {cell('rule')} | {cell('cued')} |")
         if stations:
             L += ["", "Per station (uncued): repeat -> no-label class / wrong-label class", ""]
             for s in ss:
