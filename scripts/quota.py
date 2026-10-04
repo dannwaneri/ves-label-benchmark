@@ -19,6 +19,7 @@ with api.build_kaggle_client() as kaggle:
     r = kaggle.models.model_proxy_api_client.get_model_proxy_quotas(ApiGetModelProxyQuotasRequest())
 for b in r.quota_balances:
     t = b.refill_time
+    when = (f"refill {t:%Y-%m-%d %H:%M} UTC ({t + timedelta(hours=1):%Y-%m-%d %H:%M} WAT)" if t
+            else "no window open (no spend yet); a window starts at the next spend")
     print(f"{b.refill_period.name.split('.')[-1]:8} used ${b.quota_used:6.2f} of ${b.total_quota_allowed:6.2f}"
-          f"  remaining ${max(b.total_quota_allowed - b.quota_used, 0):6.2f}"
-          f"  refill {t:%Y-%m-%d %H:%M} UTC ({t + timedelta(hours=1):%Y-%m-%d %H:%M} WAT)")
+          f"  remaining ${max(b.total_quota_allowed - b.quota_used, 0):6.2f}  {when}")
