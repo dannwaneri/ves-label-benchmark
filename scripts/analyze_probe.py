@@ -28,7 +28,8 @@ def load(run_dir):
         d = json.loads(Path(f).read_text(encoding="utf-8"))
         res = (d.get("results") or [{}])[0]
         if "-item-run_param_id_" not in f:
-            main = (res.get("numericResult") or {}).get("value")
+            # protobuf omits a zero value: numericResult {} means 0.0
+            main = (res["numericResult"].get("value", 0.0) if "numericResult" in res else None)
             continue
         dr = res.get("dictResult") or {}
         reqs = [q for c in d.get("conversations", []) for q in c.get("requests", [])]
