@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:50:21.015735Z",
+  "endTime": "2026-10-04T03:50:25.409243Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-e09fbe28",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-6828c346",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-07 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1790.5 | 0.52 | 0.52\n2 | 384.0 | 1.63 | 2.15\n3 | 73.0 | 22.70 | 24.85\n4 | 103.4 | 11.48 | 36.33\n5 | 540.2 | 1.37 | 37.70\n6 | 520.8 | - | -\n\nThe survey interpretation on file classifies this sounding curve as QHAK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Station H-07\nCurve type: QHAK-type\nAquifer depth: 2.15 - 36.33 m\nRecommendation: Drill to a total depth of approximately 40 m to fully penetrate the weathered and fractured basement aquifer horizons. Screen intervals should be placed within the 2.15 to 36.33 m saturated zone for optimal water yield."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 256,
+            "outputTokens": 858,
+            "inputTokensCostNanodollars": "192000",
+            "outputTokensCostNanodollars": "3217500",
+            "totalBackendLatencyMs": "4329"
+          },
+          "id": "attempt-1-6828c346-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 256,
+        "outputTokens": 858,
+        "inputTokensCostNanodollars": "192000",
+        "outputTokensCostNanodollars": "3217500",
+        "totalBackendLatencyMs": "4329"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 3.0,
+        "reply": "Station: Station H-07\nCurve type: QHAK-type\nAquifer depth: 2.15 - 36.33 m\nRecommendation: Drill to a total depth of approximately 40 m to fully penetrate the weathered and fractured basement aquifer horizons. Screen intervals should be placed within the 2.15 to 36.33 m saturated zone for optimal water yield.",
+        "item_id": "heldout-H-07|uncued_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #214"
+}

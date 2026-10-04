@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:14:29.693708Z",
+  "endTime": "2026-10-04T03:14:33.922777Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-c341a696",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-96d05246",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Ulakwo (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 14.369 | 0.124 | 0.12415\n2 | 15.965 | 8.25 | 9.665\n3 | 4591.4 | 27.074 | 47.738\n4 | 5101.5 | - | -\n\nThe survey interpretation on file classifies this sounding curve as HA-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Ulakwo\nCurve type: HA-type\nAquifer depth: 9.67 \u2013 47.74 m\nRecommendation: Drill to a minimum depth of 50 m to fully penetrate the high-resistivity freshwater sand aquifer. Install well screens within the permeable coarse sand interval between 20 m and 45 m, followed by thorough gravel packing and well development."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 222,
+            "outputTokens": 1070,
+            "inputTokensCostNanodollars": "166500",
+            "outputTokensCostNanodollars": "4012500",
+            "totalBackendLatencyMs": "4169"
+          },
+          "id": "attempt-1-96d05246-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 222,
+        "outputTokens": 1070,
+        "inputTokensCostNanodollars": "166500",
+        "outputTokensCostNanodollars": "4012500",
+        "totalBackendLatencyMs": "4169"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Ulakwo\nCurve type: HA-type\nAquifer depth: 9.67 \u2013 47.74 m\nRecommendation: Drill to a minimum depth of 50 m to fully penetrate the high-resistivity freshwater sand aquifer. Install well screens within the permeable coarse sand interval between 20 m and 45 m, followed by thorough gravel packing and well development.",
+        "item_id": "reading-etche-ulakwo|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #115"
+}

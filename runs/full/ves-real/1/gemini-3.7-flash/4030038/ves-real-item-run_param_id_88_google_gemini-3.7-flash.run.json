@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:13:34.799948Z",
+  "endTime": "2026-10-04T03:13:37.689531Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-bd4635ed",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-8d78f2fa",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Egwi (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 295.88 | 0.54518 | 0.54518\n2 | 798.6 | 3.5924 | 4.1376\n3 | 864.62 | 2.1559 | 6.2935\n4 | 1810.2 | 37.957 | 37.25\n5 | 5634.2 | - | -\n\nThe survey interpretation on file classifies this sounding curve as HAA-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Egwi\nCurve type: HAA-type\nAquifer depth: 6.29 \u2013 37.25 m\nRecommendation: Drill to a target depth of approximately 35 to 40 m to tap the productive sandy aquifer within Layer 4 before encountering the resistive basement/substratum. Install well screens within the coarse sand intervals of this zone and conduct adequate gravel packing and well development for optimal yield."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 251,
+            "outputTokens": 790,
+            "inputTokensCostNanodollars": "188250",
+            "outputTokensCostNanodollars": "2962500",
+            "totalBackendLatencyMs": "2840"
+          },
+          "id": "attempt-1-8d78f2fa-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 251,
+        "outputTokens": 790,
+        "inputTokensCostNanodollars": "188250",
+        "outputTokensCostNanodollars": "2962500",
+        "totalBackendLatencyMs": "2840"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Egwi\nCurve type: HAA-type\nAquifer depth: 6.29 \u2013 37.25 m\nRecommendation: Drill to a target depth of approximately 35 to 40 m to tap the productive sandy aquifer within Layer 4 before encountering the resistive basement/substratum. Install well screens within the coarse sand intervals of this zone and conduct adequate gravel packing and well development for optimal yield.",
+        "item_id": "reading-etche-egwi|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #89"
+}

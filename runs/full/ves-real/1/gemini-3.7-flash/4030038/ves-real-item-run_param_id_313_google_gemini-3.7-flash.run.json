@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:20:53.034155Z",
+  "endTime": "2026-10-04T03:20:56.377714Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-aae203e0",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-1f410079",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Odufor (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 20.32 | 0.13606 | 0.13606\n2 | 851.16 | 1.1039 | 1.2399\n3 | 2511.9 | 15.803 | 17.043\n4 | 1345 | - | -\n\nThe survey interpretation on file classifies this sounding curve as AK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Odufor\nCurve type: AK-type\nAquifer depth: > 17.04 m\nRecommendation: Drill beyond 17.04 m into the fourth geoelectric layer to tap into the target water-bearing formation. Ensure continuous lithologic sampling and install appropriate well screens with gravel packing across the productive saturated zone."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 224,
+            "outputTokens": 805,
+            "inputTokensCostNanodollars": "168000",
+            "outputTokensCostNanodollars": "3018750",
+            "totalBackendLatencyMs": "3294"
+          },
+          "id": "attempt-1-1f410079-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 224,
+        "outputTokens": 805,
+        "inputTokensCostNanodollars": "168000",
+        "outputTokensCostNanodollars": "3018750",
+        "totalBackendLatencyMs": "3294"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: Odufor\nCurve type: AK-type\nAquifer depth: > 17.04 m\nRecommendation: Drill beyond 17.04 m into the fourth geoelectric layer to tap into the target water-bearing formation. Ensure continuous lithologic sampling and install appropriate well screens with gravel packing across the productive saturated zone.",
+        "item_id": "reading-etche-odufor|uncued_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #314"
+}

@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:24:50.170385Z",
+  "endTime": "2026-10-04T03:24:54.524927Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-aa37751d",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-ba0008ff",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation BMGS-bori-field (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1005 | 3.42 | 3.42\n2 | 3588 | 6.33 | 9.76\n3 | 1358 | 10.9 | 20.7\n4 | 333 | 9.08 | 29.7\n5 | 2950 | 36.8 | 66.5\n6 | 5469 | - | -\n\nThe survey interpretation on file classifies this sounding curve as KQHA-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: BMGS-bori-field\nCurve type: KQHA\nAquifer depth: 20.7 \u2013 29.7 m\nRecommendation: Drill to a target depth of approximately 35 m to fully penetrate the low-resistivity aquifer layer identified between 20.7 m and 29.7 m. Screen across this water-bearing zone and install appropriate gravel packing to ensure optimal yield and prevent sand ingress."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 247,
+            "outputTokens": 960,
+            "inputTokensCostNanodollars": "185250",
+            "outputTokensCostNanodollars": "3600000",
+            "totalBackendLatencyMs": "4306"
+          },
+          "id": "attempt-1-ba0008ff-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 247,
+        "outputTokens": 960,
+        "inputTokensCostNanodollars": "185250",
+        "outputTokensCostNanodollars": "3600000",
+        "totalBackendLatencyMs": "4306"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 3.0,
+        "reply": "Station: BMGS-bori-field\nCurve type: KQHA\nAquifer depth: 20.7 \u2013 29.7 m\nRecommendation: Drill to a target depth of approximately 35 m to fully penetrate the low-resistivity aquifer layer identified between 20.7 m and 29.7 m. Screen across this water-bearing zone and install appropriate gravel packing to ensure optimal yield and prevent sand ingress.",
+        "item_id": "reading-bori-bmgs-bori-field|uncued_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #444"
+}

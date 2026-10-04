@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:12:11.298414Z",
+  "endTime": "2026-10-04T03:12:14.134645Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-27c322e6",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-8eff7dd7",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kor-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1916 | 1.24 | 1.24\n2 | 1252 | 1.79 | 3.03\n3 | 1658 | 108 | 111\n4 | 581 | - | -\n\nThe survey interpretation on file classifies this sounding curve as AK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Kor-road (Bori Metropolis)\nCurve type: AK-type\nAquifer depth: > 111 m\nRecommendation: Drill to a minimum depth of 120\u2013130 m to adequately penetrate the water-bearing layer encountered below 111 m. Ensure standard casing is installed through the thick resistive overburden and screen the productive aquifer interval."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 200,
+            "outputTokens": 766,
+            "inputTokensCostNanodollars": "150000",
+            "outputTokensCostNanodollars": "2872500",
+            "totalBackendLatencyMs": "2785"
+          },
+          "id": "attempt-1-8eff7dd7-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 200,
+        "outputTokens": 766,
+        "inputTokensCostNanodollars": "150000",
+        "outputTokensCostNanodollars": "2872500",
+        "totalBackendLatencyMs": "2785"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Kor-road (Bori Metropolis)\nCurve type: AK-type\nAquifer depth: > 111 m\nRecommendation: Drill to a minimum depth of 120\u2013130 m to adequately penetrate the water-bearing layer encountered below 111 m. Ensure standard casing is installed through the thick resistive overburden and screen the productive aquifer interval.",
+        "item_id": "reading-bori-kor-road|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #51"
+}

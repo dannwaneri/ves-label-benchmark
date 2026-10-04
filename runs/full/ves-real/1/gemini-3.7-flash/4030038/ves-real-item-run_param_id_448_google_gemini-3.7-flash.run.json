@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:24:57.859149Z",
+  "endTime": "2026-10-04T03:25:01.219957Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-a1a21d86",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-08cd069e",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Bori-police-station (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 150 | 1.23 | 1.23\n2 | 97.1 | 6.21 | 7.44\n3 | 284 | 37.5 | 45\n4 | 700 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Bori-police-station (Bori Metropolis)\nCurve type: HA\nAquifer depth: 7.44 \u2013 45.00 m\nRecommendation: Drill to a terminal depth of approximately 45 to 50 m to fully penetrate the productive third layer aquifer. Install well screens within the 15 to 40 m depth interval, followed by proper gravel packing and development to ensure optimal yield."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 186,
+            "outputTokens": 875,
+            "inputTokensCostNanodollars": "139500",
+            "outputTokensCostNanodollars": "3281250",
+            "totalBackendLatencyMs": "3311"
+          },
+          "id": "attempt-1-08cd069e-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 186,
+        "outputTokens": 875,
+        "inputTokensCostNanodollars": "139500",
+        "outputTokensCostNanodollars": "3281250",
+        "totalBackendLatencyMs": "3311"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 3.0,
+        "reply": "Station: Bori-police-station (Bori Metropolis)\nCurve type: HA\nAquifer depth: 7.44 \u2013 45.00 m\nRecommendation: Drill to a terminal depth of approximately 45 to 50 m to fully penetrate the productive third layer aquifer. Install well screens within the 15 to 40 m depth interval, followed by proper gravel packing and development to ensure optimal yield.",
+        "item_id": "reading-bori-bori-police-station|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #449"
+}

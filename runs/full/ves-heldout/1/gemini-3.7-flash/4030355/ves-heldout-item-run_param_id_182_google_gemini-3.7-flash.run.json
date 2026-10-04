@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:49:08.930358Z",
+  "endTime": "2026-10-04T03:49:12.972037Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-37df6e7c",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-21e9809d",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-02 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 364.5 | 0.81 | 0.81\n2 | 257.8 | 2.53 | 3.34\n3 | 745.5 | 12.65 | 15.99\n4 | 1146.1 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: H-02\nCurve type: HA\nAquifer depth: 0.81 - 3.34 m\nRecommendation: Drilling a deep borehole is not recommended at this location due to a very thin saturated zone underlain by shallow, highly resistive bedrock. Consider exploring alternative locations with a thicker weathered overburden for better groundwater potential."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 196,
+            "outputTokens": 1039,
+            "inputTokensCostNanodollars": "147000",
+            "outputTokensCostNanodollars": "3896250",
+            "totalBackendLatencyMs": "3968"
+          },
+          "id": "attempt-1-21e9809d-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 196,
+        "outputTokens": 1039,
+        "inputTokensCostNanodollars": "147000",
+        "outputTokensCostNanodollars": "3896250",
+        "totalBackendLatencyMs": "3968"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 3.0,
+        "reply": "Station: H-02\nCurve type: HA\nAquifer depth: 0.81 - 3.34 m\nRecommendation: Drilling a deep borehole is not recommended at this location due to a very thin saturated zone underlain by shallow, highly resistive bedrock. Consider exploring alternative locations with a thicker weathered overburden for better groundwater potential.",
+        "item_id": "heldout-H-02|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #183"
+}

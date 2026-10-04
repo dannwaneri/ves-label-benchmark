@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:11:17.686532Z",
+  "endTime": "2026-10-04T03:11:20.942951Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-37fd6e5d",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-fcb57941",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Gokana-street (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1420 | 1.44 | 1.44\n2 | 859 | 1.49 | 2.93\n3 | 987 | 14.5 | 17.4\n4 | 2246 | 33.5 | 50.9\n5 | 34337 | - | -\n\nThe survey interpretation on file classifies this sounding curve as HAK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Gokana-street (Bori Metropolis)\nCurve type: HAK-type\nAquifer depth: 17.4 \u2013 50.9 m\nRecommendation: Drill to a target depth of approximately 50 m to tap the high-resistivity, prolific sandy aquifer identified in Layer 4. Terminate drilling before penetrating the highly resistive bedrock at 50.9 m, and install well screens within the 17.4 to 50.9 m zone with appropriate gravel packing."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 224,
+            "outputTokens": 817,
+            "inputTokensCostNanodollars": "168000",
+            "outputTokensCostNanodollars": "3063750",
+            "totalBackendLatencyMs": "3205"
+          },
+          "id": "attempt-1-fcb57941-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 224,
+        "outputTokens": 817,
+        "inputTokensCostNanodollars": "168000",
+        "outputTokensCostNanodollars": "3063750",
+        "totalBackendLatencyMs": "3205"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Gokana-street (Bori Metropolis)\nCurve type: HAK-type\nAquifer depth: 17.4 \u2013 50.9 m\nRecommendation: Drill to a target depth of approximately 50 m to tap the high-resistivity, prolific sandy aquifer identified in Layer 4. Terminate drilling before penetrating the highly resistive bedrock at 50.9 m, and install well screens within the 17.4 to 50.9 m zone with appropriate gravel packing.",
+        "item_id": "reading-bori-gokana-street|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #27"
+}

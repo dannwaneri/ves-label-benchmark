@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:17:16.872822Z",
+  "endTime": "2026-10-04T03:17:21.994870Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-ea831f12",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-7fa319ca",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Bank-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 640 | 5.21 | 5.21\n2 | 934 | 8.58 | 13.8\n3 | 2594 | 84.1 | 97.9\n4 | 4386 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Bank-road (Bori Metropolis)\nCurve type: AA-type (\u03c11 < \u03c12 < \u03c13 < \u03c14)\nAquifer depth: 13.8 \u2013 97.9 m\nRecommendation: Drill to a target depth of approximately 50 to 60 m within the prolific third layer to harness potable groundwater. Ensure appropriate gravel packing and slotted casing installation within the saturated sand zone to prevent fine sand ingress."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 186,
+            "outputTokens": 955,
+            "inputTokensCostNanodollars": "139500",
+            "outputTokensCostNanodollars": "3581250",
+            "totalBackendLatencyMs": "5076"
+          },
+          "id": "attempt-1-7fa319ca-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 186,
+        "outputTokens": 955,
+        "inputTokensCostNanodollars": "139500",
+        "outputTokensCostNanodollars": "3581250",
+        "totalBackendLatencyMs": "5076"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: Bank-road (Bori Metropolis)\nCurve type: AA-type (\u03c11 < \u03c12 < \u03c13 < \u03c14)\nAquifer depth: 13.8 \u2013 97.9 m\nRecommendation: Drill to a target depth of approximately 50 to 60 m within the prolific third layer to harness potable groundwater. Ensure appropriate gravel packing and slotted casing installation within the saturated sand zone to prevent fine sand ingress.",
+        "item_id": "reading-bori-bank-road|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #219"
+}

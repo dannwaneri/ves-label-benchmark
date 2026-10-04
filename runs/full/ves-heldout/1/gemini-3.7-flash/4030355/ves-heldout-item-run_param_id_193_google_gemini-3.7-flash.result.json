@@ -1,0 +1,36 @@
+{
+  "task_name": "ves-heldout-item",
+  "source": "ves-heldout",
+  "trial_name": "ves-heldout-item-Run #194",
+  "trial_uri": "kbench://not-a-harbor-trial",
+  "task_id": {
+    "path": "kbench://not-a-harbor-task"
+  },
+  "task_checksum": "unknown (kbench)",
+  "config": {
+    "task": {
+      "path": "kbench://not-a-harbor-task"
+    }
+  },
+  "agent_info": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_info": {
+      "name": "google/gemini-3.7-flash"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 388,
+    "n_output_tokens": 1210,
+    "cost_usd": 0.0048285
+  },
+  "verifier_result": {
+    "rewards": {
+      "rep": 3.0,
+      "attempts": 1.0,
+      "pass": 0.0
+    }
+  },
+  "started_at": "2026-10-04T03:49:31.758382Z",
+  "finished_at": "2026-10-04T03:49:36.370925Z"
+}

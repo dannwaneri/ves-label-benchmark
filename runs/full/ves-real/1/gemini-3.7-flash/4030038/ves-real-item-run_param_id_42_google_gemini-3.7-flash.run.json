@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:11:50.077309Z",
+  "endTime": "2026-10-04T03:11:54.421069Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-0b713526",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-df77791f",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kogam-street (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 127 | 0.822 | 0.822\n2 | 50.4 | 5.63 | 6.45\n3 | 126 | 21.2 | 27.7\n4 | 149 | 29.7 | 57.3\n5 | 197 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Kogam-street (Bori Metropolis)\nCurve type: HAA\nAquifer depth: 27.7 \u2013 57.3 m\nRecommendation: Drill to a total depth of approximately 60 to 65 m to fully penetrate the prolific sandy aquifer. Install well screens within the 28 to 57 m interval and install appropriate gravel packing to ensure optimal water yield and filtration."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 207,
+            "outputTokens": 1292,
+            "inputTokensCostNanodollars": "155250",
+            "outputTokensCostNanodollars": "4845000",
+            "totalBackendLatencyMs": "4283"
+          },
+          "id": "attempt-1-df77791f-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 207,
+        "outputTokens": 1292,
+        "inputTokensCostNanodollars": "155250",
+        "outputTokensCostNanodollars": "4845000",
+        "totalBackendLatencyMs": "4283"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Kogam-street (Bori Metropolis)\nCurve type: HAA\nAquifer depth: 27.7 \u2013 57.3 m\nRecommendation: Drill to a total depth of approximately 60 to 65 m to fully penetrate the prolific sandy aquifer. Install well screens within the 28 to 57 m interval and install appropriate gravel packing to ensure optimal water yield and filtration.",
+        "item_id": "reading-bori-kogam-street|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #43"
+}

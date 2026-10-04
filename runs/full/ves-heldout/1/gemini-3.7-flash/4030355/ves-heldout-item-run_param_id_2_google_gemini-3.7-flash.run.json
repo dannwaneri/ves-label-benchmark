@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:42:34.208532Z",
+  "endTime": "2026-10-04T03:42:41.165897Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-747b241a",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-d5bf7c37",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-01 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 332.5 | 0.52 | 0.52\n2 | 601.3 | 6.89 | 7.41\n3 | 359.9 | 16.01 | 23.42\n4 | 286.0 | - | -\n\nThe survey interpretation on file classifies this sounding curve as K-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: H-01\nCurve type: K-type\nAquifer depth: 7.41 to >23.42 m\nRecommendation: Drill to a target depth of 30 to 35 m to fully penetrate the lower-resistivity saturated zone. Case off the top resistive formation down to 7.41 m and position well screens within the permeable aquifer interval below."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 210,
+            "outputTokens": 907,
+            "inputTokensCostNanodollars": "157500",
+            "outputTokensCostNanodollars": "3401250",
+            "totalBackendLatencyMs": "6893"
+          },
+          "id": "attempt-1-d5bf7c37-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 210,
+        "outputTokens": 907,
+        "inputTokensCostNanodollars": "157500",
+        "outputTokensCostNanodollars": "3401250",
+        "totalBackendLatencyMs": "6893"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: H-01\nCurve type: K-type\nAquifer depth: 7.41 to >23.42 m\nRecommendation: Drill to a target depth of 30 to 35 m to fully penetrate the lower-resistivity saturated zone. Case off the top resistive formation down to 7.41 m and position well screens within the permeable aquifer interval below.",
+        "item_id": "heldout-H-01|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #3"
+}

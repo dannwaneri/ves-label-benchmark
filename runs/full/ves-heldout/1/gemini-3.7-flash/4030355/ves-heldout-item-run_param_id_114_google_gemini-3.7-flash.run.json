@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:46:51.628596Z",
+  "endTime": "2026-10-04T03:46:56.191304Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-51d6412b",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-f2b8b6e4",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-05 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 26.6 | 4.30 | 4.30\n2 | 119.1 | 2.37 | 6.67\n3 | 340.4 | 0.77 | 7.44\n4 | 640.3 | 0.77 | 8.21\n5 | 2441.4 | - | -\n\nThe survey interpretation on file classifies this sounding curve as AA-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: H-05\nCurve type: AA-type\nAquifer depth: 0.0 - 4.30 m\nRecommendation: Deep borehole drilling is not recommended at this location due to very shallow, highly resistive impermeable basement bedrock encountered from 8.21 m depth. Groundwater exploitation should be limited to the shallow overburden zone via a large-diameter hand-dug well, or an alternative station should be investigated."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 229,
+            "outputTokens": 1266,
+            "inputTokensCostNanodollars": "171750",
+            "outputTokensCostNanodollars": "4747500",
+            "totalBackendLatencyMs": "4489"
+          },
+          "id": "attempt-1-f2b8b6e4-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 229,
+        "outputTokens": 1266,
+        "inputTokensCostNanodollars": "171750",
+        "outputTokensCostNanodollars": "4747500",
+        "totalBackendLatencyMs": "4489"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: H-05\nCurve type: AA-type\nAquifer depth: 0.0 - 4.30 m\nRecommendation: Deep borehole drilling is not recommended at this location due to very shallow, highly resistive impermeable basement bedrock encountered from 8.21 m depth. Groundwater exploitation should be limited to the shallow overburden zone via a large-diameter hand-dug well, or an alternative station should be investigated.",
+        "item_id": "heldout-H-05|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #115"
+}

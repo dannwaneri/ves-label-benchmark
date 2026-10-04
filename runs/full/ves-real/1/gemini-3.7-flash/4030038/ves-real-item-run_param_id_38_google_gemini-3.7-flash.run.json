@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:11:42.404042Z",
+  "endTime": "2026-10-04T03:11:45.239373Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-bd50146c",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-b76c266f",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kenpoly-sec-school-field (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1874 | 2.78 | 2.78\n2 | 2428 | 9.13 | 11.9\n3 | 1071 | 15.2 | 27.1\n4 | 3706 | 32.2 | 59.3\n5 | 178 | - | -\n\nThe survey interpretation on file classifies this sounding curve as AAK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Kenpoly-sec-school-field (Bori Metropolis)\nCurve type: AAK-type\nAquifer depth: > 59.3 m\nRecommendation: Drill to a target depth of at least 65\u201370 m to adequately penetrate and tap the low-resistivity, water-bearing fifth layer encountered below 59.3 m. Case off the overlying resistive formations to maintain borehole stability and install screens across the saturated zone."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 228,
+            "outputTokens": 864,
+            "inputTokensCostNanodollars": "171000",
+            "outputTokensCostNanodollars": "3240000",
+            "totalBackendLatencyMs": "2784"
+          },
+          "id": "attempt-1-b76c266f-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 228,
+        "outputTokens": 864,
+        "inputTokensCostNanodollars": "171000",
+        "outputTokensCostNanodollars": "3240000",
+        "totalBackendLatencyMs": "2784"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Kenpoly-sec-school-field (Bori Metropolis)\nCurve type: AAK-type\nAquifer depth: > 59.3 m\nRecommendation: Drill to a target depth of at least 65\u201370 m to adequately penetrate and tap the low-resistivity, water-bearing fifth layer encountered below 59.3 m. Case off the overlying resistive formations to maintain borehole stability and install screens across the saturated zone.",
+        "item_id": "reading-bori-kenpoly-sec-school-field|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #39"
+}

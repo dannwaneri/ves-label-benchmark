@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:17:50.892620Z",
+  "endTime": "2026-10-04T03:17:54.841230Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-cf2bea6a",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-0137e4da",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Bori-police-station (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 150 | 1.23 | 1.23\n2 | 97.1 | 6.21 | 7.44\n3 | 284 | 37.5 | 45\n4 | 700 | - | -\n\nThe survey interpretation on file classifies this sounding curve as HA-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>\n\nReference note: Curve-type notation for vertical electrical sounding (VES): take the layer resistivities in depth order. For each group of three consecutive layers (layers 1-2-3, then 2-3-4, and so on), write one letter: A if r1 < r2 < r3; Q if r1 > r2 > r3; H if r1 > r2 < r3; K if r1 < r2 > r3. A curve with N layers gets N-2 letters, in depth order (for example, a 4-layer curve gets 2 letters, such as HA). If all the letters are the same, the curve may also be written as that single letter (AAA may be written A)."
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Bori-police-station (Bori Metropolis)\nCurve type: HA\nAquifer depth: 7.44 \u2013 45.0 m\nRecommendation: Drill to a target depth of approximately 45 to 50 m to fully penetrate the productive third geoelectric layer. Install well screens within the water-bearing zone between 15 m and 40 m to ensure optimal yield and prevent sand ingress."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 359,
+            "outputTokens": 697,
+            "inputTokensCostNanodollars": "269250",
+            "outputTokensCostNanodollars": "2613750",
+            "totalBackendLatencyMs": "3890"
+          },
+          "id": "attempt-1-0137e4da-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 359,
+        "outputTokens": 697,
+        "inputTokensCostNanodollars": "269250",
+        "outputTokensCostNanodollars": "2613750",
+        "totalBackendLatencyMs": "3890"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: Bori-police-station (Bori Metropolis)\nCurve type: HA\nAquifer depth: 7.44 \u2013 45.0 m\nRecommendation: Drill to a target depth of approximately 45 to 50 m to fully penetrate the productive third geoelectric layer. Install well screens within the water-bearing zone between 15 m and 40 m to ensure optimal yield and prevent sand ingress.",
+        "item_id": "reading-bori-bori-police-station|rule_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #235"
+}

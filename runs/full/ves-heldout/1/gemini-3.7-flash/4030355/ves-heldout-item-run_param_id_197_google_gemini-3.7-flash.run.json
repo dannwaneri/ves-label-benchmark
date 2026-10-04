@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:49:40.517242Z",
+  "endTime": "2026-10-04T03:49:44.931043Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-f7097b1d",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-dff5fa7e",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-04 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 133.9 | 19.46 | 19.46\n2 | 50.7 | 19.69 | 39.15\n3 | 23.0 | 4.00 | 43.15\n4 | 61.9 | 4.32 | 47.47\n5 | 20.8 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>\n\nReference note: Curve-type notation for vertical electrical sounding (VES): take the layer resistivities in depth order. For each group of three consecutive layers (layers 1-2-3, then 2-3-4, and so on), write one letter: A if r1 < r2 < r3; Q if r1 > r2 > r3; H if r1 > r2 < r3; K if r1 < r2 > r3. A curve with N layers gets N-2 letters, in depth order (for example, a 4-layer curve gets 2 letters, such as HA). If all the letters are the same, the curve may also be written as that single letter (AAA may be written A)."
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Station H-04\nCurve type: QHK\nAquifer depth: > 47.47 m (secondary shallow zone at 39.15 \u2013 43.15 m)\nRecommendation: Drill to a target depth of 60\u201365 m to fully penetrate and exploit the productive low-resistivity aquifer horizon starting below 47.47 m. Install casing through the upper weathered formations to prevent hole collapse and screen the main aquifer zone."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 374,
+            "outputTokens": 1249,
+            "inputTokensCostNanodollars": "280500",
+            "outputTokensCostNanodollars": "4683750",
+            "totalBackendLatencyMs": "4344"
+          },
+          "id": "attempt-1-dff5fa7e-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 374,
+        "outputTokens": 1249,
+        "inputTokensCostNanodollars": "280500",
+        "outputTokensCostNanodollars": "4683750",
+        "totalBackendLatencyMs": "4344"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 3.0,
+        "reply": "Station: Station H-04\nCurve type: QHK\nAquifer depth: > 47.47 m (secondary shallow zone at 39.15 \u2013 43.15 m)\nRecommendation: Drill to a target depth of 60\u201365 m to fully penetrate and exploit the productive low-resistivity aquifer horizon starting below 47.47 m. Install casing through the upper weathered formations to prevent hole collapse and screen the main aquifer zone.",
+        "item_id": "heldout-H-04|rule_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #198"
+}

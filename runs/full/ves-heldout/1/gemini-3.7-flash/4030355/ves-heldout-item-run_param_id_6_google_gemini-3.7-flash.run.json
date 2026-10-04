@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:42:42.759673Z",
+  "endTime": "2026-10-04T03:42:47.006930Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-10344be0",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-ac9b5c62",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-02 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 364.5 | 0.81 | 0.81\n2 | 257.8 | 2.53 | 3.34\n3 | 745.5 | 12.65 | 15.99\n4 | 1146.1 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: H-02\nCurve type: HA\nAquifer depth: 3.34 \u2013 15.99 m\nRecommendation: Drill to a target depth of approximately 20 m to fully penetrate the weathered/fractured zone and seat the borehole into the competent bedrock. Install casing through the upper 3.5 m to prevent shallow collapse and screen the productive fractured interval."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 196,
+            "outputTokens": 1236,
+            "inputTokensCostNanodollars": "147000",
+            "outputTokensCostNanodollars": "4635000",
+            "totalBackendLatencyMs": "4172"
+          },
+          "id": "attempt-1-ac9b5c62-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 196,
+        "outputTokens": 1236,
+        "inputTokensCostNanodollars": "147000",
+        "outputTokensCostNanodollars": "4635000",
+        "totalBackendLatencyMs": "4172"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: H-02\nCurve type: HA\nAquifer depth: 3.34 \u2013 15.99 m\nRecommendation: Drill to a target depth of approximately 20 m to fully penetrate the weathered/fractured zone and seat the borehole into the competent bedrock. Install casing through the upper 3.5 m to prevent shallow collapse and screen the productive fractured interval.",
+        "item_id": "heldout-H-02|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #7"
+}

@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:12:07.653340Z",
+  "endTime": "2026-10-04T03:12:11.292371Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-55c87179",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-e385ccd0",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kor-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1916 | 1.24 | 1.24\n2 | 1252 | 1.79 | 3.03\n3 | 1658 | 108 | 111\n4 | 581 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Kor-road (Bori Metropolis)\nCurve type: HK\nAquifer depth: > 111 m\nRecommendation: Drill to a minimum depth of 125\u2013130 m to adequately penetrate the prolific aquifer horizon starting at 111 m. Install well screens and gravel pack within this lower conductive zone to maximize yield."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 185,
+            "outputTokens": 998,
+            "inputTokensCostNanodollars": "138750",
+            "outputTokensCostNanodollars": "3742500",
+            "totalBackendLatencyMs": "3580"
+          },
+          "id": "attempt-1-e385ccd0-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 185,
+        "outputTokens": 998,
+        "inputTokensCostNanodollars": "138750",
+        "outputTokensCostNanodollars": "3742500",
+        "totalBackendLatencyMs": "3580"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Kor-road (Bori Metropolis)\nCurve type: HK\nAquifer depth: > 111 m\nRecommendation: Drill to a minimum depth of 125\u2013130 m to adequately penetrate the prolific aquifer horizon starting at 111 m. Install well screens and gravel pack within this lower conductive zone to maximize yield.",
+        "item_id": "reading-bori-kor-road|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #49"
+}

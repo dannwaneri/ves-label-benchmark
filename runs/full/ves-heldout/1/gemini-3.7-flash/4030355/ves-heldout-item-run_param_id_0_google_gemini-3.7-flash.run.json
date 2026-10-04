@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:42:28.950049Z",
+  "endTime": "2026-10-04T03:42:34.201368Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-62972944",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-e6b6a811",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-01 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 332.5 | 0.52 | 0.52\n2 | 601.3 | 6.89 | 7.41\n3 | 359.9 | 16.01 | 23.42\n4 | 286.0 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: H-01\nCurve type: KQ-type ($\\rho_1 < \\rho_2 > \\rho_3 > \\rho_4$)\nAquifer depth: 7.41 to >30 m (weathered horizon from 7.41\u201323.42 m, deeper saturated fractured zone below 23.42 m)\nRecommendation: Drill to a target depth of 35\u201345 m to fully penetrate the low-resistivity water-bearing zone underlying the resistive overburden. Install well screens within the permeable intervals below 7.41 m and into the fractured basement."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 195,
+            "outputTokens": 1591,
+            "inputTokensCostNanodollars": "146250",
+            "outputTokensCostNanodollars": "5966250",
+            "totalBackendLatencyMs": "5079"
+          },
+          "id": "attempt-1-e6b6a811-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 195,
+        "outputTokens": 1591,
+        "inputTokensCostNanodollars": "146250",
+        "outputTokensCostNanodollars": "5966250",
+        "totalBackendLatencyMs": "5079"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: H-01\nCurve type: KQ-type ($\\rho_1 < \\rho_2 > \\rho_3 > \\rho_4$)\nAquifer depth: 7.41 to >30 m (weathered horizon from 7.41\u201323.42 m, deeper saturated fractured zone below 23.42 m)\nRecommendation: Drill to a target depth of 35\u201345 m to fully penetrate the low-resistivity water-bearing zone underlying the resistive overburden. Install well screens within the permeable intervals below 7.41 m and into the fractured basement.",
+        "item_id": "heldout-H-01|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #1"
+}

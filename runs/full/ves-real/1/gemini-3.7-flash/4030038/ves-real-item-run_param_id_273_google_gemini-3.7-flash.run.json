@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemini-3.7-flash"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:19:24.740102Z",
+  "endTime": "2026-10-04T03:19:28.400299Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-a660b22d",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-0b79b5d2",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Maakoro-street (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 168 | 1.71 | 1.71\n2 | 484 | 7.45 | 9.16\n3 | 255 | 15.3 | 24.4\n4 | 1109 | 25 | 49.4\n5 | 807 | 74.2 | 124\n6 | 8895 | - | -\n\nThe survey interpretation on file classifies this sounding curve as KHKH-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Maakoro-street (Bori Metropolis)\nCurve type: KHKH-type\nAquifer depth: 49.4 \u2013 124.0 m\nRecommendation: Drill to a target depth of approximately 125 m to fully penetrate the thick, productive fifth layer. Install well screens within the prolific sand interval between 55 m and 115 m to ensure optimal freshwater yield."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3.7-flash"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 240,
+            "outputTokens": 871,
+            "inputTokensCostNanodollars": "180000",
+            "outputTokensCostNanodollars": "3266250",
+            "totalBackendLatencyMs": "3607"
+          },
+          "id": "attempt-1-0b79b5d2-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 240,
+        "outputTokens": 871,
+        "inputTokensCostNanodollars": "180000",
+        "outputTokensCostNanodollars": "3266250",
+        "totalBackendLatencyMs": "3607"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: Maakoro-street (Bori Metropolis)\nCurve type: KHKH-type\nAquifer depth: 49.4 \u2013 124.0 m\nRecommendation: Drill to a target depth of approximately 125 m to fully penetrate the thick, productive fifth layer. Install well screens within the prolific sand interval between 55 m and 115 m to ensure optimal freshwater yield.",
+        "item_id": "reading-bori-maakoro-street|uncued_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #274"
+}
