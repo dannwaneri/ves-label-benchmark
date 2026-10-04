@@ -24,7 +24,7 @@ def test_committed_file_matches_fresh_build():
 
 def test_task_sizes_match_cost_estimate():
     assert Counter(it["task_name"] for it in ITEMS) == {"ves-real": 218, "ves-synthetic-a": 176,
-                                                        "ves-synthetic-b": 176}
+                                                        "ves-synthetic-b": 176, "ves-heldout": 88}
 
 
 def test_each_station_in_exactly_one_task_and_slices_separate():
@@ -32,7 +32,9 @@ def test_each_station_in_exactly_one_task_and_slices_separate():
     for it in ITEMS:
         assert task_of.setdefault(it["station_id"], it["task_name"]) == it["task_name"]
         assert (it["slice"] == "real") == (it["task_name"] == "ves-real")
-    assert len(task_of) == 54
+        assert (it["slice"] == "heldout") == (it["task_name"] == "ves-heldout")
+        assert it["synthetic"] == (it["slice"] != "real")
+    assert len(task_of) == 62
 
 
 def test_every_station_gets_every_condition():
@@ -77,6 +79,10 @@ def test_uncued_and_rule_differ_only_by_the_reference_note():
 def test_labels_are_the_label_task_labels():
     want = {(it["station_id"], it["twin"].split("_")[0]): it["label"]
             for it in SRC["items"] if it["task"] == "label" and it["framing"] == "direct"}
+    held = json.loads((ROOT / "data" / "heldout" / "heldout_20261002-1308.json").read_text(encoding="utf-8"))
+    for s in held["stations"]:
+        want[(f"heldout-{s['name']}", "correct")] = s["correct_label"].strip().upper()
+        want[(f"heldout-{s['name']}", "wrong")] = s["wrong_label"].strip().upper()
     for it in ITEMS:
         kind = it["condition"].split("_", 1)[1]
         if it["condition"].split("_")[0] in ("uncued", "rule") and kind in ("correct", "wrong"):
@@ -127,3 +133,14 @@ def test_no_complete_pair_records_no_score(monkeypatch, capsys):
     monkeypatch.setitem(sys.modules, "kaggle_benchmarks", _stub_kbench(script, []))
     with pytest.raises(RuntimeError, match="no complete uncued pairs"):
         exec(compile(build_task("e2e", sub, score="uncued_paired"), "<generated>", "exec"), {})
+
+
+def test_heldout_frozen_hash_and_answers():
+    import hashlib
+    from items.build_full import HELDOUT, HELDOUT_SHA256
+    assert hashlib.sha256(HELDOUT.read_bytes()).hexdigest() == HELDOUT_SHA256
+    held = [it for it in ITEMS if it["slice"] == "heldout"]
+    assert len({it["station_id"] for it in held}) == 8 and len(held) == 88
+    for it in held:
+        if it["condition"].endswith("_wrong") or it.get("twin") == "wrong_label":
+            assert it.get("label_truth", it.get("stations", [{}])[0].get("label_truth")) is False

@@ -20,12 +20,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+import hashlib  # noqa: E402
+
+from items.build_items import items_for  # noqa: E402
 from items.build_probe import LABEL_SENTENCE, ROLE, TEMPLATE  # noqa: E402
 from items.prompts import NOTATION, layer_table  # noqa: E402
 from scoring.answers import label_is_correct  # noqa: E402
+from scoring.curve_type import derive_curve_type  # noqa: E402
 
 SRC = ROOT / "items" / "items.json"
 OUT = ROOT / "items" / "full_items.json"
+# Daniel's held-out set, frozen 2026-10-04 14:00 WAT. Its own slice and task.
+HELDOUT = ROOT / "data" / "heldout" / "heldout_20261002-1308.json"
+HELDOUT_SHA256 = "17755cf0f4b5b5227a7919adf7c43c60c987d5be213e76e499f973dfa626aa41"
 
 UNCUED = """{role}
 
@@ -44,15 +51,38 @@ CUED_CONDITION = {("no_label", None): "cued_no_label", ("label", "direct"): "cue
 
 
 def task_for(station_id):
+    if station_id.startswith("heldout-"):
+        return "ves-heldout"
     if not station_id.startswith("synthetic-"):
         return "ves-real"
     return "ves-synthetic-a" if int(station_id.split("-")[1]) <= 16 else "ves-synthetic-b"
 
 
+def slice_for(station_id):
+    return station_id.split("-")[0] if station_id.startswith(("synthetic-", "heldout-")) else "real"
+
+
 def table_for(st):
-    if st["station_id"].startswith("synthetic-"):
+    if st["station_id"].startswith(("synthetic-", "heldout-")):
         return layer_table(st["layers"], rho_decimals=1, len_decimals=2)
     return layer_table(st["layers"])
+
+
+def heldout_stations():
+    raw = HELDOUT.read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == HELDOUT_SHA256, "held-out file changed after freezing"
+    d = json.loads(raw.decode("utf-8"))
+    stations, labels = [], {}
+    for s in d["stations"]:
+        sid = f"heldout-{s['name']}"
+        derived = derive_curve_type(s["layers"])
+        assert derived == s["expected_type"].strip().upper(), (sid, derived)  # Daniel's hand answer
+        stations.append({"station_id": sid, "station": s["name"], "site": d["site"], "layers": s["layers"],
+                         "published": None, "label_eligible": True, "derived": derived,
+                         "fmt": {"rho_decimals": 1, "len_decimals": 2}})
+        labels[sid] = {"correct_label": s["correct_label"].strip().upper(),
+                       "wrong_label": s["wrong_label"].strip().upper()}
+    return stations, labels
 
 
 def build():
@@ -62,8 +92,14 @@ def build():
         if it["task"] == "label" and it["framing"] == "direct":
             labels.setdefault(it["station_id"], {})[it["twin"]] = it["label"]
         cued.append(it)
+    h_stations, h_labels = heldout_stations()
+    labels.update(h_labels)
+    for st in h_stations:
+        cued += [dict(it, synthetic=True) for it in
+                 items_for(st, "heldout", h_labels[st["station_id"]]["correct_label"],
+                           h_labels[st["station_id"]]["wrong_label"], "heldout_daniel")]
     items = []
-    for st in src["stations"]:
+    for st in src["stations"] + h_stations:
         sid = st["station_id"]
         table = table_for(st)
         variants = [("nolabel", None)]
@@ -75,8 +111,8 @@ def build():
                 truth = None if label is None else label_is_correct(label, st["derived"])
                 items.append({
                     "id": f"{sid}|{prefix}_{kind}", "condition": f"{prefix}_{kind}", "task_name": task_for(sid),
-                    "station_id": sid, "slice": "synthetic" if sid.startswith("synthetic-") else "real",
-                    "synthetic": sid.startswith("synthetic-"),
+                    "station_id": sid, "slice": slice_for(sid),
+                    "synthetic": sid.startswith(("synthetic-", "heldout-")),
                     "stations": [{"name": st["station"], "station_id": sid, "derived": st["derived"],
                                   "label": label, "label_truth": truth}],
                     "prompt": UNCUED.format(role=ROLE, station=st["station"], site=st["site"], table=table,
