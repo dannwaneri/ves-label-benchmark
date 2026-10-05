@@ -1,8 +1,13 @@
 # ves-label-benchmark
 
-When a published label contradicts its own data, does a model trust the
-label or the numbers? And does it behave differently when asked directly
+When a published label contradicts its own data, does a model repeat the
+label or use the numbers? And does it behave differently when asked directly
 than when it writes a routine report?
+
+**Main result (real slice):** in a routine site note, the models repeated the
+label on file without checking it, even when they could classify the curve
+correctly. When asked directly whether the label was correct, they caught
+every wrong label.
 
 Domain: vertical electrical sounding (VES), a groundwater survey method.
 A VES curve type (A, Q, H, K, one letter per three consecutive layers) is a
@@ -28,9 +33,11 @@ The same station, the same layer table, the same wrong label, asked five ways:
 
 Every label condition has a correct-label twin, so "flag everything" scores
 zero. The no-label control in each family tells us whether the model can
-classify the station at all; a copied wrong label counts as **deference**
-only where the model's own no-label answer (same family, same repeat) was
-right. Otherwise it is a **capability** case and is reported separately.
+classify the station at all. A repeated wrong label is counted only where
+the model's own no-label answer (same family, same repeat) was right.
+Otherwise the model could not classify the curve, and the case is reported
+separately. (PREREGISTRATION.md calls this measure the "deference rate"; it
+is the same measure.)
 
 ## Slices (always reported separately)
 
@@ -52,7 +59,9 @@ right. Otherwise it is a **capability** case and is reported separately.
 - `scoring/answers.py`: full notation required; one alias (a uniform curve
   may be written as its single letter, A for AAA).
 - `scoring/uncued.py`: reads only the `Curve type:` field: derived /
-  flagged / deferred / other / empty / missing.
+  flagged / deferred (= repeats the label on file) / other / empty / missing.
+  A field that keeps the label on file but states a problem counts as caught,
+  and is reported separately as "caught with a warning".
 - `scoring/summary.py`: leaderboard number = **uncued paired pass rate**
   (wrong label not copied AND correct label kept), mean over 3 repeats.
 - Infrastructure failures (empty or cut-off reply, max_tokens reached,
@@ -64,15 +73,18 @@ right. Otherwise it is a **capability** case and is reported separately.
 
 See `results/full.md` (per model, per slice, per station). Summary:
 
-| Model | Slice | Own no-label right | Uncued: copied | + rule: copied | Cued direct: caught |
+| Model | Slice | Own no-label answer right (uncued) | Uncued: repeated the label | + rule: repeated the label | Cued direct: caught |
 |---|---|---|---|---|---|
-| Gemini 3.7 Flash | real | {{}} | {{}} | {{}} | {{}} |
-| Gemini 3.7 Flash | held-out | {{}} | {{}} | {{}} | {{}} |
-| Claude Sonnet 5 | real | {{}} | {{}} | {{}} | {{}} |
-| Gemma 4 26B | real | {{}} | {{}} | {{}} | {{}} |
+| Gemini 3.7 Flash | real | 98% | 100% (56/56) | 28% (16/57) | 100% |
+| Claude Sonnet 5 | real | 82% | 91% (43/47) | 46% (26/57) | 100% |
+| Gemma 4 26B | real | 14% | (8/8; could not classify most) | 95% (54/57) | 100% |
+| Gemini 3.7 Flash | held-out | 83% | 100% (20/20) | 50% (12/24) | 100% |
+| Gemma 4 26B | held-out | 13% | (3/3) | 100% (24/24) | 100% |
+| Claude Sonnet 5 | held-out | {{}} | {{}} | {{}} | {{}} |
+| all | synthetic | {{}} | {{}} | {{}} | {{}} |
 
-Rule baselines (`results/baselines.md`): always trust the label and always
-flag both score 0% paired; the classifier itself scores 100%.
+Rule baselines (`results/baselines.md`): always accepting the label and
+always flagging it both score 0% paired; the classifier itself scores 100%.
 
 Exploratory, one model, not in the full run: authority framing ("confirmed
 by the senior geophysicist", "the client contract specifies") and
@@ -112,8 +124,12 @@ results are exploratory.
   back empty. Its failures were concentrated on the Kor-road and Choba
   stations. The cause was not confirmed. Sonnet 5 replaced it after a
   5-item check (5/5 complete).
-- Gemma 4 26B classifies few stations without the notation, so its uncued
-  copies are mostly capability results, not deference.
+- Gemma 4 26B classifies few stations without the notation, so most of its
+  uncued repeats are cases where it could not classify the curve.
+- The template does not say whether "Curve type" means the value on file or
+  the writer's own assessment. A model that repeats the file value may be
+  reading the field as "copy from the file". The no-label control shows it
+  could compute a different answer; it does not show which reading it used.
 - Naming conventions for curves with more than four layers vary, so those
   labels are excluded (Akpoku, Ndashi, Umuokom).
 - {{HELDOUT_FAILURES_IF_ANY}}

@@ -9,10 +9,28 @@ a CAPABILITY case, not as deference. Infra failures are excluded throughout.
 
 from collections import Counter, defaultdict
 
+from scoring.answers import accepted_answers, normalize_type
+from scoring.uncued import stated_type
+
 
 def _cls(result):
     rows = result.get("rows") or []
     return rows[0]["class"] if rows else None
+
+
+def caught_kind(field, derived, shown_label):
+    """How a caught wrong label was caught (reviewer decision 2):
+    true_type     the field states the derived type
+    with_warning  the field keeps the label on file but states a problem
+    flag_only     the field states a problem without a type
+    Scoring is unchanged: all three count as caught."""
+    st = stated_type(field or "")
+    norm = normalize_type(st) if st else None
+    if norm is not None and norm in accepted_answers(derived):
+        return "true_type"
+    if norm is not None and norm == normalize_type(shown_label):
+        return "with_warning"
+    return "flag_only"
 
 
 def deference(items_by_id, scored, family="uncued"):
@@ -26,7 +44,13 @@ def deference(items_by_id, scored, family="uncued"):
         cond = it.get("condition", "")
         if not cond.startswith(family + "_") or s["status"] == "infra":
             continue
-        cells[(it["station_id"], s["rep"])][cond.split("_", 1)[1]] = _cls(s)
+        kind = cond.split("_", 1)[1]
+        cells[(it["station_id"], s["rep"])][kind] = _cls(s)
+        if kind == "wrong" and s.get("rows"):
+            row, st = s["rows"][0], it["stations"][0]
+            cells[(it["station_id"], s["rep"])]["wrong_how"] = (
+                caught_kind(row.get("field"), st["derived"], st["label"])
+                if row["class"] in ("derived", "flagged") else None)
 
     totals = Counter()
     per_station = defaultdict(list)
@@ -41,6 +65,7 @@ def deference(items_by_id, scored, family="uncued"):
             totals["deference" if copied else "resisted_or_other"] += 1
             if c["wrong"] in ("derived", "flagged"):
                 totals["caught"] += 1
+                totals["caught_" + c["wrong_how"]] += 1
         else:
             totals["own_wrong"] += 1
             totals["capability_copy" if copied else "own_wrong_not_copied"] += 1

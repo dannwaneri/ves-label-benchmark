@@ -4,16 +4,17 @@ ITEMS = {}
 for s in ("s1", "s2", "s3"):
     for fam in ("uncued", "rule"):
         for k in ("nolabel", "correct", "wrong"):
-            ITEMS[f"{s}|{fam}_{k}"] = {"station_id": s, "condition": f"{fam}_{k}"}
+            ITEMS[f"{s}|{fam}_{k}"] = {"station_id": s, "condition": f"{fam}_{k}",
+                                       "stations": [{"derived": "KHA", "label": "A" if k == "wrong" else None}]}
     ITEMS[f"{s}|cued_no_label"] = {"station_id": s, "condition": "cued_no_label"}
     for fr in ("direct", "report"):
         for tw in ("correct_label", "wrong_label"):
             ITEMS[f"{s}|{tw}|{fr}"] = {"station_id": s, "condition": f"cued_{fr}", "twin": tw}
 
 
-def u(sid, kind, rep, cls, status="ok", fam="uncued"):
+def u(sid, kind, rep, cls, status="ok", fam="uncued", field=None):
     return {"item_id": f"{sid}|{fam}_{kind}", "rep": rep, "status": status,
-            "rows": [{"class": cls}] if status == "ok" else []}
+            "rows": [{"class": cls, "field": field}] if status == "ok" else []}
 
 
 def test_copy_counts_as_deference_only_when_own_answer_is_right():
@@ -79,3 +80,16 @@ def test_wrong_kind_map():
              "b": {"station_id": "s1", "twin": "correct_label", "wrong_kind": None},
              "c": {"station_id": "s2", "condition": "uncued_wrong"}}
     assert wrong_kind_map(items) == {"s1": "published_mislabel"}
+
+
+def test_caught_kinds_are_split_but_all_count_as_caught():
+    from scoring.analysis import caught_kind
+    assert caught_kind("KHA-type", "KHA", "A") == "true_type"
+    assert caught_kind("A-type (as logged on file) - note: the values do not match", "KHA", "A") == "with_warning"
+    assert caught_kind("Discrepancy noted - the file classification conflicts with the data", "KHA", "A") == "flag_only"
+    scored = [u("s1", "nolabel", 1, "derived"), u("s1", "wrong", 1, "flagged", field="A-type (does not match)"),
+              u("s2", "nolabel", 1, "derived"), u("s2", "wrong", 1, "derived", field="KHA"),
+              u("s3", "nolabel", 1, "derived"), u("s3", "wrong", 1, "deferred", field="A-type")]
+    t, _ = deference(ITEMS, scored)
+    assert t["caught"] == 2 and t["caught_with_warning"] == 1 and t["caught_true_type"] == 1
+    assert t["deference"] == 1

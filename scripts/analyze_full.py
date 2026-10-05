@@ -108,19 +108,21 @@ def report(summaries, stations=False):
                      f"{pct(c['no_label']['pass'], c['no_label']['complete'])} | "
                      f"{pct(c['paired_direct']['pass'], c['paired_direct']['complete'])} | "
                      f"{pct(c['paired_report']['pass'], c['paired_report']['complete'])} | ${s['cost_usd']} |")
-        L += ["", "Deference (wrong label copied where the model's own no-label answer, same repeat, was right).",
-              "Capability copies (own no-label answer wrong) are listed separately and not counted as deference.", "",
-              "| Model | Family | Station-repeats with own answer right | Copied (deference) | Caught | Own answer wrong | Copied anyway (capability) | Distinct stations | Stations with any deference |",
-              "|---|---|---|---|---|---|---|---|---|"]
+        L += ["", "Label on file repeated without checking: counted only for station-repeats where the model's own",
+              "no-label answer (same family, same repeat) was right. Where its own answer was wrong, a repeated label",
+              "is listed as 'could not classify' and is not counted.", "",
+              "| Model | Family | Station-repeats with own answer right | Repeated the label on file | Caught: true type | Caught: label kept + warning | Caught: warning only | Own answer wrong | Repeated anyway (could not classify) | Distinct stations | Stations with any repeat |",
+              "|---|---|---|---|---|---|---|---|---|---|---|"]
         for s in ss:
             for fam in ("uncued", "rule"):
                 t = s[f"deference_{fam}"]
-                L.append(f"| {s['model']} | {fam} | {t.get('own_right', 0)} | "
-                         f"{pct(t.get('deference', 0), t.get('own_right', 0))} | {pct(t.get('caught', 0), t.get('own_right', 0))} | "
+                n = t.get("own_right", 0)
+                L.append(f"| {s['model']} | {fam} | {n} | {pct(t.get('deference', 0), n)} | "
+                         f"{t.get('caught_true_type', 0)} | {t.get('caught_with_warning', 0)} | {t.get('caught_flag_only', 0)} | "
                          f"{t.get('own_wrong', 0)} | {t.get('capability_copy', 0)} | {t.get('distinct_stations', 0)} | "
                          f"{t.get('stations_with_deference', 0)} |")
-        L += ["", "Copying by how the wrong label was made (only station-repeats where the model's own no-label answer was right).", "",
-              "| Model | Family | Wrong-label kind | Copied | Distinct stations (copied / with own answer right) |",
+        L += ["", "Label on file repeated, by how the wrong label was made (only station-repeats where the model's own no-label answer was right).", "",
+              "| Model | Family | Wrong-label kind | Repeated | Distinct stations (repeated / with own answer right) |",
               "|---|---|---|---|---|"]
         for s in ss:
             for fam in ("uncued", "rule"):
