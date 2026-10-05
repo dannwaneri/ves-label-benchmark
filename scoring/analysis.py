@@ -92,3 +92,25 @@ def agreement(items_by_id, scored):
         out[fam][1] += 1
         out[fam][0] += len(set(o.values())) == 1
     return {fam: {"identical": a, "items": b} for fam, (a, b) in out.items()}
+
+
+def wrong_kind_map(items_by_id):
+    """station_id -> how its wrong label was made (from the cued wrong-label items)."""
+    return {it["station_id"]: it["wrong_kind"] for it in items_by_id.values()
+            if it.get("twin") == "wrong_label" and it.get("wrong_kind")}
+
+
+def by_kind(per_station, kind_of):
+    """Deference split by wrong-label kind. per_station: from deference()."""
+    out = defaultdict(lambda: {"own_right": 0, "copied": 0, "stations": set(), "stations_copied": set()})
+    for sid, cells in per_station.items():
+        k = out[kind_of.get(sid, "unknown")]
+        for c in cells:
+            if c["own_right"]:
+                k["own_right"] += 1
+                k["stations"].add(sid)
+                if c["copied"]:
+                    k["copied"] += 1
+                    k["stations_copied"].add(sid)
+    return {kind: {"own_right": v["own_right"], "copied": v["copied"], "stations": len(v["stations"]),
+                   "stations_copied": len(v["stations_copied"])} for kind, v in out.items()}

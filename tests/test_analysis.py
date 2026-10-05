@@ -1,4 +1,4 @@
-from scoring.analysis import agreement, cued_pairs, deference
+from scoring.analysis import agreement, by_kind, cued_pairs, deference, wrong_kind_map
 
 ITEMS = {}
 for s in ("s1", "s2", "s3"):
@@ -62,3 +62,20 @@ def test_agreement_across_repeats():
     a = agreement(ITEMS, scored)
     assert a["uncued"] == {"identical": 1, "items": 2}      # s3 excluded (infra in one repeat)
     assert a["cued"] == {"identical": 1, "items": 1}
+
+
+def test_by_kind():
+    per = {"s1": [{"own_right": True, "copied": True}, {"own_right": True, "copied": False}],
+           "s2": [{"own_right": True, "copied": True}],
+           "s3": [{"own_right": False, "copied": True}]}            # capability: not counted
+    kinds = {"s1": "published_mislabel", "s2": "constructed_flip", "s3": "constructed_flip"}
+    out = by_kind(per, kinds)
+    assert out["published_mislabel"] == {"own_right": 2, "copied": 1, "stations": 1, "stations_copied": 1}
+    assert out["constructed_flip"] == {"own_right": 1, "copied": 1, "stations": 1, "stations_copied": 1}
+
+
+def test_wrong_kind_map():
+    items = {"a": {"station_id": "s1", "twin": "wrong_label", "wrong_kind": "published_mislabel"},
+             "b": {"station_id": "s1", "twin": "correct_label", "wrong_kind": None},
+             "c": {"station_id": "s2", "condition": "uncued_wrong"}}
+    assert wrong_kind_map(items) == {"s1": "published_mislabel"}

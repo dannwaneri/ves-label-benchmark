@@ -20,6 +20,23 @@ Capability copies (own no-label answer wrong) are listed separately and not coun
 | google/gemma-4-26b-a4b | uncued | 8 | 100% (8/8) | 0% (0/8) | 49 | 49 | 19 | 3 |
 | google/gemma-4-26b-a4b | rule | 57 | 95% (54/57) | 5% (3/57) | 0 | 0 | 19 | 19 |
 
+Copying by how the wrong label was made (only station-repeats where the model's own no-label answer was right).
+
+| Model | Family | Wrong-label kind | Copied | Distinct stations (copied / with own answer right) |
+|---|---|---|---|---|
+| google/gemini-3.7-flash | uncued | constructed_flip | 100% (29/29) | 10 / 10 |
+| google/gemini-3.7-flash | uncued | constructed_single | 100% (18/18) | 6 / 6 |
+| google/gemini-3.7-flash | uncued | published_mislabel | 100% (9/9) | 3 / 3 |
+| google/gemini-3.7-flash | rule | constructed_flip | 50% (15/30) | 7 / 10 |
+| google/gemini-3.7-flash | rule | constructed_single | 0% (0/18) | 0 / 6 |
+| google/gemini-3.7-flash | rule | published_mislabel | 11% (1/9) | 1 / 3 |
+| google/gemma-4-26b-a4b | uncued | constructed_flip | 100% (8/8) | 3 / 3 |
+| google/gemma-4-26b-a4b | uncued | constructed_single | n/a | 0 / 0 |
+| google/gemma-4-26b-a4b | uncued | published_mislabel | n/a | 0 / 0 |
+| google/gemma-4-26b-a4b | rule | constructed_flip | 97% (29/30) | 10 / 10 |
+| google/gemma-4-26b-a4b | rule | constructed_single | 89% (16/18) | 6 / 6 |
+| google/gemma-4-26b-a4b | rule | published_mislabel | 100% (9/9) | 3 / 3 |
+
 Run-to-run agreement: items with the same outcome in all 3 repeats (complete in all repeats).
 
 | Model | Uncued | Rule | Cued |
@@ -43,6 +60,15 @@ Capability copies (own no-label answer wrong) are listed separately and not coun
 | google/gemini-3.7-flash | rule | 24 | 50% (12/24) | 50% (12/24) | 0 | 0 | 8 | 5 |
 | google/gemma-4-26b-a4b | uncued | 3 | 100% (3/3) | 0% (0/3) | 21 | 21 | 8 | 1 |
 | google/gemma-4-26b-a4b | rule | 24 | 100% (24/24) | 0% (0/24) | 0 | 0 | 8 | 8 |
+
+Copying by how the wrong label was made (only station-repeats where the model's own no-label answer was right).
+
+| Model | Family | Wrong-label kind | Copied | Distinct stations (copied / with own answer right) |
+|---|---|---|---|---|
+| google/gemini-3.7-flash | uncued | heldout_daniel | 100% (20/20) | 8 / 8 |
+| google/gemini-3.7-flash | rule | heldout_daniel | 50% (12/24) | 5 / 8 |
+| google/gemma-4-26b-a4b | uncued | heldout_daniel | 100% (3/3) | 1 / 1 |
+| google/gemma-4-26b-a4b | rule | heldout_daniel | 100% (24/24) | 8 / 8 |
 
 Run-to-run agreement: items with the same outcome in all 3 repeats (complete in all repeats).
 
