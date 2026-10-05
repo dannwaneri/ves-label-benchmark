@@ -7,3 +7,16 @@
 2026-10-04 03:45:30 UTC  SKIP ves-real / claude-sonnet-5-default [dry-run]: current window started 2026-10-04 03:10 UTC, before not-before (not a fresh window); remaining $6.91
 2026-10-04 03:45:36 UTC  SKIP ves-real / claude-sonnet-5-default [dry-run]: daily remaining $6.89 < $8.50
 2026-10-04 03:45:42 UTC  DRY-RUN ves-real / claude-sonnet-5-default [dry-run]: all guards passed (remaining $6.88); would start the run now
+2026-10-05 03:30:09 UTC  STARTED ves-real / claude-sonnet-5-default (remaining before $10.00): Submitted run(s) for task 'ves-real'.
+  claude-sonnet-5-default: Scheduled
+
+Next steps:
+   Check run status:
+   $ kaggle b t status ves-real
+2026-10-05 04:24:34 UTC  SKIP day ves-synthetic-a [dry-run]: before not-before 2026-10-06 03:30 UTC
+2026-10-05 04:24:37 UTC  SKIP day ves-synthetic-a [dry-run]: remaining $4.46 < $9.50
+2026-10-05 04:24:40 UTC  SKIP day ves-synthetic-a [dry-run]: not a fresh quota window (remaining $4.46)
+2026-10-05 04:24:45 UTC  DRY-RUN day ves-synthetic-a [dry-run]: would push ves-synthetic-a (remaining $4.46)
+2026-10-05 04:24:49 UTC  STOP day ves-synthetic-a [dry-run] / claude-sonnet-5-default: remaining $4.46 < $5.20; later models not started
+2026-10-05 04:24:58 UTC  SKIP day ves-real [dry-run] / claude-sonnet-5-default: already has a run
+2026-10-05 04:25:01 UTC  SKIP day ves-real [dry-run] / gemma-4-26b-a4b-it: already has a run
