@@ -1,0 +1,36 @@
+{
+  "task_name": "ves-real-item",
+  "source": "ves-real",
+  "trial_name": "ves-real-item-Run #411",
+  "trial_uri": "kbench://not-a-harbor-trial",
+  "task_id": {
+    "path": "kbench://not-a-harbor-task"
+  },
+  "task_checksum": "unknown (kbench)",
+  "config": {
+    "task": {
+      "path": "kbench://not-a-harbor-task"
+    }
+  },
+  "agent_info": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_info": {
+      "name": "anthropic/claude-sonnet-5@default"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 470,
+    "n_output_tokens": 274,
+    "cost_usd": 0.00368
+  },
+  "verifier_result": {
+    "rewards": {
+      "rep": 2.0,
+      "attempts": 1.0,
+      "pass": 1.0
+    }
+  },
+  "started_at": "2026-10-05T03:59:08.254938Z",
+  "finished_at": "2026-10-05T03:59:10.854775Z"
+}

@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-05T03:31:33.882062Z",
+  "endTime": "2026-10-05T03:31:44.005372Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-a38766ea",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-09e01f81",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation BMGS-bori-field (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1005 | 3.42 | 3.42\n2 | 3588 | 6.33 | 9.76\n3 | 1358 | 10.9 | 20.7\n4 | 333 | 9.08 | 29.7\n5 | 2950 | 36.8 | 66.5\n6 | 5469 | - | -\n\nThe survey interpretation on file classifies this sounding curve as KQHA-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: BMGS-bori-field\nCurve type: KQHA\nAquifer depth: 20.7 m \u2013 29.7 m\nRecommendation: Target the low-resistivity (333 \u03a9\u00b7m) zone between ~20.7 m and 29.7 m depth as the primary aquifer horizon; advance drilling with core sampling through this interval to confirm lithology and water-bearing potential, and ensure proper casing through the overlying high-resistivity layers to prevent collapse."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-sonnet-5@default"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 322,
+            "outputTokens": 882,
+            "inputTokensCostNanodollars": "644000",
+            "outputTokensCostNanodollars": "8820000",
+            "totalBackendLatencyMs": "9962"
+          },
+          "id": "attempt-1-09e01f81-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 322,
+        "outputTokens": 882,
+        "inputTokensCostNanodollars": "644000",
+        "outputTokensCostNanodollars": "8820000",
+        "totalBackendLatencyMs": "9962"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: BMGS-bori-field\nCurve type: KQHA\nAquifer depth: 20.7 m \u2013 29.7 m\nRecommendation: Target the low-resistivity (333 \u03a9\u00b7m) zone between ~20.7 m and 29.7 m depth as the primary aquifer horizon; advance drilling with core sampling through this interval to confirm lithology and water-bearing potential, and ensure proper casing through the overlying high-resistivity layers to prevent collapse.",
+        "item_id": "reading-bori-bmgs-bori-field|uncued_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #8"
+}

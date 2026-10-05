@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-05T03:36:02.381795Z",
+  "endTime": "2026-10-05T03:36:12.470808Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-5b0a03de",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-bc0e1eb2",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Maakoro-street (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 168 | 1.71 | 1.71\n2 | 484 | 7.45 | 9.16\n3 | 255 | 15.3 | 24.4\n4 | 1109 | 25 | 49.4\n5 | 807 | 74.2 | 124\n6 | 8895 | - | -\n\nThe survey interpretation on file classifies this sounding curve as KHKH-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Maakoro-street (Bori Metropolis)\nCurve type: KHKH\nAquifer depth: 24.4 m \u2013 124 m (Layers 4 and 5, \u03c1 = 1109 \u03a9\u00b7m and 807 \u03a9\u00b7m)\nRecommendation: Drill to approximately 125 m, casing off the low-resistivity clayey overburden (0\u201324.4 m) and screening the resistive sandy intervals between 24.4\u201349.4 m and especially 49.4\u2013124 m, as the latter represents the thickest and most promising water-bearing zone before the highly resistive basement/bedrock is encountered below 124 m."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-sonnet-5@default"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 313,
+            "outputTokens": 939,
+            "inputTokensCostNanodollars": "626000",
+            "outputTokensCostNanodollars": "9390000",
+            "totalBackendLatencyMs": "9897"
+          },
+          "id": "attempt-1-bc0e1eb2-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 313,
+        "outputTokens": 939,
+        "inputTokensCostNanodollars": "626000",
+        "outputTokensCostNanodollars": "9390000",
+        "totalBackendLatencyMs": "9897"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Maakoro-street (Bori Metropolis)\nCurve type: KHKH\nAquifer depth: 24.4 m \u2013 124 m (Layers 4 and 5, \u03c1 = 1109 \u03a9\u00b7m and 807 \u03a9\u00b7m)\nRecommendation: Drill to approximately 125 m, casing off the low-resistivity clayey overburden (0\u201324.4 m) and screening the resistive sandy intervals between 24.4\u201349.4 m and especially 49.4\u2013124 m, as the latter represents the thickest and most promising water-bearing zone before the highly resistive basement/bedrock is encountered below 124 m.",
+        "item_id": "reading-bori-maakoro-street|uncued_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #56"
+}

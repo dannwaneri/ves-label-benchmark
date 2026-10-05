@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-05T03:50:05.772130Z",
+  "endTime": "2026-10-05T03:50:17.815048Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-5280ab81",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-0bb553ad",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Maakoro-street (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 168 | 1.71 | 1.71\n2 | 484 | 7.45 | 9.16\n3 | 255 | 15.3 | 24.4\n4 | 1109 | 25 | 49.4\n5 | 807 | 74.2 | 124\n6 | 8895 | - | -\n\nThe survey interpretation on file classifies this sounding curve as KHKH-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Maakoro-street (Bori Metropolis)\nCurve type: KHKH\nAquifer depth: 49.4 m \u2013 124 m (Layer 5, \u03c1 \u2248 807 \u03a9\u00b7m, thickness 74.2 m)\nRecommendation: Target the saturated sand horizon between approximately 49 m and 124 m depth as the main production aquifer; case and grout off the upper low-resistivity clay/clayey-sand zones (Layers 1\u20133) to prevent cross-contamination, and confirm lithology with cuttings before setting the screen interval."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-sonnet-5@default"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 313,
+            "outputTokens": 1186,
+            "inputTokensCostNanodollars": "626000",
+            "outputTokensCostNanodollars": "11860000",
+            "totalBackendLatencyMs": "11899"
+          },
+          "id": "attempt-1-0bb553ad-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 313,
+        "outputTokens": 1186,
+        "inputTokensCostNanodollars": "626000",
+        "outputTokensCostNanodollars": "11860000",
+        "totalBackendLatencyMs": "11899"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: Maakoro-street (Bori Metropolis)\nCurve type: KHKH\nAquifer depth: 49.4 m \u2013 124 m (Layer 5, \u03c1 \u2248 807 \u03a9\u00b7m, thickness 74.2 m)\nRecommendation: Target the saturated sand horizon between approximately 49 m and 124 m depth as the main production aquifer; case and grout off the upper low-resistivity clay/clayey-sand zones (Layers 1\u20133) to prevent cross-contamination, and confirm lithology with cuttings before setting the screen interval.",
+        "item_id": "reading-bori-maakoro-street|uncued_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #274"
+}

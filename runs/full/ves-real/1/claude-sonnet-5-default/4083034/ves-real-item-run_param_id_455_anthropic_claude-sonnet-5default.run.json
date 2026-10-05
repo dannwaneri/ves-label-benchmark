@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-05T04:01:07.210757Z",
+  "endTime": "2026-10-05T04:01:18.763653Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-7c727c92",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-77dbc730",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Court-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 16.8 | 2.56 | 2.56\n2 | 73.3 | 10.4 | 12.9\n3 | 701 | 49.9 | 62.9\n4 | 51.6 | 51.4 | 114\n5 | 99.8 | - | -\n\nThe survey interpretation on file classifies this sounding curve as AKH-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Court-road (Bori Metropolis)\nCurve type: AKH\nAquifer depth: 62.9 m \u2013 114 m (Layer 4, moderate resistivity zone beneath the resistive Layer 3)\nRecommendation: Target screening between approximately 63 m and 114 m depth, as this layer's moderate resistivity (51.6 ohm-m) is consistent with a saturated, permeable sand/sandstone aquifer; drill through the overlying resistive Layer 3 (701 ohm-m, likely compact/lateritic material) with care, and log resistivity below 114 m to confirm whether Layer 5 represents a deeper exploitable aquifer."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-sonnet-5@default"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 299,
+            "outputTokens": 1217,
+            "inputTokensCostNanodollars": "598000",
+            "outputTokensCostNanodollars": "12170000",
+            "totalBackendLatencyMs": "11419"
+          },
+          "id": "attempt-1-77dbc730-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 299,
+        "outputTokens": 1217,
+        "inputTokensCostNanodollars": "598000",
+        "outputTokensCostNanodollars": "12170000",
+        "totalBackendLatencyMs": "11419"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 3.0,
+        "reply": "Station: Court-road (Bori Metropolis)\nCurve type: AKH\nAquifer depth: 62.9 m \u2013 114 m (Layer 4, moderate resistivity zone beneath the resistive Layer 3)\nRecommendation: Target screening between approximately 63 m and 114 m depth, as this layer's moderate resistivity (51.6 ohm-m) is consistent with a saturated, permeable sand/sandstone aquifer; drill through the overlying resistive Layer 3 (701 ohm-m, likely compact/lateritic material) with care, and log resistivity below 114 m to confirm whether Layer 5 represents a deeper exploitable aquifer.",
+        "item_id": "reading-bori-court-road|uncued_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #456"
+}

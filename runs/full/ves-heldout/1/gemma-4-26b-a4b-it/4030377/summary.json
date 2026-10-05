@@ -105,6 +105,22 @@
    "items": 40
   }
  },
+ "by_kind_uncued": {
+  "heldout_daniel": {
+   "own_right": 3,
+   "copied": 3,
+   "stations": 1,
+   "stations_copied": 1
+  }
+ },
+ "by_kind_rule": {
+  "heldout_daniel": {
+   "own_right": 24,
+   "copied": 24,
+   "stations": 8,
+   "stations_copied": 8
+  }
+ },
  "per_station_uncued": {
   "heldout-H-01": [
    {

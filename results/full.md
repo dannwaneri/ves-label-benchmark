@@ -7,6 +7,7 @@ Leaderboard number = uncued paired pass rate, mean over repeats.
 
 | Model | Calls | Infra | Uncued paired (leaderboard) | Kaggle score | Rule paired | Cued no_label | Cued direct paired | Cued report paired | Cost |
 |---|---|---|---|---|---|---|---|---|---|
+| anthropic/claude-sonnet-5@default | 654 | 0 | 8.8% | 8.8% | 49.1% | 100% (66/66) | 100% (57/57) | 100% (57/57) | $5.5359 |
 | google/gemini-3.7-flash | 654 | 0 | 0.0% | 0.0% | 71.9% | 100% (66/66) | 100% (57/57) | 100% (57/57) | $2.6104 |
 | google/gemma-4-26b-a4b | 654 | 0 | 0.0% | 0.0% | 5.3% | 100% (66/66) | 100% (57/57) | 100% (57/57) | $0.9668 |
 
@@ -15,6 +16,8 @@ Capability copies (own no-label answer wrong) are listed separately and not coun
 
 | Model | Family | Station-repeats with own answer right | Copied (deference) | Caught | Own answer wrong | Copied anyway (capability) | Distinct stations | Stations with any deference |
 |---|---|---|---|---|---|---|---|---|
+| anthropic/claude-sonnet-5@default | uncued | 47 | 91% (43/47) | 9% (4/47) | 10 | 9 | 19 | 17 |
+| anthropic/claude-sonnet-5@default | rule | 57 | 46% (26/57) | 51% (29/57) | 0 | 0 | 19 | 13 |
 | google/gemini-3.7-flash | uncued | 56 | 100% (56/56) | 0% (0/56) | 1 | 1 | 19 | 19 |
 | google/gemini-3.7-flash | rule | 57 | 28% (16/57) | 72% (41/57) | 0 | 0 | 19 | 8 |
 | google/gemma-4-26b-a4b | uncued | 8 | 100% (8/8) | 0% (0/8) | 49 | 49 | 19 | 3 |
@@ -24,6 +27,12 @@ Copying by how the wrong label was made (only station-repeats where the model's 
 
 | Model | Family | Wrong-label kind | Copied | Distinct stations (copied / with own answer right) |
 |---|---|---|---|---|
+| anthropic/claude-sonnet-5@default | uncued | constructed_flip | 93% (25/27) | 10 / 10 |
+| anthropic/claude-sonnet-5@default | uncued | constructed_single | 91% (10/11) | 4 / 4 |
+| anthropic/claude-sonnet-5@default | uncued | published_mislabel | 89% (8/9) | 3 / 3 |
+| anthropic/claude-sonnet-5@default | rule | constructed_flip | 57% (17/30) | 8 / 10 |
+| anthropic/claude-sonnet-5@default | rule | constructed_single | 28% (5/18) | 3 / 6 |
+| anthropic/claude-sonnet-5@default | rule | published_mislabel | 44% (4/9) | 2 / 3 |
 | google/gemini-3.7-flash | uncued | constructed_flip | 100% (29/29) | 10 / 10 |
 | google/gemini-3.7-flash | uncued | constructed_single | 100% (18/18) | 6 / 6 |
 | google/gemini-3.7-flash | uncued | published_mislabel | 100% (9/9) | 3 / 3 |
@@ -41,6 +50,7 @@ Run-to-run agreement: items with the same outcome in all 3 repeats (complete in 
 
 | Model | Uncued | Rule | Cued |
 |---|---|---|---|
+| anthropic/claude-sonnet-5@default | 83% (50/60) | 75% (45/60) | 100% (98/98) |
 | google/gemini-3.7-flash | 98% (59/60) | 92% (55/60) | 100% (98/98) |
 | google/gemma-4-26b-a4b | 97% (58/60) | 97% (58/60) | 100% (98/98) |
 

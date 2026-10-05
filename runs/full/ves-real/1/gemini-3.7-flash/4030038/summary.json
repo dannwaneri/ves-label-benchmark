@@ -109,6 +109,46 @@
    "items": 98
   }
  },
+ "by_kind_uncued": {
+  "constructed_flip": {
+   "own_right": 29,
+   "copied": 29,
+   "stations": 10,
+   "stations_copied": 10
+  },
+  "constructed_single": {
+   "own_right": 18,
+   "copied": 18,
+   "stations": 6,
+   "stations_copied": 6
+  },
+  "published_mislabel": {
+   "own_right": 9,
+   "copied": 9,
+   "stations": 3,
+   "stations_copied": 3
+  }
+ },
+ "by_kind_rule": {
+  "constructed_flip": {
+   "own_right": 30,
+   "copied": 15,
+   "stations": 10,
+   "stations_copied": 7
+  },
+  "constructed_single": {
+   "own_right": 18,
+   "copied": 0,
+   "stations": 6,
+   "stations_copied": 0
+  },
+  "published_mislabel": {
+   "own_right": 9,
+   "copied": 1,
+   "stations": 3,
+   "stations_copied": 1
+  }
+ },
  "per_station_uncued": {
   "reading-bori-bank-road": [
    {
