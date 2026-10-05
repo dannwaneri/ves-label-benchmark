@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T06:02:02.922265Z",
+  "endTime": "2026-10-04T06:02:51.653598Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-e65c5d84",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-8e782518",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Ulakwo (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 14.369 | 0.124 | 0.12415\n2 | 15.965 | 8.25 | 9.665\n3 | 4591.4 | 27.074 | 47.738\n4 | 5101.5 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Ulakwo\nCurve type: A-type\nAquifer depth: 0 - 9.66 m\nRecommendation: Target the shallow weathered overburden to intercept the potential aquifer. Be prepared for a rapid transition to hard, highly resistive basement rock at approximately 9.7 meters."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 207,
+            "outputTokens": 2291,
+            "inputTokensCostNanodollars": "31050",
+            "outputTokensCostNanodollars": "1374600",
+            "totalBackendLatencyMs": "48649"
+          },
+          "id": "attempt-1-8e782518-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 207,
+        "outputTokens": 2291,
+        "inputTokensCostNanodollars": "31050",
+        "outputTokensCostNanodollars": "1374600",
+        "totalBackendLatencyMs": "48649"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: Ulakwo\nCurve type: A-type\nAquifer depth: 0 - 9.66 m\nRecommendation: Target the shallow weathered overburden to intercept the potential aquifer. Be prepared for a rapid transition to hard, highly resistive basement rock at approximately 9.7 meters.",
+        "item_id": "reading-etche-ulakwo|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #331"
+}

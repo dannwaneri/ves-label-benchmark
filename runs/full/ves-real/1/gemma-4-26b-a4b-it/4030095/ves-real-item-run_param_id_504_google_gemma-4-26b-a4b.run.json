@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T07:12:33.591192Z",
+  "endTime": "2026-10-04T07:14:23.154251Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-49658b44",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-8d31f839",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Monokpo-street (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1426 | 2.2 | 2.2\n2 | 569 | 0.998 | 3.2\n3 | 1241 | 23.2 | 26.4\n4 | 1931 | 30.1 | 56.5\n5 | 2994 | - | -\n\nThe survey interpretation on file classifies this sounding curve as Q-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Monokpo-street (Bori Metropolis)\nCurve type: Q-type\nAquifer depth: 2.2 - 3.2 m\nRecommendation: Target the conductive layer starting at 2.2m. Drill to a minimum depth of 30m to ensure sufficient water yield."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 222,
+            "outputTokens": 5184,
+            "inputTokensCostNanodollars": "33300",
+            "outputTokensCostNanodollars": "3110400",
+            "totalBackendLatencyMs": "109485"
+          },
+          "id": "attempt-1-8d31f839-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 222,
+        "outputTokens": 5184,
+        "inputTokensCostNanodollars": "33300",
+        "outputTokensCostNanodollars": "3110400",
+        "totalBackendLatencyMs": "109485"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 3.0,
+        "reply": "Station: Monokpo-street (Bori Metropolis)\nCurve type: Q-type\nAquifer depth: 2.2 - 3.2 m\nRecommendation: Target the conductive layer starting at 2.2m. Drill to a minimum depth of 30m to ensure sufficient water yield.",
+        "item_id": "reading-bori-monokpo-street|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #505"
+}

@@ -1,0 +1,36 @@
+{
+  "task_name": "ves-real-item",
+  "source": "ves-real",
+  "trial_name": "ves-real-item-Run #45",
+  "trial_uri": "kbench://not-a-harbor-trial",
+  "task_id": {
+    "path": "kbench://not-a-harbor-task"
+  },
+  "task_checksum": "unknown (kbench)",
+  "config": {
+    "task": {
+      "path": "kbench://not-a-harbor-task"
+    }
+  },
+  "agent_info": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_info": {
+      "name": "google/gemma-4-26b-a4b"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 222,
+    "n_output_tokens": 1417,
+    "cost_usd": 0.0008835
+  },
+  "verifier_result": {
+    "rewards": {
+      "rep": 1.0,
+      "attempts": 1.0,
+      "pass": 0.0
+    }
+  },
+  "started_at": "2026-10-04T03:58:50.945730Z",
+  "finished_at": "2026-10-04T03:59:21.284411Z"
+}

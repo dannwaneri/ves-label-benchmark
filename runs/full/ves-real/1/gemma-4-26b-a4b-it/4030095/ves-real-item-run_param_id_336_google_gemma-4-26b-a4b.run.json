@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T06:05:27.057416Z",
+  "endTime": "2026-10-04T06:06:11.339129Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-763e5304",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-61cc26af",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Umuokom (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 156.2 | 0.60549 | 0.60549\n2 | 421.4 | 0.33169 | 0.93718\n3 | 2559.4 | 4.3105 | 5.2477\n4 | 1032 | 30.476 | 35.724\n5 | 75.659 | 10.418 | 36.766\n6 | 1081.5 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Umuokom\nCurve type: H-type\nAquifer depth: 5.2 - 35.7 m\nRecommendation: Target the fractured zone between 5.2m and 35.7m depth. Ensure adequate well screen placement within this interval to maximize water yield."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 263,
+            "outputTokens": 2078,
+            "inputTokensCostNanodollars": "39450",
+            "outputTokensCostNanodollars": "1246800",
+            "totalBackendLatencyMs": "44214"
+          },
+          "id": "attempt-1-61cc26af-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 263,
+        "outputTokens": 2078,
+        "inputTokensCostNanodollars": "39450",
+        "outputTokensCostNanodollars": "1246800",
+        "totalBackendLatencyMs": "44214"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: Umuokom\nCurve type: H-type\nAquifer depth: 5.2 - 35.7 m\nRecommendation: Target the fractured zone between 5.2m and 35.7m depth. Ensure adequate well screen placement within this interval to maximize water yield.",
+        "item_id": "reading-etche-umuokom|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #337"
+}

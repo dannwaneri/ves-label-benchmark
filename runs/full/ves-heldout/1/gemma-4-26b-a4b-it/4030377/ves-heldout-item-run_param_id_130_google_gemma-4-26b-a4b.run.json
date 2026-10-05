@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T04:55:10.222045Z",
+  "endTime": "2026-10-04T04:55:56.552067Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-65d26379",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-d5a1795d",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-08 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 218.1 | 18.02 | 18.02\n2 | 105.0 | 1.05 | 19.07\n3 | 60.0 | 1.04 | 20.11\n4 | 317.3 | 0.57 | 20.68\n5 | 1743.2 | 5.17 | 25.85\n6 | 2231.3 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: H-08\nCurve type: H-type\nAquifer depth: 18.0 - 21.0 m\nRecommendation: Target the weathered zone located between 18m and 21m to intercept potential groundwater. Expect competent, high-resistivity basement to begin below 21m."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 242,
+            "outputTokens": 2181,
+            "inputTokensCostNanodollars": "36300",
+            "outputTokensCostNanodollars": "1308600",
+            "totalBackendLatencyMs": "46198"
+          },
+          "id": "attempt-1-d5a1795d-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 242,
+        "outputTokens": 2181,
+        "inputTokensCostNanodollars": "36300",
+        "outputTokensCostNanodollars": "1308600",
+        "totalBackendLatencyMs": "46198"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: H-08\nCurve type: H-type\nAquifer depth: 18.0 - 21.0 m\nRecommendation: Target the weathered zone located between 18m and 21m to intercept potential groundwater. Expect competent, high-resistivity basement to begin below 21m.",
+        "item_id": "heldout-H-08|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #131"
+}

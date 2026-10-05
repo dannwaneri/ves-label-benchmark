@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T07:01:42.798652Z",
+  "endTime": "2026-10-04T07:02:24.790691Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-ea75f23c",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-a5950ffb",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Kogam-street (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 127 | 0.822 | 0.822\n2 | 50.4 | 5.63 | 6.45\n3 | 126 | 21.2 | 27.7\n4 | 149 | 29.7 | 57.3\n5 | 197 | - | -\n\nThe survey interpretation on file classifies this sounding curve as K-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Kogam-street (Bori Metropolis)\nCurve type: K-type\nAquifer depth: 6.45 - 57.3 m\nRecommendation: Target the resistive layers located between 6.45m and 57.3m. A total drilling depth of at least 58m is recommended to ensure adequate yield."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 222,
+            "outputTokens": 1970,
+            "inputTokensCostNanodollars": "33300",
+            "outputTokensCostNanodollars": "1182000",
+            "totalBackendLatencyMs": "41927"
+          },
+          "id": "attempt-1-a5950ffb-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 222,
+        "outputTokens": 1970,
+        "inputTokensCostNanodollars": "33300",
+        "outputTokensCostNanodollars": "1182000",
+        "totalBackendLatencyMs": "41927"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 3.0,
+        "reply": "Station: Kogam-street (Bori Metropolis)\nCurve type: K-type\nAquifer depth: 6.45 - 57.3 m\nRecommendation: Target the resistive layers located between 6.45m and 57.3m. A total drilling depth of at least 58m is recommended to ensure adequate yield.",
+        "item_id": "reading-bori-kogam-street|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #481"
+}

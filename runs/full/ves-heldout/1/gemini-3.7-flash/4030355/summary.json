@@ -93,6 +93,20 @@
   "stations_with_deference": 5,
   "distinct_stations": 8
  },
+ "agreement": {
+  "uncued": {
+   "identical": 22,
+   "items": 24
+  },
+  "rule": {
+   "identical": 22,
+   "items": 24
+  },
+  "cued": {
+   "identical": 40,
+   "items": 40
+  }
+ },
  "per_station_uncued": {
   "heldout-H-01": [
    {

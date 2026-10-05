@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T03:47:03.673891Z",
+  "endTime": "2026-10-04T03:47:32.599348Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-1e8c4581",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-2b8010bc",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Court-road (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 16.8 | 2.56 | 2.56\n2 | 73.3 | 10.4 | 12.9\n3 | 701 | 49.9 | 62.9\n4 | 51.6 | 51.4 | 114\n5 | 99.8 | - | -\n\nThe survey interpretation on file classifies this sounding curve as Q-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Station Court-road (Bori Metropolis)\nCurve type: Q-type\nAquifer depth: 62.9 - 114 m\nRecommendation: Target the low-resistivity zone located beneath the highly resistive layer. Aim to drill to at least 115 meters to ensure full penetration of the primary aquifer."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 221,
+            "outputTokens": 1347,
+            "inputTokensCostNanodollars": "33150",
+            "outputTokensCostNanodollars": "808200",
+            "totalBackendLatencyMs": "28849"
+          },
+          "id": "attempt-1-2b8010bc-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 221,
+        "outputTokens": 1347,
+        "inputTokensCostNanodollars": "33150",
+        "outputTokensCostNanodollars": "808200",
+        "totalBackendLatencyMs": "28849"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Station Court-road (Bori Metropolis)\nCurve type: Q-type\nAquifer depth: 62.9 - 114 m\nRecommendation: Target the low-resistivity zone located beneath the highly resistive layer. Aim to drill to at least 115 meters to ensure full penetration of the primary aquifer.",
+        "item_id": "reading-bori-court-road|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #21"
+}

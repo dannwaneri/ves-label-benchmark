@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T04:24:16.242627Z",
+  "endTime": "2026-10-04T04:25:34.169923Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-4822a332",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-27d512d8",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Okehi (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 697.56 | 0.29506 | 0.29506\n2 | 10642 | 0.51943 | 0.81449\n3 | 5533 | 35.32 | 39.13\n4 | 5776.1 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Okehi\nCurve type: H-type\nAquifer depth: None detected\nRecommendation: The profile consists of highly resistive layers, indicating the presence of massive and dry basement rock. Drilling is not recommended at this station due to the absence of a saturated zone."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 208,
+            "outputTokens": 3685,
+            "inputTokensCostNanodollars": "31200",
+            "outputTokensCostNanodollars": "2211000",
+            "totalBackendLatencyMs": "77861"
+          },
+          "id": "attempt-1-27d512d8-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 208,
+        "outputTokens": 3685,
+        "inputTokensCostNanodollars": "31200",
+        "outputTokensCostNanodollars": "2211000",
+        "totalBackendLatencyMs": "77861"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: Okehi\nCurve type: H-type\nAquifer depth: None detected\nRecommendation: The profile consists of highly resistive layers, indicating the presence of massive and dry basement rock. Drilling is not recommended at this station due to the absence of a saturated zone.",
+        "item_id": "reading-etche-okehi|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #101"
+}

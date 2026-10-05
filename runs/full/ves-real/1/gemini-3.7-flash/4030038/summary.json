@@ -95,6 +95,20 @@
   "stations_with_deference": 8,
   "distinct_stations": 19
  },
+ "agreement": {
+  "uncued": {
+   "identical": 59,
+   "items": 60
+  },
+  "rule": {
+   "identical": 55,
+   "items": 60
+  },
+  "cued": {
+   "identical": 98,
+   "items": 98
+  }
+ },
  "per_station_uncued": {
   "reading-bori-bank-road": [
    {

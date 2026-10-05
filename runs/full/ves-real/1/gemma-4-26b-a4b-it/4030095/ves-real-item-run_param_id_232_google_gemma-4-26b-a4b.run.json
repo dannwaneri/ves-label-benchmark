@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T05:18:18.045497Z",
+  "endTime": "2026-10-04T05:18:37.998953Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-b9267c85",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-70da558f",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Bori-police-station (Bori Metropolis). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 150 | 1.23 | 1.23\n2 | 97.1 | 6.21 | 7.44\n3 | 284 | 37.5 | 45\n4 | 700 | - | -\n\nThe survey interpretation on file classifies this sounding curve as HK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Bori-police-station (Bori Metropolis)\nCurve type: HK-type\nAquifer depth: 7.44 \u2013 45.0 m\nRecommendation: Target the resistive layer starting at 7.44m. Drill to a minimum depth of 45m to ensure the borehole fully penetrates the primary aquifer zone."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 201,
+            "outputTokens": 925,
+            "inputTokensCostNanodollars": "30150",
+            "outputTokensCostNanodollars": "555000",
+            "totalBackendLatencyMs": "19882"
+          },
+          "id": "attempt-1-70da558f-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 201,
+        "outputTokens": 925,
+        "inputTokensCostNanodollars": "30150",
+        "outputTokensCostNanodollars": "555000",
+        "totalBackendLatencyMs": "19882"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: Bori-police-station (Bori Metropolis)\nCurve type: HK-type\nAquifer depth: 7.44 \u2013 45.0 m\nRecommendation: Target the resistive layer starting at 7.44m. Drill to a minimum depth of 45m to ensure the borehole fully penetrates the primary aquifer zone.",
+        "item_id": "reading-bori-bori-police-station|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #233"
+}

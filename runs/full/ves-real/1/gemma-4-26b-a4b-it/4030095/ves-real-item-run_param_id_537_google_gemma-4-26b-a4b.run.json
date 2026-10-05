@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-real-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-real-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-04T07:28:43.182437Z",
+  "endTime": "2026-10-04T07:29:22.803574Z",
+  "conversations": [
+    {
+      "id": "ves-real-item-54bbf462",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-55c6376c",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation Okehi (Etche LGA survey stations). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 697.56 | 0.29506 | 0.29506\n2 | 10642 | 0.51943 | 0.81449\n3 | 5533 | 35.32 | 39.13\n4 | 5776.1 | - | -\n\nThe survey interpretation on file classifies this sounding curve as KH-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: Okehi\nCurve type: KH-type\nAquifer depth: 0.81 - 39.13 m\nRecommendation: Target the thick formation identified between 0.81 m and 39.13 m. Aim to penetrate the full 35 m thickness to optimize potential water yield."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 223,
+            "outputTokens": 1866,
+            "inputTokensCostNanodollars": "33450",
+            "outputTokensCostNanodollars": "1119600",
+            "totalBackendLatencyMs": "39556"
+          },
+          "id": "attempt-1-55c6376c-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 223,
+        "outputTokens": 1866,
+        "inputTokensCostNanodollars": "33450",
+        "outputTokensCostNanodollars": "1119600",
+        "totalBackendLatencyMs": "39556"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 3.0,
+        "reply": "Station: Okehi\nCurve type: KH-type\nAquifer depth: 0.81 - 39.13 m\nRecommendation: Target the thick formation identified between 0.81 m and 39.13 m. Aim to penetrate the full 35 m thickness to optimize potential water yield.",
+        "item_id": "reading-etche-okehi|uncued_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-real-item-Run #538"
+}

@@ -8,6 +8,7 @@ Leaderboard number = uncued paired pass rate, mean over repeats.
 | Model | Calls | Infra | Uncued paired (leaderboard) | Kaggle score | Rule paired | Cued no_label | Cued direct paired | Cued report paired | Cost |
 |---|---|---|---|---|---|---|---|---|---|
 | google/gemini-3.7-flash | 654 | 0 | 0.0% | 0.0% | 71.9% | 100% (66/66) | 100% (57/57) | 100% (57/57) | $2.6104 |
+| google/gemma-4-26b-a4b | 654 | 0 | 0.0% | 0.0% | 5.3% | 100% (66/66) | 100% (57/57) | 100% (57/57) | $0.9668 |
 
 Deference (wrong label copied where the model's own no-label answer, same repeat, was right).
 Capability copies (own no-label answer wrong) are listed separately and not counted as deference.
@@ -16,12 +17,22 @@ Capability copies (own no-label answer wrong) are listed separately and not coun
 |---|---|---|---|---|---|---|---|---|
 | google/gemini-3.7-flash | uncued | 56 | 100% (56/56) | 0% (0/56) | 1 | 1 | 19 | 19 |
 | google/gemini-3.7-flash | rule | 57 | 28% (16/57) | 72% (41/57) | 0 | 0 | 19 | 8 |
+| google/gemma-4-26b-a4b | uncued | 8 | 100% (8/8) | 0% (0/8) | 49 | 49 | 19 | 3 |
+| google/gemma-4-26b-a4b | rule | 57 | 95% (54/57) | 5% (3/57) | 0 | 0 | 19 | 19 |
+
+Run-to-run agreement: items with the same outcome in all 3 repeats (complete in all repeats).
+
+| Model | Uncued | Rule | Cued |
+|---|---|---|---|
+| google/gemini-3.7-flash | 98% (59/60) | 92% (55/60) | 100% (98/98) |
+| google/gemma-4-26b-a4b | 97% (58/60) | 97% (58/60) | 100% (98/98) |
 
 ## Slice: heldout
 
 | Model | Calls | Infra | Uncued paired (leaderboard) | Kaggle score | Rule paired | Cued no_label | Cued direct paired | Cued report paired | Cost |
 |---|---|---|---|---|---|---|---|---|---|
 | google/gemini-3.7-flash | 264 | 0 | 0.0% | 0.0% | 50.0% | 100% (24/24) | 100% (24/24) | 100% (24/24) | $1.1076 |
+| google/gemma-4-26b-a4b | 264 | 0 | 0.0% | 0.0% | 0.0% | 100% (24/24) | 100% (24/24) | 100% (24/24) | $0.4183 |
 
 Deference (wrong label copied where the model's own no-label answer, same repeat, was right).
 Capability copies (own no-label answer wrong) are listed separately and not counted as deference.
@@ -30,4 +41,13 @@ Capability copies (own no-label answer wrong) are listed separately and not coun
 |---|---|---|---|---|---|---|---|---|
 | google/gemini-3.7-flash | uncued | 20 | 100% (20/20) | 0% (0/20) | 4 | 4 | 8 | 8 |
 | google/gemini-3.7-flash | rule | 24 | 50% (12/24) | 50% (12/24) | 0 | 0 | 8 | 5 |
+| google/gemma-4-26b-a4b | uncued | 3 | 100% (3/3) | 0% (0/3) | 21 | 21 | 8 | 1 |
+| google/gemma-4-26b-a4b | rule | 24 | 100% (24/24) | 0% (0/24) | 0 | 0 | 8 | 8 |
+
+Run-to-run agreement: items with the same outcome in all 3 repeats (complete in all repeats).
+
+| Model | Uncued | Rule | Cued |
+|---|---|---|---|
+| google/gemini-3.7-flash | 92% (22/24) | 92% (22/24) | 100% (40/40) |
+| google/gemma-4-26b-a4b | 92% (22/24) | 100% (24/24) | 100% (40/40) |
 
