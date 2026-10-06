@@ -63,7 +63,9 @@ def main():
             else:
                 push_marker.write_text(datetime.now(timezone.utc).isoformat(), encoding="utf-8")
                 src = ROOT / "kaggle" / "generated" / f"{a.task}.py"
-                rc, out = kaggle("b", "t", "push", a.task, "-f", str(src), "--wait", "5400")
+                # The push waits for the default-model run to finish: allow far more than
+                # the 10-minute default (bug on 2026-10-06: push timed out at 10 min).
+                rc, out = kaggle("b", "t", "push", a.task, "-f", str(src), "--wait", "5400", timeout=6000)
                 log(f"{'PUSHED' if rc == 0 else 'PUSH FAILED'} {tag}: {out.strip()[-200:]}")
                 if rc != 0:
                     return

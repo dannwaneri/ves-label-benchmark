@@ -33,10 +33,10 @@ def log(msg):
         fh.write(line + "\n")
 
 
-def kaggle(*args):
+def kaggle(*args, timeout=600):
     # cwd=home: the repo's own kaggle/ folder would shadow the kaggle package.
     p = subprocess.run([sys.executable, "-m", "kaggle", *args], capture_output=True, text=True,
-                       env=ENV, encoding="utf-8", errors="replace", timeout=600, cwd=str(Path.home()))
+                       env=ENV, encoding="utf-8", errors="replace", timeout=timeout, cwd=str(Path.home()))
     return p.returncode, (p.stdout or "") + (p.stderr or "")
 
 
