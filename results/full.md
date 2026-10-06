@@ -55,6 +55,36 @@ Run-to-run agreement: items with the same outcome in all 3 repeats (complete in 
 | google/gemini-3.7-flash | 98% (59/60) | 92% (55/60) | 100% (98/98) |
 | google/gemma-4-26b-a4b | 97% (58/60) | 97% (58/60) | 100% (98/98) |
 
+## Slice: synthetic
+
+| Model | Calls | Infra | Uncued paired (leaderboard) | Kaggle score | Rule paired | Cued no_label | Cued direct paired | Cued report paired | Cost |
+|---|---|---|---|---|---|---|---|---|---|
+| google/gemini-3.7-flash | 528 | 0 | 0.0% | 0.0% | 87.5% | 100% (48/48) | 100% (48/48) | 100% (48/48) | $2.1561 |
+
+Label on file repeated without checking: counted only for station-repeats where the model's own
+no-label answer (same family, same repeat) was right. Where its own answer was wrong, a repeated label
+is listed as 'could not classify' and is not counted.
+
+| Model | Family | Station-repeats with own answer right | Repeated the label on file | Caught: true type | Caught: label kept + warning | Caught: warning only | Own answer wrong | Repeated anyway (could not classify) | Distinct stations | Stations with any repeat |
+|---|---|---|---|---|---|---|---|---|---|---|
+| google/gemini-3.7-flash | uncued | 48 | 100% (48/48) | 0 | 0 | 0 | 0 | 0 | 16 | 16 |
+| google/gemini-3.7-flash | rule | 48 | 12% (6/48) | 42 | 0 | 0 | 0 | 0 | 16 | 4 |
+
+Label on file repeated, by how the wrong label was made (only station-repeats where the model's own no-label answer was right).
+
+| Model | Family | Wrong-label kind | Repeated | Distinct stations (repeated / with own answer right) |
+|---|---|---|---|---|
+| google/gemini-3.7-flash | uncued | constructed_flip | 100% (24/24) | 8 / 8 |
+| google/gemini-3.7-flash | uncued | constructed_single | 100% (24/24) | 8 / 8 |
+| google/gemini-3.7-flash | rule | constructed_flip | 25% (6/24) | 4 / 8 |
+| google/gemini-3.7-flash | rule | constructed_single | 0% (0/24) | 0 / 8 |
+
+Run-to-run agreement: items with the same outcome in all 3 repeats (complete in all repeats).
+
+| Model | Uncued | Rule | Cued |
+|---|---|---|---|
+| google/gemini-3.7-flash | 100% (48/48) | 94% (45/48) | 100% (80/80) |
+
 ## Slice: heldout
 
 | Model | Calls | Infra | Uncued paired (leaderboard) | Kaggle score | Rule paired | Cued no_label | Cued direct paired | Cued report paired | Cost |

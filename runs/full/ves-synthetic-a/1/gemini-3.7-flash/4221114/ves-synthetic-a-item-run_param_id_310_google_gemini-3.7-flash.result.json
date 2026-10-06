@@ -1,0 +1,36 @@
+{
+  "task_name": "ves-synthetic-a-item",
+  "source": "ves-synthetic-a",
+  "trial_name": "ves-synthetic-a-item-Run #311",
+  "trial_uri": "kbench://not-a-harbor-trial",
+  "task_id": {
+    "path": "kbench://not-a-harbor-task"
+  },
+  "task_checksum": "unknown (kbench)",
+  "config": {
+    "task": {
+      "path": "kbench://not-a-harbor-task"
+    }
+  },
+  "agent_info": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_info": {
+      "name": "google/gemini-3.7-flash"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 367,
+    "n_output_tokens": 600,
+    "cost_usd": 0.00252525
+  },
+  "verifier_result": {
+    "rewards": {
+      "rep": 2.0,
+      "attempts": 1.0,
+      "pass": 1.0
+    }
+  },
+  "started_at": "2026-10-06T03:52:19.328764Z",
+  "finished_at": "2026-10-06T03:52:21.948385Z"
+}

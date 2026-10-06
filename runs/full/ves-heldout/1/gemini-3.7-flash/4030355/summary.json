@@ -88,6 +88,7 @@
   "own_right": 24,
   "resisted_or_other": 12,
   "caught": 12,
+  "caught_true_type": 12,
   "deference": 12,
   "stations_with_own_right": 8,
   "stations_with_deference": 5,
