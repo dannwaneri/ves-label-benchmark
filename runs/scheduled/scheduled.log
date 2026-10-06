@@ -33,3 +33,6 @@ Next steps:
 Next steps:
    Check run status:
    $ kaggle b t status ves-synthetic-a
+2026-10-06 05:12:22 UTC  SKIP day ves-heldout [dry-run]: before not-before 2026-10-07 03:41 UTC
+2026-10-06 05:12:23 UTC  SKIP day ves-synthetic-b [dry-run]: before not-before 2026-10-07 03:41 UTC
+2026-10-06 05:12:33 UTC  STOP day ves-heldout [dry-run] / claude-sonnet-5-default: remaining $2.26 < $3.50; later models not started
