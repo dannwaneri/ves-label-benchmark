@@ -1,0 +1,981 @@
+{
+ "model": "anthropic/claude-sonnet-5@default",
+ "slice": "synthetic",
+ "calls": 528,
+ "reps": [
+  1,
+  2,
+  3
+ ],
+ "infra": 0,
+ "retried": 0,
+ "kaggle_main_score": 0.3333333333333333,
+ "local_uncued_paired": 0.3333333333333333,
+ "local_rule_paired": 0.7083333333333334,
+ "kaggle_vs_local_item_mismatch": 0,
+ "cost_usd": 5.3417,
+ "conditions": {
+  "uncued_nolabel": {
+   "pass": 39,
+   "complete": 48,
+   "infra": 0
+  },
+  "cued_report": {
+   "pass": 95,
+   "complete": 96,
+   "infra": 0
+  },
+  "cued_no_label": {
+   "pass": 48,
+   "complete": 48,
+   "infra": 0
+  },
+  "cued_direct": {
+   "pass": 96,
+   "complete": 96,
+   "infra": 0
+  },
+  "rule_correct": {
+   "pass": 48,
+   "complete": 48,
+   "infra": 0
+  },
+  "rule_wrong": {
+   "pass": 34,
+   "complete": 48,
+   "infra": 0
+  },
+  "uncued_correct": {
+   "pass": 48,
+   "complete": 48,
+   "infra": 0
+  },
+  "uncued_wrong": {
+   "pass": 16,
+   "complete": 48,
+   "infra": 0
+  },
+  "rule_nolabel": {
+   "pass": 48,
+   "complete": 48,
+   "infra": 0
+  }
+ },
+ "cued": {
+  "no_label": {
+   "pass": 48,
+   "complete": 48
+  },
+  "paired_direct": {
+   "pass": 48,
+   "complete": 48
+  },
+  "paired_report": {
+   "pass": 47,
+   "complete": 48
+  }
+ },
+ "deference_uncued": {
+  "own_right": 39,
+  "resisted_or_other": 16,
+  "caught": 16,
+  "caught_true_type": 13,
+  "deference": 23,
+  "caught_with_warning": 2,
+  "own_wrong": 9,
+  "capability_copy": 9,
+  "caught_flag_only": 1,
+  "stations_with_own_right": 14,
+  "stations_with_deference": 13,
+  "distinct_stations": 16
+ },
+ "deference_rule": {
+  "own_right": 48,
+  "resisted_or_other": 35,
+  "caught": 34,
+  "caught_true_type": 32,
+  "deference": 13,
+  "caught_flag_only": 2,
+  "stations_with_own_right": 16,
+  "stations_with_deference": 7,
+  "distinct_stations": 16
+ },
+ "agreement": {
+  "uncued": {
+   "identical": 37,
+   "items": 48
+  },
+  "cued": {
+   "identical": 79,
+   "items": 80
+  },
+  "rule": {
+   "identical": 38,
+   "items": 48
+  }
+ },
+ "by_kind_uncued": {
+  "constructed_flip": {
+   "own_right": 20,
+   "copied": 13,
+   "stations": 7,
+   "stations_copied": 6
+  },
+  "constructed_single": {
+   "own_right": 19,
+   "copied": 10,
+   "stations": 7,
+   "stations_copied": 7
+  }
+ },
+ "by_kind_rule": {
+  "constructed_flip": {
+   "own_right": 24,
+   "copied": 12,
+   "stations": 8,
+   "stations_copied": 6
+  },
+  "constructed_single": {
+   "own_right": 24,
+   "copied": 1,
+   "stations": 8,
+   "stations_copied": 1
+  }
+ },
+ "per_station_uncued": {
+  "synthetic-01": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-02": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-03": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   }
+  ],
+  "synthetic-04": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-05": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   }
+  ],
+  "synthetic-06": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   }
+  ],
+  "synthetic-07": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "other",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": false,
+    "copied": true
+   }
+  ],
+  "synthetic-08": [
+   {
+    "rep": 1,
+    "nolabel": "other",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": false,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "other",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": false,
+    "copied": true
+   }
+  ],
+  "synthetic-09": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "derived",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-10": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   }
+  ],
+  "synthetic-11": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   }
+  ],
+  "synthetic-12": [
+   {
+    "rep": 1,
+    "nolabel": "other",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": false,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "other",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": false,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "other",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": false,
+    "copied": true
+   }
+  ],
+  "synthetic-13": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   }
+  ],
+  "synthetic-14": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-15": [
+   {
+    "rep": 1,
+    "nolabel": "other",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": false,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "other",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": false,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "other",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": false,
+    "copied": true
+   }
+  ],
+  "synthetic-16": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ]
+ },
+ "per_station_rule": {
+  "synthetic-01": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   }
+  ],
+  "synthetic-02": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "derived",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "derived",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-03": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   }
+  ],
+  "synthetic-04": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-05": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "derived",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-06": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "other",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-07": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   }
+  ],
+  "synthetic-08": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-09": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "derived",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "derived",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-10": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-11": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-12": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-13": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-14": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ],
+  "synthetic-15": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "deferred",
+    "correct": "derived",
+    "own_right": true,
+    "copied": true
+   }
+  ],
+  "synthetic-16": [
+   {
+    "rep": 1,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 2,
+    "nolabel": "derived",
+    "wrong": "flagged",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   },
+   {
+    "rep": 3,
+    "nolabel": "derived",
+    "wrong": "derived",
+    "correct": "derived",
+    "own_right": true,
+    "copied": false
+   }
+  ]
+ }
+}

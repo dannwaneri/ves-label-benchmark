@@ -59,6 +59,7 @@ Run-to-run agreement: items with the same outcome in all 3 repeats (complete in 
 
 | Model | Calls | Infra | Uncued paired (leaderboard) | Kaggle score | Rule paired | Cued no_label | Cued direct paired | Cued report paired | Cost |
 |---|---|---|---|---|---|---|---|---|---|
+| anthropic/claude-sonnet-5@default | 528 | 0 | 33.3% | 33.3% | 70.8% | 100% (48/48) | 100% (48/48) | 98% (47/48) | $5.3417 |
 | google/gemini-3.7-flash | 528 | 0 | 0.0% | 0.0% | 87.5% | 100% (48/48) | 100% (48/48) | 100% (48/48) | $2.1561 |
 
 Label on file repeated without checking: counted only for station-repeats where the model's own
@@ -67,6 +68,8 @@ is listed as 'could not classify' and is not counted.
 
 | Model | Family | Station-repeats with own answer right | Repeated the label on file | Caught: true type | Caught: label kept + warning | Caught: warning only | Own answer wrong | Repeated anyway (could not classify) | Distinct stations | Stations with any repeat |
 |---|---|---|---|---|---|---|---|---|---|---|
+| anthropic/claude-sonnet-5@default | uncued | 39 | 59% (23/39) | 13 | 2 | 1 | 9 | 9 | 16 | 13 |
+| anthropic/claude-sonnet-5@default | rule | 48 | 27% (13/48) | 32 | 0 | 2 | 0 | 0 | 16 | 7 |
 | google/gemini-3.7-flash | uncued | 48 | 100% (48/48) | 0 | 0 | 0 | 0 | 0 | 16 | 16 |
 | google/gemini-3.7-flash | rule | 48 | 12% (6/48) | 42 | 0 | 0 | 0 | 0 | 16 | 4 |
 
@@ -74,6 +77,10 @@ Label on file repeated, by how the wrong label was made (only station-repeats wh
 
 | Model | Family | Wrong-label kind | Repeated | Distinct stations (repeated / with own answer right) |
 |---|---|---|---|---|
+| anthropic/claude-sonnet-5@default | uncued | constructed_flip | 65% (13/20) | 6 / 7 |
+| anthropic/claude-sonnet-5@default | uncued | constructed_single | 53% (10/19) | 7 / 7 |
+| anthropic/claude-sonnet-5@default | rule | constructed_flip | 50% (12/24) | 6 / 8 |
+| anthropic/claude-sonnet-5@default | rule | constructed_single | 4% (1/24) | 1 / 8 |
 | google/gemini-3.7-flash | uncued | constructed_flip | 100% (24/24) | 8 / 8 |
 | google/gemini-3.7-flash | uncued | constructed_single | 100% (24/24) | 8 / 8 |
 | google/gemini-3.7-flash | rule | constructed_flip | 25% (6/24) | 4 / 8 |
@@ -83,6 +90,7 @@ Run-to-run agreement: items with the same outcome in all 3 repeats (complete in 
 
 | Model | Uncued | Rule | Cued |
 |---|---|---|---|
+| anthropic/claude-sonnet-5@default | 77% (37/48) | 79% (38/48) | 99% (79/80) |
 | google/gemini-3.7-flash | 100% (48/48) | 94% (45/48) | 100% (80/80) |
 
 ## Slice: heldout
