@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-synthetic-a-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-synthetic-a-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-06T06:59:59.112141Z",
+  "endTime": "2026-10-06T07:00:33.066823Z",
+  "conversations": [
+    {
+      "id": "ves-synthetic-a-item-74ffb74d",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-9bb6633e",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation T-01 (survey area T). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 1056.4 | 23.97 | 23.97\n2 | 1090.4 | 1.46 | 25.43\n3 | 2606.8 | 3.17 | 28.60\n4 | 3560.6 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: T-01\nCurve type: Type A\nAquifer depth: 0 - 23.97 m\nRecommendation: Target the weathered zone within the first 24 meters. Prepare for competent, high-resistivity bedrock encountered below 25 meters."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 201,
+            "outputTokens": 1596,
+            "inputTokensCostNanodollars": "30150",
+            "outputTokensCostNanodollars": "957600",
+            "totalBackendLatencyMs": "33922"
+          },
+          "id": "attempt-1-9bb6633e-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 201,
+        "outputTokens": 1596,
+        "inputTokensCostNanodollars": "30150",
+        "outputTokensCostNanodollars": "957600",
+        "totalBackendLatencyMs": "33922"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 3.0,
+        "reply": "Station: T-01\nCurve type: Type A\nAquifer depth: 0 - 23.97 m\nRecommendation: Target the weathered zone within the first 24 meters. Prepare for competent, high-resistivity bedrock encountered below 25 meters.",
+        "item_id": "synthetic-01|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-synthetic-a-item-Run #353"
+}
