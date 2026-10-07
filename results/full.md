@@ -105,6 +105,7 @@ Run-to-run agreement: items with the same outcome in all 3 repeats (complete in 
 
 | Model | Calls | Infra | Uncued paired (leaderboard) | Kaggle score | Rule paired | Cued no_label | Cued direct paired | Cued report paired | Cost |
 |---|---|---|---|---|---|---|---|---|---|
+| anthropic/claude-sonnet-5@default | 264 | 0 | 4.2% | 4.2% | 58.3% | 100% (24/24) | 100% (24/24) | 100% (24/24) | $2.4873 |
 | google/gemini-3.7-flash | 264 | 0 | 0.0% | 0.0% | 50.0% | 100% (24/24) | 100% (24/24) | 100% (24/24) | $1.1076 |
 | google/gemma-4-26b-a4b | 264 | 0 | 0.0% | 0.0% | 0.0% | 100% (24/24) | 100% (24/24) | 100% (24/24) | $0.4183 |
 
@@ -114,6 +115,8 @@ is listed as 'could not classify' and is not counted.
 
 | Model | Family | Station-repeats with own answer right | Repeated the label on file | Caught: true type | Caught: label kept + warning | Caught: warning only | Own answer wrong | Repeated anyway (could not classify) | Distinct stations | Stations with any repeat |
 |---|---|---|---|---|---|---|---|---|---|---|
+| anthropic/claude-sonnet-5@default | uncued | 15 | 93% (14/15) | 1 | 0 | 0 | 9 | 9 | 8 | 7 |
+| anthropic/claude-sonnet-5@default | rule | 24 | 42% (10/24) | 14 | 0 | 0 | 0 | 0 | 8 | 4 |
 | google/gemini-3.7-flash | uncued | 20 | 100% (20/20) | 0 | 0 | 0 | 4 | 4 | 8 | 8 |
 | google/gemini-3.7-flash | rule | 24 | 50% (12/24) | 12 | 0 | 0 | 0 | 0 | 8 | 5 |
 | google/gemma-4-26b-a4b | uncued | 3 | 100% (3/3) | 0 | 0 | 0 | 21 | 21 | 8 | 1 |
@@ -123,6 +126,8 @@ Label on file repeated, by how the wrong label was made (only station-repeats wh
 
 | Model | Family | Wrong-label kind | Repeated | Distinct stations (repeated / with own answer right) |
 |---|---|---|---|---|
+| anthropic/claude-sonnet-5@default | uncued | heldout_daniel | 93% (14/15) | 7 / 7 |
+| anthropic/claude-sonnet-5@default | rule | heldout_daniel | 42% (10/24) | 4 / 8 |
 | google/gemini-3.7-flash | uncued | heldout_daniel | 100% (20/20) | 8 / 8 |
 | google/gemini-3.7-flash | rule | heldout_daniel | 50% (12/24) | 5 / 8 |
 | google/gemma-4-26b-a4b | uncued | heldout_daniel | 100% (3/3) | 1 / 1 |
@@ -132,6 +137,7 @@ Run-to-run agreement: items with the same outcome in all 3 repeats (complete in 
 
 | Model | Uncued | Rule | Cued |
 |---|---|---|---|
+| anthropic/claude-sonnet-5@default | 75% (18/24) | 79% (19/24) | 100% (40/40) |
 | google/gemini-3.7-flash | 92% (22/24) | 92% (22/24) | 100% (40/40) |
 | google/gemma-4-26b-a4b | 92% (22/24) | 100% (24/24) | 100% (40/40) |
 

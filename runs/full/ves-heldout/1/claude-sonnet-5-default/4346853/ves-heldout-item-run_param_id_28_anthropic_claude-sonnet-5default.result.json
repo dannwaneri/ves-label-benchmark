@@ -1,0 +1,36 @@
+{
+  "task_name": "ves-heldout-item",
+  "source": "ves-heldout",
+  "trial_name": "ves-heldout-item-Run #29",
+  "trial_uri": "kbench://not-a-harbor-trial",
+  "task_id": {
+    "path": "kbench://not-a-harbor-task"
+  },
+  "task_checksum": "unknown (kbench)",
+  "config": {
+    "task": {
+      "path": "kbench://not-a-harbor-task"
+    }
+  },
+  "agent_info": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_info": {
+      "name": "anthropic/claude-sonnet-5@default"
+    }
+  },
+  "agent_result": {
+    "n_input_tokens": 506,
+    "n_output_tokens": 889,
+    "cost_usd": 0.009902
+  },
+  "verifier_result": {
+    "rewards": {
+      "rep": 1.0,
+      "attempts": 1.0,
+      "pass": 1.0
+    }
+  },
+  "started_at": "2026-10-07T08:23:13.020424Z",
+  "finished_at": "2026-10-07T08:23:22.084314Z"
+}

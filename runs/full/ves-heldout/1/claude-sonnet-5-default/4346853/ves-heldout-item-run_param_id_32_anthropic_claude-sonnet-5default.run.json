@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-07T08:23:40.295793Z",
+  "endTime": "2026-10-07T08:23:48.614157Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-ab9f1ae8",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-07e2f0e6",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-06 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 609.8 | 18.27 | 18.27\n2 | 213.6 | 1.05 | 19.32\n3 | 1311.8 | 4.54 | 23.86\n4 | 278.0 | 3.10 | 26.96\n5 | 1124.7 | 1.46 | 28.42\n6 | 291.6 | - | -\n\nThe survey interpretation on file classifies this sounding curve as HK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: H-06\nCurve type: HK-type\nAquifer depth: 23.86 \u2013 26.96 m\nRecommendation: Target drilling and screen placement within the 23.86\u201326.96 m interval (Layer 4, ~278 ohm-m), as this lower-resistivity zone sandwiched between two resistive layers is interpreted as the main water-bearing horizon; confirm with lithologic logging during drilling since the thin 213.6 ohm-m layer at 18.27\u201319.32 m is too thin to be a viable production zone."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-sonnet-5@default"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 320,
+            "outputTokens": 840,
+            "inputTokensCostNanodollars": "640000",
+            "outputTokensCostNanodollars": "8400000",
+            "totalBackendLatencyMs": "8259"
+          },
+          "id": "attempt-1-07e2f0e6-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 320,
+        "outputTokens": 840,
+        "inputTokensCostNanodollars": "640000",
+        "outputTokensCostNanodollars": "8400000",
+        "totalBackendLatencyMs": "8259"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: H-06\nCurve type: HK-type\nAquifer depth: 23.86 \u2013 26.96 m\nRecommendation: Target drilling and screen placement within the 23.86\u201326.96 m interval (Layer 4, ~278 ohm-m), as this lower-resistivity zone sandwiched between two resistive layers is interpreted as the main water-bearing horizon; confirm with lithologic logging during drilling since the thin 213.6 ohm-m layer at 18.27\u201319.32 m is too thin to be a viable production zone.",
+        "item_id": "heldout-H-06|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #33"
+}

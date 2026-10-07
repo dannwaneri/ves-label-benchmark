@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-07T08:23:00.696389Z",
+  "endTime": "2026-10-07T08:23:13.014572Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-b615f20c",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-0e10d2f6",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-05 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 26.6 | 4.30 | 4.30\n2 | 119.1 | 2.37 | 6.67\n3 | 340.4 | 0.77 | 7.44\n4 | 640.3 | 0.77 | 8.21\n5 | 2441.4 | - | -\n\nThe survey interpretation on file classifies this sounding curve as AA-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: H-05\nCurve type: AA-type\nAquifer depth: 4.30\u20136.67 m\nRecommendation: Target the moderately resistive weathered zone (layer 2, ~119 ohm-m) between 4.30 m and 6.67 m depth for screening, as it represents the main water-bearing horizon in this basement sequence; case off the overlying low-resistivity topsoil and avoid deepening into the underlying high-resistivity fractured/fresh bedrock beyond ~7.4 m, which shows poor water yield potential."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-sonnet-5@default"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 299,
+            "outputTokens": 1202,
+            "inputTokensCostNanodollars": "598000",
+            "outputTokensCostNanodollars": "12020000",
+            "totalBackendLatencyMs": "12223"
+          },
+          "id": "attempt-1-0e10d2f6-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 299,
+        "outputTokens": 1202,
+        "inputTokensCostNanodollars": "598000",
+        "outputTokensCostNanodollars": "12020000",
+        "totalBackendLatencyMs": "12223"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 1.0,
+        "reply": "Station: H-05\nCurve type: AA-type\nAquifer depth: 4.30\u20136.67 m\nRecommendation: Target the moderately resistive weathered zone (layer 2, ~119 ohm-m) between 4.30 m and 6.67 m depth for screening, as it represents the main water-bearing horizon in this basement sequence; case off the overlying low-resistivity topsoil and avoid deepening into the underlying high-resistivity fractured/fresh bedrock beyond ~7.4 m, which shows poor water yield potential.",
+        "item_id": "heldout-H-05|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #27"
+}

@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-07T08:34:27.589917Z",
+  "endTime": "2026-10-07T08:34:43.302545Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-26115884",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-893294bb",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-04 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 133.9 | 19.46 | 19.46\n2 | 50.7 | 19.69 | 39.15\n3 | 23.0 | 4.00 | 43.15\n4 | 61.9 | 4.32 | 47.47\n5 | 20.8 | - | -\n\nThe survey interpretation on file classifies this sounding curve as QHA-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: H-04\nCurve type: QHA\nAquifer depth: 39.15 m \u2013 43.15 m (secondary, thin low-resistivity zone) and >47.47 m (main target, low-resistivity basal layer, \u03c1 = 20.8 \u03a9\u00b7m)\nRecommendation: Plan the borehole to penetrate past 47.47 m to intersect the deep, low-resistivity layer 5, which is the most promising water-bearing horizon; log carefully through the thin conductive zone at 39\u201343 m as it may represent a secondary or perched aquifer worth testing during drilling."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-sonnet-5@default"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 299,
+            "outputTokens": 1503,
+            "inputTokensCostNanodollars": "598000",
+            "outputTokensCostNanodollars": "15030000",
+            "totalBackendLatencyMs": "15634"
+          },
+          "id": "attempt-1-893294bb-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 299,
+        "outputTokens": 1503,
+        "inputTokensCostNanodollars": "598000",
+        "outputTokensCostNanodollars": "15030000",
+        "totalBackendLatencyMs": "15634"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 3.0,
+        "reply": "Station: H-04\nCurve type: QHA\nAquifer depth: 39.15 m \u2013 43.15 m (secondary, thin low-resistivity zone) and >47.47 m (main target, low-resistivity basal layer, \u03c1 = 20.8 \u03a9\u00b7m)\nRecommendation: Plan the borehole to penetrate past 47.47 m to intersect the deep, low-resistivity layer 5, which is the most promising water-bearing horizon; log carefully through the thin conductive zone at 39\u201343 m as it may represent a secondary or perched aquifer worth testing during drilling.",
+        "item_id": "heldout-H-04|uncued_wrong",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": false,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #197"
+}

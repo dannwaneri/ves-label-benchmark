@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-07T08:30:36.343293Z",
+  "endTime": "2026-10-07T08:30:41.531267Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-e7d371e8",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-a13baf47",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-08 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 218.1 | 18.02 | 18.02\n2 | 105.0 | 1.05 | 19.07\n3 | 60.0 | 1.04 | 20.11\n4 | 317.3 | 0.57 | 20.68\n5 | 1743.2 | 5.17 | 25.85\n6 | 2231.3 | - | -\n\nThe survey interpretation on file classifies this sounding curve as QHAA-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: H-08\nCurve type: QHAA\nAquifer depth: 19.07\u201320.11 m\nRecommendation: Target the low-resistivity zone (60 ohm-m) between 19.07 m and 20.11 m as the primary water-bearing horizon; case off the overlying layers to isolate this thin aquifer and collect a water sample for quality testing before finalizing the completion depth."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-sonnet-5@default"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 322,
+            "outputTokens": 550,
+            "inputTokensCostNanodollars": "644000",
+            "outputTokensCostNanodollars": "5500000",
+            "totalBackendLatencyMs": "5122"
+          },
+          "id": "attempt-1-a13baf47-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 322,
+        "outputTokens": 550,
+        "inputTokensCostNanodollars": "644000",
+        "outputTokensCostNanodollars": "5500000",
+        "totalBackendLatencyMs": "5122"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: H-08\nCurve type: QHAA\nAquifer depth: 19.07\u201320.11 m\nRecommendation: Target the low-resistivity zone (60 ohm-m) between 19.07 m and 20.11 m as the primary water-bearing horizon; case off the overlying layers to isolate this thin aquifer and collect a water sample for quality testing before finalizing the completion depth.",
+        "item_id": "heldout-H-08|uncued_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #132"
+}

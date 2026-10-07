@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-07T08:28:39.101215Z",
+  "endTime": "2026-10-07T08:28:49.255110Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-40555cbf",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-2a68e9e5",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-05 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 26.6 | 4.30 | 4.30\n2 | 119.1 | 2.37 | 6.67\n3 | 340.4 | 0.77 | 7.44\n4 | 640.3 | 0.77 | 8.21\n5 | 2441.4 | - | -\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: H-05\nCurve type: A-type (resistivity increases progressively with depth: \u03c11<\u03c12<\u03c13<\u03c14<\u03c15)\nAquifer depth: 4.30 \u2013 6.67 m (weathered/fractured zone, 119.1 ohm\u2011m layer)\n\nRecommendation: Target the weathered zone between 4.3 m and 6.7 m depth as the primary water\u2011bearing horizon; drill through this interval with proper casing to prevent collapse, and terminate before the underlying resistive, likely low\u2011yield competent bedrock (>340 ohm\u2011m) unless deeper fracture zones are confirmed during drilling."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-sonnet-5@default"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 274,
+            "outputTokens": 977,
+            "inputTokensCostNanodollars": "548000",
+            "outputTokensCostNanodollars": "9770000",
+            "totalBackendLatencyMs": "10086"
+          },
+          "id": "attempt-1-2a68e9e5-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 274,
+        "outputTokens": 977,
+        "inputTokensCostNanodollars": "548000",
+        "outputTokensCostNanodollars": "9770000",
+        "totalBackendLatencyMs": "10086"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: H-05\nCurve type: A-type (resistivity increases progressively with depth: \u03c11<\u03c12<\u03c13<\u03c14<\u03c15)\nAquifer depth: 4.30 \u2013 6.67 m (weathered/fractured zone, 119.1 ohm\u2011m layer)\n\nRecommendation: Target the weathered zone between 4.3 m and 6.7 m depth as the primary water\u2011bearing horizon; drill through this interval with proper casing to prevent collapse, and terminate before the underlying resistive, likely low\u2011yield competent bedrock (>340 ohm\u2011m) unless deeper fracture zones are confirmed during drilling.",
+        "item_id": "heldout-H-05|uncued_nolabel",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #113"
+}

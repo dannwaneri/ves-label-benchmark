@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-heldout-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-heldout-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "anthropic/claude-sonnet-5@default"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-07T08:32:21.083679Z",
+  "endTime": "2026-10-07T08:32:27.504960Z",
+  "conversations": [
+    {
+      "id": "ves-heldout-item-6f727264",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-f5a0904c",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation H-01 (survey area H). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 332.5 | 0.52 | 0.52\n2 | 601.3 | 6.89 | 7.41\n3 | 359.9 | 16.01 | 23.42\n4 | 286.0 | - | -\n\nThe survey interpretation on file classifies this sounding curve as KQ-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: H-01\nCurve type: KQ-type\nAquifer depth: 23.42 m to greater depth (base not resolved by sounding)\nRecommendation: Target the lower-resistivity zone beginning at 23.42 m (Layer 4, ~286 \u03a9\u00b7m) as the probable aquifer; case off the upper layers (0\u201323.42 m) and plan screen placement below 23.42 m, with a deeper test hole or geophysical log recommended to confirm the base of this water-bearing unit before final screen design."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "anthropic/claude-sonnet-5@default"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 279,
+            "outputTokens": 610,
+            "inputTokensCostNanodollars": "558000",
+            "outputTokensCostNanodollars": "6100000",
+            "totalBackendLatencyMs": "6339"
+          },
+          "id": "attempt-1-f5a0904c-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 279,
+        "outputTokens": 610,
+        "inputTokensCostNanodollars": "558000",
+        "outputTokensCostNanodollars": "6100000",
+        "totalBackendLatencyMs": "6339"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 3.0,
+        "reply": "Station: H-01\nCurve type: KQ-type\nAquifer depth: 23.42 m to greater depth (base not resolved by sounding)\nRecommendation: Target the lower-resistivity zone beginning at 23.42 m (Layer 4, ~286 \u03a9\u00b7m) as the probable aquifer; case off the upper layers (0\u201323.42 m) and plan screen placement below 23.42 m, with a deeper test hole or geophysical log recommended to confirm the base of this water-bearing unit before final screen design.",
+        "item_id": "heldout-H-01|uncued_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-heldout-item-Run #178"
+}
