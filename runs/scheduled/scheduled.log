@@ -42,3 +42,5 @@ Next steps:
 Next steps:
    Check run status:
    $ kaggle b t status ves-heldout
+2026-10-07 08:37:15 UTC  SKIP ves-synthetic-b / claude-sonnet-5-default [dry-run]: now is before not-before 2026-10-08 08:20 UTC
+2026-10-07 08:37:21 UTC  SKIP ves-synthetic-b / claude-sonnet-5-default [dry-run]: daily remaining $5.64 < $6.00
