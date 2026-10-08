@@ -5,8 +5,8 @@ tags: kagglechallenge, ai, machinelearning, benchmark
 ---
 
 <!-- DRAFT. All numbers are final (results/final.md). Daniel rewrites the
-     story parts in his own voice before publishing. Upload the four images
-     in results/figures/ to DEV and replace each {{IMAGE: ...}} line. -->
+     story parts in his own voice before publishing. Images load from the GitHub
+     repo, so they appear once the repo is public (Oct 10). -->
 
 *This is a submission for the [Kaggle Benchmarking Challenge](https://dev.to/devteam/join-the-kaggle-benchmarking-challenge-2500-in-prizes-for-five-winners-18ml).*
 
@@ -70,11 +70,7 @@ froze before any model saw them. Three repeats each.
 **Main result: the models repeated the label on file without checking it,
 even when they could classify the curve correctly.**
 
-{{IMAGE: results/figures/diagram_choba.png — alt: "One station (Choba,
-published as A-type, layers say KHA) in five situations, with what Gemini
-3.7 Flash wrote: no label, KHA; asked directly, label_correct false; report
-with a flag, flagged; site note with the rule, KHA; plain site note,
-A-type."}}
+![One station (Choba, published as A-type, layers say KHA) in five situations, with what Gemini 3.7 Flash wrote: no label, KHA; asked directly, label_correct false; report with a flag, flagged; site note with the rule, KHA; plain site note, A-type.](https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/diagram_choba.png)
 
 Real slice (19 label stations, 3 repeats). "Repeated" counts only cases
 where the model's own no-label answer, in the same repeat, was right.
@@ -86,11 +82,7 @@ where the model's own no-label answer, in the same repeat, was right.
 | Site note + rule: repeated | 28% | 46% | **95%** (54/57) |
 | Asked directly: caught the wrong label | 100% | 100% | 100% |
 
-{{IMAGE: results/figures/chart_ladder.png — alt: "Dot chart, one row per
-model, real slice: share of wrong labels accepted or repeated when asked
-directly (0% for all three), in a site note with the rule (Flash 28%,
-Sonnet 46%, Gemma 95%) and in a plain site note (Flash 100%, Sonnet 91%,
-Gemma 100% of 8 cases)."}}
+![Dot chart, one row per model, real slice: share of wrong labels accepted or repeated when asked directly (0% for all three), in a site note with the rule (Flash 28%, Sonnet 46%, Gemma 95%) and in a plain site note (Flash 100%, Sonnet 91%, Gemma 100% of 8 cases).](https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/chart_ladder.png)
 
 1. **Knowing is not acting.** Every model caught every wrong label when
    asked, on every slice. In a plain site note, Flash repeated all of them,
@@ -114,11 +106,7 @@ Gemma 100% of 8 cases)."}}
    Gemma, with the rule, 24/24.
 6. **The pattern holds on every slice.**
 
-{{IMAGE: results/figures/chart_slices.png — alt: "Three panels, one per
-model; rows real, held-out, synthetic-a, synthetic-b; share of wrong
-labels repeated in a plain site note and with the rule. Flash: 100, 100,
-100, 98 percent; with rule 28, 50, 12, 27. Sonnet: 91, 93, 59, 57; with
-rule 46, 42, 27. Gemma with rule: 95, 100, 94, 90."}}
+![Three panels, one per model; rows real, held-out, synthetic-a, synthetic-b; share of wrong labels repeated in a plain site note and with the rule. Flash: 100, 100, 100, 98 percent; with rule 28, 50, 12, 27. Sonnet: 91, 93, 59, 57; with rule 46, 42, 27. Gemma with rule: 95, 100, 94, 90.](https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/chart_slices.png)
 
 **My predictions vs the results.** Before Sonnet's first full run I
 committed three numbers: how often it would repeat the wrong label.
@@ -246,10 +234,7 @@ assessment)" to remove the ambiguity above.
 - **Code, items, preregistration and every raw reply:** https://github.com/dannwaneri/ves-label-benchmark
 - The dataset behind it: {{ONE_LINE_SANITY_ENTRY_LINK}}
 
-{{IMAGE: results/figures/kaggle_leaderboard.png — alt: "Kaggle leaderboard
-for VES Label Check: three tasks (real, held-out, synthetic-b) by three
-models. Claude Sonnet 5: 5.3%, 8.3%, 31.3%. Gemini 3.7 Flash: 0.0%, 0.0%,
-6.3%. Gemma 4 26B: 0.0% on all three."}}
+![Kaggle leaderboard for VES Label Check: three tasks (real, held-out, synthetic-b) by three models. Claude Sonnet 5: 5.3%, 8.3%, 31.3%. Gemini 3.7 Flash: 0.0%, 0.0%, 6.3%. Gemma 4 26B: 0.0% on all three.](https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/kaggle_leaderboard.png)
 
 The leaderboard score is the share of stations (mean of 3 repeats) where
 the plain site note did **not** repeat the wrong label and kept the
