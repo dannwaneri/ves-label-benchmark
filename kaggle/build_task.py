@@ -143,6 +143,7 @@ def main():
     ap.add_argument("--ids", help="comma-separated item ids, in this order")
     ap.add_argument("--repeats", type=int, default=1)
     ap.add_argument("--task-name", help="keep items whose task_name equals this")
+    ap.add_argument("--conditions", help="comma-separated item conditions to keep")
     ap.add_argument("--score", default="items", choices=("items", "uncued_paired"))
     args = ap.parse_args()
     items = json.loads((ROOT / args.items).read_text(encoding="utf-8"))["items"]
@@ -154,6 +155,9 @@ def main():
         items = [by_id[i] for i in args.ids.split(",")]
     if args.task_name:
         items = [it for it in items if it.get("task_name") == args.task_name]
+    if args.conditions:
+        keep_c = set(args.conditions.split(","))
+        items = [it for it in items if it.get("condition") in keep_c]
     if args.task:
         items = [it for it in items if it.get("task") == args.task]
     assert items, "no items selected"
