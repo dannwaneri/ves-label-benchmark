@@ -71,7 +71,7 @@ def ask(llm, item):
 
 
 # %%
-@kbench.task(name="{name}-item", store_task=False)
+@kbench.task(name="row-{name}", store_task=False)
 def ves_item(llm, item_id: str, rep: int) -> dict:
     item = ITEMS_BY_ID[item_id]
     replies, errors = ask(llm, item)
@@ -110,6 +110,9 @@ def main_task(llm) -> float:
 
 
 main_task.run(kbench.llm)
+
+# %%
+# %choose {name}
 '''
 
 

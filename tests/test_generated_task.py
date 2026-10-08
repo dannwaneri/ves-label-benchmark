@@ -190,7 +190,11 @@ def test_end_to_end_all_infra_records_no_score(monkeypatch, capsys):
 
 
 def _last_line(code):
-    return [ln for ln in code.splitlines() if ln.strip()][-1].strip()
+    # The task's last statement must be .run(); a final `# %choose` comment cell may follow
+    # (jupytext turns it into the live %choose magic in the pushed notebook).
+    lines = [ln.strip() for ln in code.splitlines() if ln.strip() and ln.strip() != "# %%"]
+    lines = [ln for ln in lines if not ln.startswith("# %choose")]
+    return lines[-1]
 
 
 def test_every_generated_task_ends_with_run():
@@ -200,3 +204,11 @@ def test_every_generated_task_ends_with_run():
     assert files
     for f in files:
         assert _last_line(f.read_text(encoding="utf-8")) == "main_task.run(kbench.llm)", f.name
+
+
+def test_choose_cell_and_row_task_name_do_not_collide():
+    code = build("ves-real", PROBE[:2])
+    assert code.rstrip().endswith("# %choose ves-real")
+    assert '@kbench.task(name="row-ves-real", store_task=False)' in code
+    # %choose keeps files matching "<task>.*.run.json": the row task must not share the prefix
+    assert not "row-ves-real".startswith("ves-real")
