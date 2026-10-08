@@ -1,12 +1,12 @@
 ---
-title: "{{TITLE}}"
+title: "Asked directly, 3 AI models caught a wrong label. In a site note, they copied it."
 published: false
 tags: kagglechallenge, ai, machinelearning, benchmark
 ---
 
-<!-- DRAFT. Real-slice numbers are final. {{...}} = held-out Sonnet and
-     synthetic results, filled after the runs. Daniel rewrites the story
-     parts in his own voice before publishing. -->
+<!-- DRAFT. All numbers are final (results/final.md). Daniel rewrites the
+     story parts in his own voice before publishing. Upload the four images
+     in results/figures/ to DEV and replace each {{IMAGE: ...}} line. -->
 
 *This is a submission for the [Kaggle Benchmarking Challenge](https://dev.to/devteam/join-the-kaggle-benchmarking-challenge-2500-in-prizes-for-five-winners-18ml).*
 
@@ -50,7 +50,7 @@ Two things keep it honest:
   label in sight. Where it could not, I report the case separately.
 
 Scoring is plain code reading one field. No model judges another model.
-The scorer has 234 tests, and deliberate bugs that a test must catch.
+The scorer has 235 tests, and deliberate bugs that a test must catch.
 
 ## Which models did I run it against?
 
@@ -70,8 +70,14 @@ froze before any model saw them. Three repeats each.
 **Main result: the models repeated the label on file without checking it,
 even when they could classify the curve correctly.**
 
+{{IMAGE: results/figures/diagram_choba.png — alt: "One station (Choba,
+published as A-type, layers say KHA) in five situations, with what Gemini
+3.7 Flash wrote: no label, KHA; asked directly, label_correct false; report
+with a flag, flagged; site note with the rule, KHA; plain site note,
+A-type."}}
+
 Real slice (19 label stations, 3 repeats). "Repeated" counts only cases
-where the model's own no-label answer was right.
+where the model's own no-label answer, in the same repeat, was right.
 
 | | Gemini 3.7 Flash | Claude Sonnet 5 | Gemma 4 26B |
 |---|---|---|---|
@@ -79,16 +85,16 @@ where the model's own no-label answer was right.
 | Site note: repeated the wrong label | **100%** (56/56) | **91%** (43/47) | could not classify most |
 | Site note + rule: repeated | 28% | 46% | **95%** (54/57) |
 | Asked directly: caught the wrong label | 100% | 100% | 100% |
-| Leaderboard (site note, paired) | 0.0% | 8.8% | 0.0% |
 
-Flash and Gemma both score 0.0% on the leaderboard for different reasons:
-Flash could classify almost every curve and still repeated every wrong
-label, while Gemma, without the rule, could classify only a few curves at
-all.
+{{IMAGE: results/figures/chart_ladder.png — alt: "Dot chart, one row per
+model, real slice: share of wrong labels accepted or repeated when asked
+directly (0% for all three), in a site note with the rule (Flash 28%,
+Sonnet 46%, Gemma 95%) and in a plain site note (Flash 100%, Sonnet 91%,
+Gemma 100% of 8 cases)."}}
 
 1. **Knowing is not acting.** Every model caught every wrong label when
-   asked. In a site note, Flash repeated all of them, across all 19
-   stations.
+   asked, on every slice. In a plain site note, Flash repeated all of them,
+   across all 19 real stations.
 2. **The rule helps some models, not all.** With the rule as a reference
    note, Flash repeated 28% and Sonnet 46%. Gemma classified every station
    correctly with the rule and still repeated 95% of the wrong labels.
@@ -100,24 +106,32 @@ all.
    | Obvious (wrong length) | 18/18 | 0/18 | 5/18 |
    | Subtle (one step changed) | 29/29 | 15/30 | 17/30 |
 
-4. **Sonnet sometimes notices.** In 4 site notes it caught the error: 3
-   times with the true type, once keeping the label with a warning
-   ("caught with a warning: 1").
-5. **The held-out set agrees.** {{held-out numbers incl. Sonnet}}
-6. **Synthetic slice.** {{synthetic numbers}}
+4. **Sonnet sometimes notices.** In 4 real-slice site notes it caught the
+   error: 3 times with the true type, once keeping the label with a
+   warning ("caught with a warning: 1").
+5. **The held-out set agrees.** On the 8 stations I labelled by hand and
+   froze before any run, Flash repeated 20/20, Sonnet 14/15 (93%), and
+   Gemma, with the rule, 24/24.
+6. **The pattern holds on every slice.**
 
-**My predictions vs the results.** Before the Sonnet run I committed three
-numbers: how often Sonnet would repeat the wrong label.
+{{IMAGE: results/figures/chart_slices.png — alt: "Three panels, one per
+model; rows real, held-out, synthetic-a, synthetic-b; share of wrong
+labels repeated in a plain site note and with the rule. Flash: 100, 100,
+100, 98 percent; with rule 28, 50, 12, 27. Sonnet: 91, 93, 59, 57; with
+rule 46, 42, 27. Gemma with rule: 95, 100, 94, 90."}}
 
-| | Predicted | Result |
-|---|---|---|
-| Site note | 90% | 91% |
-| Site note + rule | 35% | 46% |
-| Asked directly | 5% | 0% |
+**My predictions vs the results.** Before Sonnet's first full run I
+committed three numbers: how often it would repeat the wrong label.
 
-{{IMAGE: chart_ladder.png — alt: "Dot chart, one row per model: share of
-site notes that repeated the wrong label, under three conditions: asked
-directly, site note with the rule, plain site note. Real slice."}}
+| | Predicted | Real | Held-out | Synthetic-a | Synthetic-b |
+|---|---|---|---|---|---|
+| Site note | 90% | 91% | 93% | **59%** | **57%** |
+| Site note + rule | 35% | 46% | 42% | 27% | not run |
+| Asked directly | 5% | 0% | 0% | 0% | not run |
+
+The preregistration has 28 numeric predictions. 26 were met. The two
+misses are the same one: Sonnet's site-note rate on the two synthetic
+slices (predicted 70% or more). Full table: `results/final.md`.
 
 **Is the gap real or noise?** Exploratory, not preregistered: an exact
 McNemar test, paired by station, first repeat only, on stations the model
@@ -141,11 +155,13 @@ the note. The stations are few, so treat the p-values as rough.
 **What surprised me.** Two things. First, Gemma: with the rule in the
 template it classified every station correctly, and still repeated the
 wrong label in 95% of its notes. Knowing the rule did not make it look.
-Second, my own prediction failed. On the first synthetic slice, Sonnet
-repeated the wrong label in 59% of notes, not the 90% I predicted, while
-on the real and held-out stations it repeated 91% and 93%. I do not know
-why. One guess: the synthetic tables look less like a published survey.
-I did not test that.
+Second, my own prediction failed, twice. On the synthetic stations,
+Sonnet repeated the wrong label in 59% and 57% of notes (two separate
+slices and runs), against 91% on the real stations and 93% on the
+held-out ones. My first guess was that the synthetic tables look less like
+a published survey. The held-out tables rule that out: they have the same
+format (one decimal, a generic site name), and there Sonnet repeated 93%.
+I do not know the cause.
 
 ## What I got wrong
 
@@ -155,14 +171,24 @@ I did not test that.
   pilot failed.
 - **My scorer had two bugs.** One crashed on replies with no JSON line; one
   read the wrong object when a reply had nested JSON. Tests caught both
-  before any full run. The scorer has 234 tests now, and deliberate bugs
+  before any full run. The scorer has 235 tests now, and deliberate bugs
   that a test must catch.
 - **My first strong model did not work on Kaggle.** Most of Claude Opus 5's
   report replies came back empty, mostly on two stations. I replaced it
   with Sonnet 5 after a 5-item check. I do not know the cause.
 - **I preregistered late**, after the first Flash runs. The file says so,
   with the commit time.
-- **A prediction failed** (Sonnet on synthetic-a, above).
+- **A prediction failed**, twice (Sonnet on both synthetic slices, above).
+- **My first leaderboard was empty.** Kaggle needs one line, `%choose
+  <task>`, at the end of a task file, so it knows which result is the
+  score. I had removed it because it looked like a Python syntax error.
+  The runs were fine, but the leaderboard could not read them. On the last
+  run day I pushed small leaderboard tasks with the line in place (the
+  site-note items only, 3 repeats) and ran all three models again. Those
+  are new runs, so Sonnet's leaderboard scores differ a little from the
+  full runs (real 5.3% vs 8.8%, held-out 8.3% vs 4.2%); that is within the
+  run-to-run variation I measured. The fix also cost Sonnet's full run on
+  synthetic-b: for that slice it has only the site-note items.
 
 ## What this means if you use AI to write reports
 
@@ -206,7 +232,9 @@ could have got it right.
   the same outcome in all 3 repeats for 83% of site-note items.
 - Claude Code built most of the code. I made the design calls and wrote
   the held-out answers.
-- {{held-out failures, if any}}
+- The held-out set did not fail anywhere: my hand answers matched the
+  classifier on all 8 stations, and every Sonnet prediction held there.
+  The failed predictions are on the synthetic slices (above).
 
 What I would measure next: offer the classifier as a tool in the site
 note and see whether the model calls it, and ask for "Curve type (your
@@ -214,6 +242,15 @@ assessment)" to remove the ambiguity above.
 
 ## Where can you see it?
 
-- Kaggle benchmark: {{KAGGLE_BENCHMARK_URL}}
-- Code, items, raw outputs: {{GITHUB_URL}}
+- **Kaggle benchmark:** https://www.kaggle.com/benchmarks/danielnwaneri/ves-label-check
+- **Code, items, preregistration and every raw reply:** https://github.com/dannwaneri/ves-label-benchmark
 - The dataset behind it: {{ONE_LINE_SANITY_ENTRY_LINK}}
+
+{{IMAGE: results/figures/kaggle_leaderboard.png — alt: "Kaggle leaderboard
+for VES Label Check: three tasks (real, held-out, synthetic-b) by three
+models. Claude Sonnet 5: 5.3%, 8.3%, 31.3%. Gemini 3.7 Flash: 0.0%, 0.0%,
+6.3%. Gemma 4 26B: 0.0% on all three."}}
+
+The leaderboard score is the share of stations (mean of 3 repeats) where
+the plain site note did **not** repeat the wrong label and kept the
+correct one. Higher means the model checked. Every score here is low.
