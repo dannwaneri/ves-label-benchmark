@@ -115,12 +115,75 @@ numbers: how often Sonnet would repeat the wrong label.
 | Site note + rule | 35% | 46% |
 | Asked directly | 5% | 0% |
 
-What surprised me: {{...}}
+{{IMAGE: chart_ladder.png — alt: "Dot chart, one row per model: share of
+site notes that repeated the wrong label, under three conditions: asked
+directly, site note with the rule, plain site note. Real slice."}}
 
-The general idea that models go along with what they are told is not new;
-other entries in this challenge show it too. What this adds is a measured
-ladder in a scientific domain, with real published errors and a ground
-truth anyone can recompute.
+**Is the gap real or noise?** Exploratory, not preregistered: an exact
+McNemar test, paired by station, first repeat only, on stations the model
+classified correctly with no label shown.
+
+{% details Paired tests, real slice (all slices in results/stats.md) %}
+
+| Model | Comparison | Stations | Repeated only in the site note | Only in the other | p |
+|---|---|---|---|---|---|
+| Gemini 3.7 Flash | site note vs direct question | 19 | 19 | 0 | 0.000004 |
+| Gemini 3.7 Flash | site note vs site note + rule | 19 | 12 | 0 | 0.0005 |
+| Claude Sonnet 5 | site note vs direct question | 16 | 14 | 0 | 0.0001 |
+| Claude Sonnet 5 | site note vs site note + rule | 16 | 6 | 0 | 0.03 |
+
+In every slice and model, the "only in the other" column is 0: no model
+ever accepted a wrong label in the direct question while catching it in
+the note. The stations are few, so treat the p-values as rough.
+
+{% enddetails %}
+
+**What surprised me.** Two things. First, Gemma: with the rule in the
+template it classified every station correctly, and still repeated the
+wrong label in 95% of its notes. Knowing the rule did not make it look.
+Second, my own prediction failed. On the first synthetic slice, Sonnet
+repeated the wrong label in 59% of notes, not the 90% I predicted, while
+on the real and held-out stations it repeated 91% and 93%. I do not know
+why. One guess: the synthetic tables look less like a published survey.
+I did not test that.
+
+## What I got wrong
+
+- **The first version was too easy.** In the pilot, every model scored
+  about 100%, because I asked directly. That is the result in the first
+  row of my table, not a finding. The uncued site note exists because the
+  pilot failed.
+- **My scorer had two bugs.** One crashed on replies with no JSON line; one
+  read the wrong object when a reply had nested JSON. Tests caught both
+  before any full run. The scorer has 234 tests now, and deliberate bugs
+  that a test must catch.
+- **My first strong model did not work on Kaggle.** Most of Claude Opus 5's
+  report replies came back empty, mostly on two stations. I replaced it
+  with Sonnet 5 after a 5-item check. I do not know the cause.
+- **I preregistered late**, after the first Flash runs. The file says so,
+  with the commit time.
+- **A prediction failed** (Sonnet on synthetic-a, above).
+
+## What this means if you use AI to write reports
+
+1. **Do not expect the model to doubt the file.** If a label, a figure or
+   a classification is in the input, it goes into the output.
+2. **Giving it the rule is not enough.** It helped two models and did not
+   help the third.
+3. **Make checking a step.** Ask "is this value correct for this data?" as
+   its own question, before the report. That question caught 100% of the
+   errors here.
+
+## How this relates to other entries
+
+The general pattern is not new, and other entries in this challenge show
+it well. Soumyadeep Dey's benchmark found that security agents notice
+their target is a real company, but almost never report it ("the Silent
+Stop"). Other entries found models siding with a wrong test, or noticing a
+poisoned test and passing it anyway. What this benchmark adds: a
+scientific domain, real errors printed in published papers, a ground truth
+anyone can recompute, and a per-station control that shows the model
+could have got it right.
 
 ## Limitations
 
