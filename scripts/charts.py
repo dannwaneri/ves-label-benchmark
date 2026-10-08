@@ -106,5 +106,55 @@ def ladder(task="ves-real", fname="chart_ladder.png", title_slice="real slice"):
     return OUT / fname
 
 
+def choba_diagram(fname="diagram_choba.png"):
+    """One station, five conditions, what Gemini 3.7 Flash wrote (all 3 repeats identical,
+    checked against runs/full/ves-real raw outputs before drawing)."""
+    GOOD, BAD = "#0ca30c", "#d03b3b"  # status palette: always with a symbol and a word
+    rows = [
+        ("1  No label", "Layer values only", "KHA", True, "can classify it"),
+        ("2  Asked directly", "Rule + label on file \"A\"\n+ \"Is this label correct?\"",
+         "label_correct: false (KHA)", True, "caught"),
+        ("3  Report with a flag", "Rule + label on file \"A\"\n+ a JSON flag field",
+         "label_issue_flagged: true", True, "caught"),
+        ("4  Site note + rule", "Site-note template + label \"A\"\n+ rule as a reference note",
+         "Curve type: KHA", True, "caught"),
+        ("5  Plain site note", "Site-note template\n+ label on file \"A\"",
+         "Curve type: A-type", False, "repeated the label"),
+    ]
+    fig, ax = plt.subplots(figsize=(9.5, 5.0), dpi=200)
+    fig.subplots_adjust(left=0.02, right=0.98, top=0.90, bottom=0.04)
+    fig.patch.set_facecolor(SURFACE)
+    ax.set_facecolor(SURFACE)
+    ax.axis("off")
+    ax.set_xlim(0, 100)
+    ax.set_ylim(0, 100)
+    fig.suptitle("One station, five situations: what Gemini 3.7 Flash wrote", x=0.02, ha="left",
+                 fontsize=12.5, fontweight="bold", color=INK, y=0.985)
+    ax.text(0, 97, "Choba (published as A-type). Layers: 91.2 < 380.2 > 43.25 < 474.3 < 597.1 ohm-m"
+            "  ->  up, down, up, up  ->  K H A", fontsize=8.8, color=INK2, va="top")
+    cols = [(0, "Situation"), (27, "What the model saw"), (58, "What it wrote"), (84, "Result")]
+    for x, h in cols:
+        ax.text(x, 88, h, fontsize=9, color=INK2, fontweight="bold", va="center")
+    ax.plot([0, 100], [85, 85], color=GRID, linewidth=1)
+    for i, (name, saw, wrote, ok, verdict) in enumerate(rows):
+        y = 76 - i * 15.5
+        ax.text(0, y, name, fontsize=9.5, color=INK, va="center", fontweight="bold")
+        ax.text(27, y, saw, fontsize=8.5, color=INK, va="center", linespacing=1.4)
+        ax.text(58, y, wrote, fontsize=8.8, color=INK, va="center", family="monospace")
+        ax.text(84, y, ("✓ " if ok else "✗ ") + verdict, fontsize=9, va="center",
+                color=GOOD if ok else BAD, fontweight="bold")
+        if i < len(rows) - 1:
+            ax.plot([0, 100], [y - 7.75, y - 7.75], color=GRID, linewidth=0.6)
+    rule_rate = rates(summaries("ves-real")["google/gemini-3.7-flash"])["rule"][0]
+    fig.text(0.02, 0.0, "One example station; same answer in all 3 repeats. Across all real stations, Flash still "
+             f"repeated {rule_rate * 100:.0f}% of wrong labels in situation 4.\nSource: ves-label-benchmark, real slice.",
+             fontsize=7.5, color=INK2, ha="left")
+    OUT.mkdir(parents=True, exist_ok=True)
+    fig.savefig(OUT / fname, bbox_inches="tight", facecolor=SURFACE)
+    plt.close(fig)
+    return OUT / fname
+
+
 if __name__ == "__main__":
     print(ladder())
+    print(choba_diagram())
