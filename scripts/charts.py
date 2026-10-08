@@ -155,6 +155,70 @@ def choba_diagram(fname="diagram_choba.png"):
     return OUT / fname
 
 
+def slices_chart(fname="chart_slices.png"):
+    """Small multiples, one panel per model: repeated-label rate per slice, site note vs + rule.
+    Numbers from scripts/final_tables.py (full runs; Sonnet synthetic-b from its leaderboard run)."""
+    import sys
+    sys.path.insert(0, str(ROOT))
+    from scripts.final_tables import full_runs, leaderboard_runs
+    F, LB = full_runs(), leaderboard_runs()
+    slices = ["real", "held-out", "synthetic-a", "synthetic-b"]
+    models = ["Flash", "Sonnet 5", "Gemma 4"]
+    names = {"Flash": "Gemini 3.7 Flash", "Sonnet 5": "Claude Sonnet 5", "Gemma 4": "Gemma 4 26B"}
+
+    def r(t):
+        return None if not t.get("own_right") else (t.get("deference", 0) / t["own_right"], t["own_right"])
+
+    fig, axes = plt.subplots(1, 3, figsize=(11, 3.6), dpi=200, sharey=True)
+    fig.patch.set_facecolor(SURFACE)
+    for ax, m in zip(axes, models):
+        style(ax)
+        for i, sl in enumerate(slices):
+            y = len(slices) - 1 - i
+            if (m, sl) in F:
+                note, rule = r(F[(m, sl)]["deference_uncued"]), r(F[(m, sl)]["deference_rule"])
+            else:
+                note, rule = r(LB[(m, sl)]["uncued"]), None
+            pts = [(rule, ORANGE, -0.27), (note, AQUA, 0.27)]
+            xs = [v[0] * 100 for v, _, _ in pts if v]
+            if len(xs) == 2:
+                ax.plot(xs, [y, y], color=GRID, linewidth=2, zorder=1)
+            for v, col, dy in pts:
+                if not v:
+                    continue
+                # rule dot drawn larger and underneath, so equal values still show both marks
+                big = col == ORANGE
+                ax.scatter(v[0] * 100, y, s=150 if big else 60, color=col, edgecolors=SURFACE, linewidths=2,
+                           zorder=2 if big else 3)
+                lab = f"{v[0] * 100:.0f}%" + (f" (n={v[1]})" if v[1] < 10 else "")
+                ax.annotate(lab, (v[0] * 100, y + dy), ha="center", va="center", fontsize=7.2, color=INK)
+            if rule is None:
+                ax.annotate("rule not run", (50, y - 0.27), ha="center", va="center", fontsize=7, color=INK2)
+        ax.set_title(names[m], fontsize=10, color=INK, loc="left")
+        ax.set_xlim(-8, 112)
+        ax.set_xticks([0, 50, 100])
+        ax.set_xticklabels(["0%", "50%", "100%"], fontsize=8)
+        ax.set_ylim(-0.7, len(slices) - 0.3)
+    axes[0].set_yticks(range(len(slices)))
+    axes[0].set_yticklabels(list(reversed(slices)), fontsize=9, color=INK)
+    handles = [plt.Line2D([], [], marker="o", linestyle="", markersize=7, color=c, label=l)
+               for c, l in ((AQUA, "Plain site note"), (ORANGE, "Site note, rule as a reference note"))]
+    fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(0.01, 0.93), ncol=2, frameon=False, fontsize=8.5)
+    fig.suptitle("In a plain site note, every model repeated the wrong label on every slice; Sonnet 5 less often on synthetic stations",
+                 x=0.01, ha="left", fontsize=11.5, fontweight="bold", color=INK, y=1.04)
+    fig.text(0.01, 0.955, "Share of wrong labels repeated, where the model's own no-label answer was right. 3 repeats.",
+             fontsize=8.8, color=INK2, ha="left")
+    fig.text(0.01, -0.06, "Gemma 4 could classify few curves without the rule, so its plain-site-note rates rest on few "
+             "cases (n shown). Sonnet 5 synthetic-b: leaderboard run, site-note items only.\nAsked directly, every model "
+             "caught every wrong label on every slice. Source: ves-label-benchmark.", fontsize=7.3, color=INK2, ha="left",
+             va="top")
+    fig.subplots_adjust(top=0.78, wspace=0.08)
+    fig.savefig(OUT / fname, bbox_inches="tight", facecolor=SURFACE)
+    plt.close(fig)
+    return OUT / fname
+
+
 if __name__ == "__main__":
     print(ladder())
     print(choba_diagram())
+    print(slices_chart())
