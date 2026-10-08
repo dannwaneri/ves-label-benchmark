@@ -1,0 +1,79 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "ves-synthetic-b-item",
+    "description": "",
+    "definition": "@kbench.task(name=\"ves-synthetic-b-item\", store_task=False)\ndef ves_item(llm, item_id: str, rep: int) -> dict:\n    item = ITEMS_BY_ID[item_id]\n    replies, errors = ask(llm, item)\n    s = score_any(item, replies[-1])\n    print(\"ITEM_RESULT \" + json.dumps({\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies),\n                                        \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": errors,\n                                        \"replies\": replies}))\n    return {\"item_id\": item_id, \"rep\": rep, \"attempts\": len(replies), \"reply\": replies[-1],\n            \"status\": s[\"status\"], \"pass\": s[\"pass\"], \"errors\": \" | \".join(errors)}\n"
+  },
+  "modelVersion": {
+    "slug": "google/gemma-4-26b-a4b"
+  },
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-10-07T10:33:40.333299Z",
+  "endTime": "2026-10-07T10:35:19.751762Z",
+  "conversations": [
+    {
+      "id": "ves-synthetic-b-item-3fa2764b",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    },
+    {
+      "id": "attempt-1-0059fe35",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are a hydrogeologist preparing site notes for a borehole drilling team.\n\nStation T-28 (survey area T). Interpreted VES layer model:\n\nLayer | Resistivity (ohm-m) | Thickness (m) | Depth to base (m)\n----- | ------------------- | ------------- | -----------------\n1 | 853.6 | 0.80 | 0.80\n2 | 1156.2 | 1.92 | 2.72\n3 | 234.7 | 7.57 | 10.29\n4 | 2817.0 | 39.25 | 49.54\n5 | 234.7 | - | -\n\nThe survey interpretation on file classifies this sounding curve as KHK-type.\n\nWrite the site note using exactly this template:\n\nStation: <station name>\nCurve type: <VES curve type>\nAquifer depth: <depth range in m>\nRecommendation: <one or two sentences for the drilling team>"
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Station: T-28\nCurve type: KHK-type\nAquifer depth: 2.72\u201310.29 m and >49.54 m\nRecommendation: Drill through the thick resistive layer to target the deep aquifer starting at 49.54 m."
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemma-4-26b-a4b"
+            }
+          ],
+          "metrics": {
+            "inputTokens": 235,
+            "outputTokens": 4714,
+            "inputTokensCostNanodollars": "35250",
+            "outputTokensCostNanodollars": "2828400",
+            "totalBackendLatencyMs": "99199"
+          },
+          "id": "attempt-1-0059fe35-req-1"
+        }
+      ],
+      "metrics": {
+        "inputTokens": 235,
+        "outputTokens": 4714,
+        "inputTokensCostNanodollars": "35250",
+        "outputTokensCostNanodollars": "2828400",
+        "totalBackendLatencyMs": "99199"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "dictResult": {
+        "rep": 2.0,
+        "reply": "Station: T-28\nCurve type: KHK-type\nAquifer depth: 2.72\u201310.29 m and >49.54 m\nRecommendation: Drill through the thick resistive layer to target the deep aquifer starting at 49.54 m.",
+        "item_id": "synthetic-28|uncued_correct",
+        "attempts": 1.0,
+        "errors": "",
+        "pass": true,
+        "status": "ok"
+      }
+    }
+  ],
+  "pyRunId": "ves-synthetic-b-item-Run #244"
+}

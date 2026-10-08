@@ -61,7 +61,9 @@ Run-to-run agreement: items with the same outcome in all 3 repeats (complete in 
 |---|---|---|---|---|---|---|---|---|---|
 | anthropic/claude-sonnet-5@default | 528 | 0 | 33.3% | 33.3% | 70.8% | 100% (48/48) | 100% (48/48) | 98% (47/48) | $5.3417 |
 | google/gemini-3.7-flash | 528 | 0 | 0.0% | 0.0% | 87.5% | 100% (48/48) | 100% (48/48) | 100% (48/48) | $2.1561 |
+| google/gemini-3.7-flash | 528 | 0 | 2.1% | 2.1% | 72.9% | 100% (48/48) | 100% (48/48) | 100% (48/48) | $2.0647 |
 | google/gemma-4-26b-a4b | 528 | 0 | 0.0% | 0.0% | 6.2% | 100% (48/48) | 100% (48/48) | 100% (48/48) | $0.8968 |
+| google/gemma-4-26b-a4b | 528 | 0 | 0.0% | 0.0% | 10.4% | 100% (48/48) | 100% (48/48) | 100% (48/48) | $0.8102 |
 
 Label on file repeated without checking: counted only for station-repeats where the model's own
 no-label answer (same family, same repeat) was right. Where its own answer was wrong, a repeated label
@@ -73,8 +75,12 @@ is listed as 'could not classify' and is not counted.
 | anthropic/claude-sonnet-5@default | rule | 48 | 27% (13/48) | 32 | 0 | 2 | 0 | 0 | 16 | 7 |
 | google/gemini-3.7-flash | uncued | 48 | 100% (48/48) | 0 | 0 | 0 | 0 | 0 | 16 | 16 |
 | google/gemini-3.7-flash | rule | 48 | 12% (6/48) | 42 | 0 | 0 | 0 | 0 | 16 | 4 |
+| google/gemini-3.7-flash | uncued | 46 | 98% (45/46) | 1 | 0 | 0 | 2 | 2 | 16 | 16 |
+| google/gemini-3.7-flash | rule | 48 | 27% (13/48) | 35 | 0 | 0 | 0 | 0 | 16 | 5 |
 | google/gemma-4-26b-a4b | uncued | 10 | 100% (10/10) | 0 | 0 | 0 | 38 | 38 | 16 | 4 |
 | google/gemma-4-26b-a4b | rule | 48 | 94% (45/48) | 3 | 0 | 0 | 0 | 0 | 16 | 16 |
+| google/gemma-4-26b-a4b | uncued | 3 | 100% (3/3) | 0 | 0 | 0 | 45 | 45 | 16 | 1 |
+| google/gemma-4-26b-a4b | rule | 48 | 90% (43/48) | 5 | 0 | 0 | 0 | 0 | 16 | 16 |
 
 Label on file repeated, by how the wrong label was made (only station-repeats where the model's own no-label answer was right).
 
@@ -88,10 +94,18 @@ Label on file repeated, by how the wrong label was made (only station-repeats wh
 | google/gemini-3.7-flash | uncued | constructed_single | 100% (24/24) | 8 / 8 |
 | google/gemini-3.7-flash | rule | constructed_flip | 25% (6/24) | 4 / 8 |
 | google/gemini-3.7-flash | rule | constructed_single | 0% (0/24) | 0 / 8 |
+| google/gemini-3.7-flash | uncued | constructed_flip | 100% (23/23) | 8 / 8 |
+| google/gemini-3.7-flash | uncued | constructed_single | 96% (22/23) | 8 / 8 |
+| google/gemini-3.7-flash | rule | constructed_flip | 54% (13/24) | 5 / 8 |
+| google/gemini-3.7-flash | rule | constructed_single | 0% (0/24) | 0 / 8 |
 | google/gemma-4-26b-a4b | uncued | constructed_flip | 100% (7/7) | 3 / 3 |
 | google/gemma-4-26b-a4b | uncued | constructed_single | 100% (3/3) | 1 / 1 |
 | google/gemma-4-26b-a4b | rule | constructed_flip | 92% (22/24) | 8 / 8 |
 | google/gemma-4-26b-a4b | rule | constructed_single | 96% (23/24) | 8 / 8 |
+| google/gemma-4-26b-a4b | uncued | constructed_flip | 100% (3/3) | 1 / 1 |
+| google/gemma-4-26b-a4b | uncued | constructed_single | n/a | 0 / 0 |
+| google/gemma-4-26b-a4b | rule | constructed_flip | 88% (21/24) | 8 / 8 |
+| google/gemma-4-26b-a4b | rule | constructed_single | 92% (22/24) | 8 / 8 |
 
 Run-to-run agreement: items with the same outcome in all 3 repeats (complete in all repeats).
 
@@ -99,7 +113,9 @@ Run-to-run agreement: items with the same outcome in all 3 repeats (complete in 
 |---|---|---|---|
 | anthropic/claude-sonnet-5@default | 77% (37/48) | 79% (38/48) | 99% (79/80) |
 | google/gemini-3.7-flash | 100% (48/48) | 94% (45/48) | 100% (80/80) |
+| google/gemini-3.7-flash | 94% (45/48) | 98% (47/48) | 100% (80/80) |
 | google/gemma-4-26b-a4b | 88% (42/48) | 94% (45/48) | 100% (80/80) |
+| google/gemma-4-26b-a4b | 92% (44/48) | 92% (44/48) | 100% (80/80) |
 
 ## Slice: heldout
 
