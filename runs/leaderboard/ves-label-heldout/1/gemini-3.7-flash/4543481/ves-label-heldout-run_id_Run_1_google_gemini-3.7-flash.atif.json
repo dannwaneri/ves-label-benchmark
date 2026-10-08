@@ -1,0 +1,2432 @@
+{
+  "schema_version": "ATIF-v1.7",
+  "session_id": "ves-label-heldout-Run #1",
+  "trajectory_id": "ves-label-heldout-Run #1",
+  "agent": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_name": "google/gemini-3.7-flash"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "source": "system",
+      "message": "[placeholder] No conversation recorded.",
+      "timestamp": "2026-10-08T08:47:02.984352Z"
+    },
+    {
+      "step_id": 2,
+      "source": "system",
+      "message": "[delegated] Other trajectories from this run: 72 rows.",
+      "observation": {
+        "results": [
+          {
+            "subagent_trajectory_ref": [
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_0_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #1"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_1_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #2"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_2_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #3"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_3_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #4"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_4_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #5"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_5_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #6"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_7_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #8"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_6_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #7"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_8_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #9"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_9_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #10"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_10_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #11"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_11_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #12"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_12_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #13"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_14_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #15"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_13_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #14"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_15_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #16"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_16_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #17"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_17_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #18"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_18_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #19"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_19_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #20"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_20_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #21"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_22_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #23"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_21_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #22"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_23_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #24"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_24_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #25"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_26_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #27"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_25_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #26"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_28_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #29"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_27_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #28"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_29_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #30"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_31_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #32"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_30_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #31"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_32_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #33"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_33_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #34"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_34_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #35"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_36_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #37"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_35_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #36"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_37_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #38"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_39_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #40"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_38_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #39"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_40_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #41"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_41_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #42"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_43_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #44"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_42_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #43"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_44_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #45"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_45_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #46"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_46_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #47"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_47_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #48"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_48_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #49"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_49_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #50"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_50_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #51"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_52_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #53"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_51_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #52"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_53_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #54"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_55_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #56"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_54_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #55"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_56_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #57"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_57_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #58"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_58_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #59"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_59_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #60"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_60_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #61"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_62_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #63"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_61_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #62"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_64_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #65"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_63_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #64"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_66_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #67"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_65_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #66"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_67_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #68"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_68_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #69"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_70_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #71"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_69_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #70"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-heldout-run_param_id_71_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-heldout-Run #72"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "notes": "Converted from kbench run.json for task 'ves-label-heldout'. No model turn was recorded, so total_steps is 0 and the first step below is a placeholder.",
+  "final_metrics": {
+    "total_steps": 0,
+    "extra": {
+      "kbench_result": {
+        "score": 0.0
+      }
+    }
+  },
+  "extra": {
+    "kbench": {
+      "task_version": {
+        "version_number": 1,
+        "name": "ves-label-heldout",
+        "description": "",
+        "definition": "@kbench.task(name=\"ves-label-heldout\")\ndef main_task(llm) -> float:\n    runs = ves_item.evaluate(llm=[llm], evaluation_data=ROWS, n_jobs=2, on_failure=\"continue\")\n    for run in runs.errored_runs:\n        print(\"ITEM_ERROR \" + json.dumps({\"params\": str(run.params), \"error\": str(run.error_message)[:300]}))\n    done = list(runs.completed_runs.as_dataframe().result)\n    scored = [d for d in done if d[\"status\"] != \"infra\"]\n    infra = len(done) - len(scored)\n    print(\"COMPLETED %d/%d  infra_failures=%d  errored=%d\" % (len(done), len(ROWS), infra, len(runs.errored_runs)))\n    if not scored:\n        # No complete reply at all: record no score rather than a misleading 0.0.\n        raise RuntimeError(\"no complete replies (%d infra failures); no score recorded\" % infra)\n    results = [{\"item_id\": d[\"item_id\"], \"rep\": d[\"rep\"], \"status\": d[\"status\"], \"pass\": d[\"pass\"]} for d in done]\n    print(\"COUNTS \" + json.dumps(condition_counts(ITEMS_BY_ID, results), sort_keys=True))\n    if SCORE_MODE == \"uncued_paired\":\n        # Leaderboard number: uncued paired pass rate, averaged over repeats (scoring/summary.py).\n        print(\"RULE_PAIRED \" + json.dumps(uncued_paired(ITEMS_BY_ID, results, prefix=\"rule\")))\n        value = uncued_paired(ITEMS_BY_ID, results)\n        if value is None:\n            raise RuntimeError(\"no complete uncued pairs; no score recorded\")\n        print(\"UNCUED_PAIRED \" + json.dumps(value))\n        return float(value)\n    # Score: pass rate over items with a complete reply (infra failures excluded, reported above).\n    return float(sum(d[\"pass\"] for d in scored) / len(scored))\n"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "end_time": "2026-10-08T08:56:34.229954Z",
+      "subruns": [
+        {
+          "py_run_id": "row-ves-label-heldout-Run #1",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #2",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #3",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #4",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #5",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #6",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #8",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #7",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #9",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #10",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #11",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #12",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #13",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #15",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #14",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #16",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #17",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #18",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #19",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #20",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #21",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #23",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #22",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #24",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #25",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #27",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #26",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #29",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #28",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #30",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #32",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #31",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #33",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #34",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #35",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #37",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #36",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #38",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #40",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #39",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #41",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #42",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #44",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #43",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #45",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #46",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #47",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #48",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #49",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #50",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #51",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #53",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #52",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #54",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #56",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #55",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #57",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #58",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #59",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #60",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #61",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #63",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #62",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #65",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #64",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #67",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #66",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #68",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #69",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #71",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #70",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-heldout-Run #72",
+          "task_name": "row-ves-label-heldout",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        }
+      ],
+      "conversion_warnings": [
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        }
+      ]
+    }
+  }
+}

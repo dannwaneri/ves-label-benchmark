@@ -1,0 +1,4808 @@
+{
+  "schema_version": "ATIF-v1.7",
+  "session_id": "ves-label-synthetic-b-Run #1",
+  "trajectory_id": "ves-label-synthetic-b-Run #1",
+  "agent": {
+    "name": "kaggle-benchmarks",
+    "version": "0.6.1",
+    "model_name": "google/gemini-3.7-flash"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "source": "system",
+      "message": "[placeholder] No conversation recorded.",
+      "timestamp": "2026-10-08T10:04:55.384119Z"
+    },
+    {
+      "step_id": 2,
+      "source": "system",
+      "message": "[delegated] Other trajectories from this run: 144 rows.",
+      "observation": {
+        "results": [
+          {
+            "subagent_trajectory_ref": [
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_0_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #1"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_1_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #2"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_3_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #4"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_2_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #3"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_4_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #5"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_5_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #6"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_6_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #7"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_8_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #9"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_9_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #10"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_7_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #8"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_10_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #11"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_12_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #13"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_11_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #12"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_13_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #14"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_14_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #15"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_16_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #17"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_15_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #16"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_17_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #18"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_18_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #19"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_19_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #20"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_21_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #22"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_22_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #23"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_20_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #21"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_23_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #24"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_24_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #25"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_25_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #26"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_26_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #27"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_28_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #29"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_27_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #28"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_29_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #30"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_30_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #31"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_31_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #32"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_33_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #34"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_32_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #33"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_34_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #35"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_36_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #37"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_37_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #38"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_35_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #36"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_38_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #39"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_39_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #40"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_40_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #41"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_42_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #43"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_43_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #44"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_41_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #42"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_44_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #45"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_45_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #46"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_46_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #47"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_47_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #48"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_48_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #49"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_49_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #50"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_50_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #51"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_52_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #53"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_51_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #52"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_53_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #54"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_54_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #55"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_55_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #56"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_56_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #57"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_57_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #58"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_58_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #59"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_60_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #61"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_61_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #62"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_59_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #60"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_62_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #63"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_64_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #65"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_63_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #64"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_65_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #66"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_66_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #67"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_67_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #68"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_69_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #70"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_70_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #71"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_71_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #72"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_72_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #73"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_73_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #74"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_74_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #75"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_68_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #69"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_75_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #76"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_76_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #77"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_77_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #78"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_78_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #79"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_79_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #80"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_80_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #81"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_81_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #82"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_82_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #83"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_84_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #85"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_85_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #86"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_86_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #87"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_87_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #88"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_88_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #89"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_83_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #84"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_90_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #91"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_91_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #92"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_92_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #93"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_89_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #90"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_94_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #95"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_93_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #94"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_95_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #96"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_96_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #97"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_97_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #98"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_98_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #99"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_99_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #100"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_100_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #101"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_101_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #102"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_103_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #104"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_102_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #103"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_104_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #105"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_105_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #106"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_106_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #107"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_108_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #109"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_107_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #108"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_109_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #110"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_110_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #111"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_112_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #113"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_111_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #112"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_114_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #115"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_113_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #114"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_115_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #116"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_116_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #117"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_117_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #118"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_118_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #119"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_120_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #121"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_119_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #120"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_121_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #122"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_122_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #123"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_124_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #125"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_123_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #124"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_125_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #126"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_126_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #127"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_127_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #128"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_128_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #129"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_129_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #130"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_130_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #131"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_132_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #133"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_133_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #134"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_131_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #132"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_134_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #135"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_135_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #136"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_136_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #137"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_138_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #139"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_139_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #140"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_140_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #141"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_141_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #142"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_142_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #143"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_143_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #144"
+                }
+              },
+              {
+                "trajectory_path": "row-ves-label-synthetic-b-run_param_id_137_google_gemini-3.7-flash.atif.json",
+                "extra": {
+                  "kbench_py_run_id": "row-ves-label-synthetic-b-Run #138"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "notes": "Converted from kbench run.json for task 'ves-label-synthetic-b'. No model turn was recorded, so total_steps is 0 and the first step below is a placeholder.",
+  "final_metrics": {
+    "total_steps": 0,
+    "extra": {
+      "kbench_result": {
+        "score": 0.0625
+      }
+    }
+  },
+  "extra": {
+    "kbench": {
+      "task_version": {
+        "version_number": 1,
+        "name": "ves-label-synthetic-b",
+        "description": "",
+        "definition": "@kbench.task(name=\"ves-label-synthetic-b\")\ndef main_task(llm) -> float:\n    runs = ves_item.evaluate(llm=[llm], evaluation_data=ROWS, n_jobs=2, on_failure=\"continue\")\n    for run in runs.errored_runs:\n        print(\"ITEM_ERROR \" + json.dumps({\"params\": str(run.params), \"error\": str(run.error_message)[:300]}))\n    done = list(runs.completed_runs.as_dataframe().result)\n    scored = [d for d in done if d[\"status\"] != \"infra\"]\n    infra = len(done) - len(scored)\n    print(\"COMPLETED %d/%d  infra_failures=%d  errored=%d\" % (len(done), len(ROWS), infra, len(runs.errored_runs)))\n    if not scored:\n        # No complete reply at all: record no score rather than a misleading 0.0.\n        raise RuntimeError(\"no complete replies (%d infra failures); no score recorded\" % infra)\n    results = [{\"item_id\": d[\"item_id\"], \"rep\": d[\"rep\"], \"status\": d[\"status\"], \"pass\": d[\"pass\"]} for d in done]\n    print(\"COUNTS \" + json.dumps(condition_counts(ITEMS_BY_ID, results), sort_keys=True))\n    if SCORE_MODE == \"uncued_paired\":\n        # Leaderboard number: uncued paired pass rate, averaged over repeats (scoring/summary.py).\n        print(\"RULE_PAIRED \" + json.dumps(uncued_paired(ITEMS_BY_ID, results, prefix=\"rule\")))\n        value = uncued_paired(ITEMS_BY_ID, results)\n        if value is None:\n            raise RuntimeError(\"no complete uncued pairs; no score recorded\")\n        print(\"UNCUED_PAIRED \" + json.dumps(value))\n        return float(value)\n    # Score: pass rate over items with a complete reply (infra failures excluded, reported above).\n    return float(sum(d[\"pass\"] for d in scored) / len(scored))\n"
+      },
+      "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+      "end_time": "2026-10-08T10:23:10.813120Z",
+      "subruns": [
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #1",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #2",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #4",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #3",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #5",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #6",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #7",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #9",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #10",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #8",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #11",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #13",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #12",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #14",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #15",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #17",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #16",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #18",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #19",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #20",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #22",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #23",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #21",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #24",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #25",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #26",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #27",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #29",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #28",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #30",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #31",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #32",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #34",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #33",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #35",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #37",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #38",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #36",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #39",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #40",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #41",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #43",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #44",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #42",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #45",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #46",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #47",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #48",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 1.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #49",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #50",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #51",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #53",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #52",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #54",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #55",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #56",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #57",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #58",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #59",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #61",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #62",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #60",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #63",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #65",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #64",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #66",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #67",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #68",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #70",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #71",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #72",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #73",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #74",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #75",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #69",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #76",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #77",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #78",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #79",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #80",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #81",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #82",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #83",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #85",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #86",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #87",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #88",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #89",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #84",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #91",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #92",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #93",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #90",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #95",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #94",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #96",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 2.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #97",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #98",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #99",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #100",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #101",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #102",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #104",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #103",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #105",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #106",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #107",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #109",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #108",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #110",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #111",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #113",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #112",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #115",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #114",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #116",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #117",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #118",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #119",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #121",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #120",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #122",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #123",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #125",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #124",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #126",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #127",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #128",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #129",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #130",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #131",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #133",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #134",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #132",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #135",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #136",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #137",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #139",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #140",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #141",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #142",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #143",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 1.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #144",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        },
+        {
+          "py_run_id": "row-ves-label-synthetic-b-Run #138",
+          "task_name": "row-ves-label-synthetic-b",
+          "model_name": "google/gemini-3.7-flash",
+          "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+          "rewards": {
+            "rep": 3.0,
+            "attempts": 1.0,
+            "pass": 0.0
+          }
+        }
+      ],
+      "conversion_warnings": [
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "reply is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "item_id is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "errors is a str"
+        },
+        {
+          "kind": "reward_leaf_unusable",
+          "detail": "status is a str"
+        }
+      ]
+    }
+  }
+}
