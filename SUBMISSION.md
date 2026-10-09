@@ -262,7 +262,7 @@ assessment)" to remove the ambiguity above.
 
 - **Kaggle benchmark:** https://www.kaggle.com/benchmarks/danielnwaneri/ves-label-check
 - **Code, items, preregistration and every raw reply:** https://github.com/dannwaneri/ves-label-benchmark
-- The dataset behind it: {{ONE_LINE_SANITY_ENTRY_LINK}}
+- Where the real stations come from: my Sanity Challenge entry, [10 Internal Inconsistencies in 3 Published Groundwater Surveys](https://dev.to/dannwaneri/10-internal-inconsistencies-in-3-published-groundwater-surveys-4634)
 
 ![Kaggle leaderboard for VES Label Check: three tasks (real, held-out, synthetic-b) by three models. Claude Sonnet 5: 5.3%, 8.3%, 31.3%. Gemini 3.7 Flash: 0.0%, 0.0%, 6.3%. Gemma 4 26B: 0.0% on all three.](https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/kaggle_leaderboard.png)
 
