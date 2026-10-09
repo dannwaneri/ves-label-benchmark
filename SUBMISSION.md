@@ -5,10 +5,6 @@ tags: devchallenge, kagglechallenge, ai, machinelearning
 cover_image: https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/cover.png
 ---
 
-<!-- DRAFT. All numbers are final (results/final.md). Daniel rewrites the
-     story parts in his own voice before publishing. Images load from the GitHub
-     repo, so they appear once the repo is public (Oct 10). -->
-
 *This is a submission for the [Kaggle Benchmarking Challenge](https://dev.to/challenges/kaggle-2026-09-23)*
 
 ## What I Benchmarked
