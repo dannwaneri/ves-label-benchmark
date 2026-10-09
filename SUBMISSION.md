@@ -1,5 +1,5 @@
 ---
-title: "Asked directly, 3 AI models caught a wrong label. In a site note, they copied it."
+title: "Super-Intelligent Yes-Men: Are We Training AI to Ignore the Truth?"
 published: false
 tags: devchallenge, kagglechallenge, ai, machinelearning
 cover_image: https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/cover.png
