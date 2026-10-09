@@ -40,9 +40,9 @@ answer change between "is this label correct?" and "write the site note"?
 
 Two things keep it honest:
 
-- **Twins.** Every wrong-label item has a correct-label twin. A model that
+- Twins: every wrong-label item has a correct-label twin. A model that
   flags everything scores zero.
-- **A no-label control.** I count a repeated label only where the same
+- A no-label control: I count a repeated label only where the same
   model, in the same repeat, classified that station correctly with no
   label in sight. Where it could not, I report the case separately.
 
@@ -51,12 +51,12 @@ The scorer has 235 tests, and deliberate bugs that a test must catch.
 
 ## Models Tested
 
-- **Gemini 3.7 Flash**: strong and cheap.
-- **Claude Sonnet 5**: the strong model. Claude Opus 5 was my first choice,
+- Gemini 3.7 Flash: strong and cheap.
+- Claude Sonnet 5: the strong model. Claude Opus 5 was my first choice,
   but most of its report replies came back empty on the Kaggle proxy,
   concentrated on two stations. I did not find the cause. Sonnet 5 passed a
   5-item completion check first.
-- **Gemma 4 26B**: a small open model.
+- Gemma 4 26B: a small open model.
 
 I picked these three to cover three cases: a model that can read the
 curve (Flash), a stronger model that might also question the label
@@ -88,13 +88,13 @@ where the model's own no-label answer, in the same repeat, was right.
 
 ![Dot chart, one row per model, real slice: share of wrong labels accepted or repeated when asked directly (0% for all three), in a site note with the rule (Flash 28%, Sonnet 46%, Gemma 95%) and in a plain site note (Flash 100%, Sonnet 91%, Gemma 100% of 8 cases).](https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/chart_ladder.png)
 
-1. **Knowing is not acting.** Every model caught every wrong label
+1. Knowing is not acting. Every model caught every wrong label
    whenever it was asked directly. In a plain site note, Flash repeated all of them,
    across all 19 real stations.
-2. **The rule helps some models, not all.** With the rule as a reference
+2. The rule helps some models, not all. With the rule as a reference
    note, Flash repeated 28% and Sonnet 46%. Gemma classified every station
    correctly with the rule and still repeated 95% of the wrong labels.
-3. **The harder the error is to see, the more it gets repeated.**
+3. The harder the error is to see, the more it gets repeated.
 
    | Wrong label | Flash, site note | Flash, + rule | Sonnet, + rule |
    |---|---|---|---|
@@ -102,17 +102,17 @@ where the model's own no-label answer, in the same repeat, was right.
    | Obvious (wrong length) | 18/18 | 0/18 | 5/18 |
    | Subtle (one step changed) | 29/29 | 15/30 | 17/30 |
 
-4. **Sonnet sometimes notices.** In 4 real-slice site notes it caught the
+4. Sonnet sometimes notices. In 4 real-slice site notes it caught the
    error: 3 times with the true type, once keeping the label with a
    warning ("caught with a warning: 1").
-5. **The held-out set agrees.** On the 8 stations I labelled by hand and
+5. The held-out set agrees. On the 8 stations I labelled by hand and
    froze before any run, Flash repeated 20/20, Sonnet 14/15 (93%), and
    Gemma, with the rule, 24/24.
-6. **The pattern holds on every slice.**
+6. The pattern holds on every slice.
 
 ![Three panels, one per model; rows real, held-out, synthetic-a, synthetic-b; share of wrong labels repeated in a plain site note and with the rule. Flash: 100, 100, 100, 98 percent; with rule 28, 50, 12, 27. Sonnet: 91, 93, 59, 57; with rule 46, 42, 27. Gemma with rule: 95, 100, 94, 90.](https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/chart_slices.png)
 
-**My predictions vs the results.** Before Sonnet's first full run I
+My predictions vs the results. Before Sonnet's first full run I
 committed three numbers: how often it would repeat the wrong label.
 
 | | Predicted | Real | Held-out | Synthetic-a | Synthetic-b |
@@ -125,7 +125,7 @@ The preregistration has 28 numeric predictions. 26 were met. The two
 misses are the same one: Sonnet's site-note rate on the two synthetic
 slices (predicted 70% or more). Full table: `results/final.md`.
 
-**Is the gap real or noise?** Exploratory, not preregistered: an exact
+Is the gap real or noise? Exploratory, not preregistered: an exact
 McNemar test, paired by station, first repeat only, on stations the model
 classified correctly with no label shown.
 
@@ -146,7 +146,7 @@ the note. The stations are few, so treat the p-values as rough.
 
 ### What surprised me
 
-Two things. First, Gemma: with the rule in the
+First, Gemma: with the rule in the
 template it classified every station correctly, and still repeated the
 wrong label in 95% of its notes. Knowing the rule did not make it look.
 Second, my own prediction failed, twice. On the synthetic stations,
@@ -159,21 +159,21 @@ I do not know the cause.
 
 ### What I got wrong
 
-- **The first version was too easy.** In the pilot, every model scored
+- The first version was too easy. In the pilot, every model scored
   about 100%, because I asked directly. That is the result in the first
   row of my table, not a finding. The uncued site note exists because the
   pilot failed.
-- **My scorer had two bugs.** One crashed on replies with no JSON line; one
+- My scorer had two bugs. One crashed on replies with no JSON line; one
   read the wrong object when a reply had nested JSON. Tests caught both
   before any full run. The scorer has 235 tests now, and deliberate bugs
   that a test must catch.
-- **My first strong model did not work on Kaggle.** Most of Claude Opus 5's
+- My first strong model did not work on Kaggle. Most of Claude Opus 5's
   report replies came back empty, mostly on two stations. I replaced it
   with Sonnet 5 after a 5-item check. I do not know the cause.
-- **I preregistered late**, after the first Flash runs. The file says so,
+- I preregistered late, after the first Flash runs. The file says so,
   with the commit time.
-- **A prediction failed**, twice (Sonnet on both synthetic slices, above).
-- **My first leaderboard was empty.** Kaggle needs one line, `%choose
+- A prediction failed, twice (Sonnet on both synthetic slices, above).
+- My first leaderboard was empty. Kaggle needs one line, `%choose
   <task>`, at the end of a task file, so it knows which result is the
   score. I had removed it because it looked like a Python syntax error.
   The runs were fine, but the leaderboard could not read them. On the last
@@ -191,11 +191,11 @@ answered correctly, I expected it to use that knowledge when it wrote.
 I do not expect that now. A direct question shows what the model knows.
 It does not show what the model will do with a label already on file.
 
-1. **Do not expect the model to doubt the file.** If a label, a figure or
+1. Do not expect the model to doubt the file. If a label, a figure or
    a classification is in the input, it goes into the output.
-2. **Giving it the rule is not enough.** It helped two models and did not
+2. Giving it the rule is not enough. It helped two models and did not
    help the third.
-3. **Make checking a step.** Ask "is this value correct for this data?" as
+3. Make checking a step. Ask "is this value correct for this data?" as
    its own question, before the report. That question caught 100% of the
    errors here.
 
@@ -247,12 +247,12 @@ assessment)" to remove the ambiguity above.
 
 ## My Benchmark
 
-- **Kaggle benchmark:** https://www.kaggle.com/benchmarks/danielnwaneri/ves-label-check
-- **Code, items, preregistration and every raw reply:** https://github.com/dannwaneri/ves-label-benchmark
+- Kaggle benchmark: https://www.kaggle.com/benchmarks/danielnwaneri/ves-label-check
+- Code, items, preregistration and every raw reply: https://github.com/dannwaneri/ves-label-benchmark
 - Where the real stations come from: my Sanity Challenge entry, [10 Internal Inconsistencies in 3 Published Groundwater Surveys](https://dev.to/dannwaneri/10-internal-inconsistencies-in-3-published-groundwater-surveys-4634)
 
 ![Kaggle leaderboard for VES Label Check: three tasks (real, held-out, synthetic-b) by three models. Claude Sonnet 5: 5.3%, 8.3%, 31.3%. Gemini 3.7 Flash: 0.0%, 0.0%, 6.3%. Gemma 4 26B: 0.0% on all three.](https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/kaggle_leaderboard.png)
 
 The leaderboard score is the share of stations (mean of 3 repeats) where
-the plain site note did **not** repeat the wrong label and kept the
+the plain site note did not repeat the wrong label and kept the
 correct one. Higher means the model checked. Every score here is low.
