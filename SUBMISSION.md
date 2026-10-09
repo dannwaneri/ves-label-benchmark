@@ -62,6 +62,13 @@ The scorer has 235 tests, and deliberate bugs that a test must catch.
   5-item completion check first.
 - **Gemma 4 26B**: a small open model.
 
+I picked these three to cover three cases: a model that can read the
+curve (Flash), a stronger model that might also question the label
+(Sonnet), and a model that cannot read the curve without help (Gemma).
+The results kept them apart: Flash read the curve and copied the label
+anyway, Sonnet sometimes caught the error, and Gemma mostly could not
+classify the curve until it had the rule.
+
 Three slices, reported separately: 22 real stations, 32 synthetic ones
 built from real patterns, and 8 held-out stations I labelled by hand and
 froze before any model saw them. Three repeats each.
@@ -182,6 +189,11 @@ I do not know the cause.
   synthetic-b: for that slice it has only the site-note items.
 
 ### What this means if you use AI to write reports
+
+Before this, I tested a model by asking it directly, as in my pilot. If it
+answered correctly, I expected it to use that knowledge when it wrote.
+I do not expect that now. A direct question shows what the model knows.
+It does not show what the model will do with a label already on file.
 
 1. **Do not expect the model to doubt the file.** If a label, a figure or
    a classification is in the input, it goes into the output.
