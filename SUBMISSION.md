@@ -120,14 +120,8 @@ where the model's own no-label answer, in the same repeat, was right.
 2. The rule helps some models, not all. With the rule as a reference
    note, Flash repeated 28% and Sonnet 46%. Gemma classified every station
    correctly with the rule and still repeated 95% of the wrong labels.
-3. The harder the error is to see, the more it gets repeated.
-
-   | Wrong label | Flash, site note | Flash, + rule | Sonnet, + rule |
-   |---|---|---|---|
-   | 3 real published errors | 9/9 | 1/9 | 4/9 |
-   | Obvious (wrong length) | 18/18 | 0/18 | 5/18 |
-   | Subtle (one step changed) | 29/29 | 15/30 | 17/30 |
-
+3. The harder the error is to see, the more it gets repeated (table
+   below the chart).
 4. Sonnet sometimes notices. In 4 real-slice site notes it caught the
    error: 3 times with the true type, once keeping the label with a
    warning ("caught with a warning: 1").
@@ -137,6 +131,14 @@ where the model's own no-label answer, in the same repeat, was right.
 6. The pattern holds on every slice.
 
 ![Three panels, one per model; rows real, held-out, synthetic-a, synthetic-b; share of wrong labels repeated in a plain site note and with the rule. Flash: 100, 100, 100, 98 percent; with rule 28, 50, 12, 27. Sonnet: 91, 93, 59, 57; with rule 46, 42, 27. Gemma with rule: 95, 100, 94, 90.](https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/chart_slices.png)
+
+Wrong labels by kind, real slice:
+
+| Wrong label | Flash, site note | Flash, + rule | Sonnet, + rule |
+|---|---|---|---|
+| 3 real published errors | 9/9 | 1/9 | 4/9 |
+| Obvious (wrong length) | 18/18 | 0/18 | 5/18 |
+| Subtle (one step changed) | 29/29 | 15/30 | 17/30 |
 
 My predictions vs the results: before Sonnet's first full run I
 committed three numbers of my own to the repo: how often it would repeat
