@@ -84,8 +84,8 @@ where the model's own no-label answer, in the same repeat, was right.
 
 ![Dot chart, one row per model, real slice: share of wrong labels accepted or repeated when asked directly (0% for all three), in a site note with the rule (Flash 28%, Sonnet 46%, Gemma 95%) and in a plain site note (Flash 100%, Sonnet 91%, Gemma 100% of 8 cases).](https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/chart_ladder.png)
 
-1. **Knowing is not acting.** Every model caught every wrong label when
-   asked, on every slice. In a plain site note, Flash repeated all of them,
+1. **Knowing is not acting.** Every model caught every wrong label
+   whenever it was asked directly. In a plain site note, Flash repeated all of them,
    across all 19 real stations.
 2. **The rule helps some models, not all.** With the rule as a reference
    note, Flash repeated 28% and Sonnet 46%. Gemma classified every station
@@ -134,7 +134,7 @@ classified correctly with no label shown.
 | Claude Sonnet 5 | site note vs direct question | 16 | 14 | 0 | 0.0001 |
 | Claude Sonnet 5 | site note vs site note + rule | 16 | 6 | 0 | 0.03 |
 
-In every slice and model, the "only in the other" column is 0: no model
+In every comparison (results/stats.md), the "only in the other" column is 0: no model
 ever accepted a wrong label in the direct question while catching it in
 the note. The stations are few, so treat the p-values as rough.
 

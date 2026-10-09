@@ -210,7 +210,7 @@ def slices_chart(fname="chart_slices.png"):
              fontsize=8.8, color=INK2, ha="left")
     fig.text(0.01, -0.06, "Gemma 4 could classify few curves without the rule, so its plain-site-note rates rest on few "
              "cases (n shown). Sonnet 5 synthetic-b: leaderboard run, site-note items only.\nAsked directly, every model "
-             "caught every wrong label on every slice. Source: ves-label-benchmark.", fontsize=7.3, color=INK2, ha="left",
+             "caught every wrong label whenever it was asked directly. Source: ves-label-benchmark.", fontsize=7.3, color=INK2, ha="left",
              va="top")
     fig.subplots_adjust(top=0.78, wspace=0.08)
     fig.savefig(OUT / fname, bbox_inches="tight", facecolor=SURFACE)
