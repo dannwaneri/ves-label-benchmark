@@ -207,7 +207,8 @@ It does not show what the model will do with a label already on file.
 
 The general pattern is not new, and other entries in this challenge show
 it well. Soumyadeep Dey's benchmark found that security agents notice
-their target is a real company, but almost never report it ("the Silent
+their target is a real company, but usually do not report it: 73% of the
+answers that called the target real stopped without a report ("the Silent
 Stop"). Other entries found models siding with a wrong test, or noticing a
 poisoned test and passing it anyway. What this benchmark adds: a
 scientific domain, real errors printed in published papers, a ground truth
