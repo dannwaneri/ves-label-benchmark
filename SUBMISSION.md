@@ -9,15 +9,21 @@ cover_image: https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/ma
 
 ## What I Benchmarked
 
-A published paper on Choba, one survey point (a "station") in Port
-Harcourt, prints its curve type as "A-type". The layer values in the same
-paper say KHA. I gave three models the layers and the label. Asked "is this
-label correct?", all three said no, in every repeat. Asked to write a
-normal site note (the short note a drilling team works from: station,
-curve type, water depth, recommendation), all three wrote "A-type", in
-every repeat. Two of them (Gemini 3.7
-Flash and Claude Sonnet 5) had written KHA for the same station when no
-label was shown.
+A published paper on Choba, a survey point (station) in Port Harcourt. In
+the paper, the curve type is printed as A-type.
+The layer values in the same paper say KHA.
+
+I fed the same layer values and the label to the three models, and asked
+"Is this label correct?" All three said no, every time.
+
+I then asked: "Write a normal site note."
+(A site note is the brief note that drilling teams use. It contains
+information on the station, the curve type, the water depth and a
+recommendation.)
+All three models generated an A-type note, every time.
+
+Gemini 3.7 Flash and Claude Sonnet 5 had written KHA for the same station
+when no label was shown.
 
 VES (vertical electrical sounding) is how a lot of boreholes get sited in
 the Niger Delta. You pass a current into the ground and measure how
