@@ -209,8 +209,11 @@ The general pattern is not new, and other entries in this challenge show
 it well. Soumyadeep Dey's benchmark found that security agents notice
 their target is a real company, but usually do not report it: 73% of the
 answers that called the target real stopped without a report ("the Silent
-Stop"). Other entries found models siding with a wrong test, or noticing a
-poisoned test and passing it anyway. What this benchmark adds: a
+Stop"). Shaban Umar's found that when models see buggy code, their tests
+often protect the bug: Claude Sonnet 5 caught the planted bug in 33% of
+suites when shown the code, and in 100% when warned. Lewis Sawe's found
+models that keep a correct answer under pressure, then give it up when a
+"senior reviewer" says otherwise. What this benchmark adds: a
 scientific domain, real errors printed in published papers, a ground truth
 anyone can recompute, and a per-station control that shows the model
 could have got it right.
