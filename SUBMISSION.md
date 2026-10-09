@@ -230,7 +230,9 @@ Stop"). Shaban Umar's found that when models see buggy code, their tests
 often protect the bug: Claude Sonnet 5 caught the planted bug in 33% of
 suites when shown the code, and in 100% when warned. Lewis Sawe's found
 models that keep a correct answer under pressure, then give it up when a
-"senior reviewer" says otherwise. What this benchmark adds: a
+"senior reviewer" says otherwise. Daniel Balcarek's found that most models
+retry a payment because a `Retry-After` header says so, even when retrying
+could charge twice: 6 of 24 attempts got it right. What this benchmark adds: a
 scientific domain, real errors printed in published papers, a ground truth
 anyone can recompute, and a per-station control that shows the model
 could have got it right.
