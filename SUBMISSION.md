@@ -2,15 +2,16 @@
 title: "Asked directly, 3 AI models caught a wrong label. In a site note, they copied it."
 published: false
 tags: kagglechallenge, ai, machinelearning, benchmark
+cover_image: https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/cover.png
 ---
 
 <!-- DRAFT. All numbers are final (results/final.md). Daniel rewrites the
      story parts in his own voice before publishing. Images load from the GitHub
      repo, so they appear once the repo is public (Oct 10). -->
 
-*This is a submission for the [Kaggle Benchmarking Challenge](https://dev.to/devteam/join-the-kaggle-benchmarking-challenge-2500-in-prizes-for-five-winners-18ml).*
+*This is a submission for the [Kaggle Benchmarking Challenge](https://dev.to/challenges/kaggle-2026-09-23)*
 
-## What task did I run?
+## What I Benchmarked
 
 The Choba station paper prints "A-type". The layer values in the same paper
 say KHA. I gave three models the layers and the label. Asked "is this label
@@ -31,7 +32,7 @@ say otherwise. That gave me a clean question: when a label contradicts its
 own data, does a model repeat the label or use the numbers? And does the
 answer change between "is this label correct?" and "write the site note"?
 
-## The design: one wrong label, five ways to meet it
+### The design: one wrong label, five ways to meet it
 
 | Condition | What the model sees | What is scored |
 |---|---|---|
@@ -52,7 +53,7 @@ Two things keep it honest:
 Scoring is plain code reading one field. No model judges another model.
 The scorer has 235 tests, and deliberate bugs that a test must catch.
 
-## Which models did I run it against?
+## Models Tested
 
 - **Gemini 3.7 Flash**: strong and cheap.
 - **Claude Sonnet 5**: the strong model. Claude Opus 5 was my first choice,
@@ -65,7 +66,7 @@ Three slices, reported separately: 22 real stations, 32 synthetic ones
 built from real patterns, and 8 held-out stations I labelled by hand and
 froze before any model saw them. Three repeats each.
 
-## What did I find?
+## Findings
 
 **Main result: the models repeated the label on file without checking it,
 even when they could classify the curve correctly.**
@@ -140,7 +141,9 @@ the note. The stations are few, so treat the p-values as rough.
 
 {% enddetails %}
 
-**What surprised me.** Two things. First, Gemma: with the rule in the
+### What surprised me
+
+Two things. First, Gemma: with the rule in the
 template it classified every station correctly, and still repeated the
 wrong label in 95% of its notes. Knowing the rule did not make it look.
 Second, my own prediction failed, twice. On the synthetic stations,
@@ -151,7 +154,7 @@ a published survey. The held-out tables rule that out: they have the same
 format (one decimal, a generic site name), and there Sonnet repeated 93%.
 I do not know the cause.
 
-## What I got wrong
+### What I got wrong
 
 - **The first version was too easy.** In the pilot, every model scored
   about 100%, because I asked directly. That is the result in the first
@@ -178,7 +181,7 @@ I do not know the cause.
   run-to-run variation I measured. The fix also cost Sonnet's full run on
   synthetic-b: for that slice it has only the site-note items.
 
-## What this means if you use AI to write reports
+### What this means if you use AI to write reports
 
 1. **Do not expect the model to doubt the file.** If a label, a figure or
    a classification is in the input, it goes into the output.
@@ -188,7 +191,7 @@ I do not know the cause.
    its own question, before the report. That question caught 100% of the
    errors here.
 
-## How this relates to other entries
+### How this relates to other entries
 
 The general pattern is not new, and other entries in this challenge show
 it well. Soumyadeep Dey's benchmark found that security agents notice
@@ -199,7 +202,7 @@ scientific domain, real errors printed in published papers, a ground truth
 anyone can recompute, and a per-station control that shows the model
 could have got it right.
 
-## Limitations
+### Limitations
 
 - The real slice is small: 19 label stations, 3 real published errors.
 - The template does not say whether "Curve type" means the value on file
@@ -224,11 +227,13 @@ could have got it right.
   classifier on all 8 stations, and every Sonnet prediction held there.
   The failed predictions are on the synthetic slices (above).
 
-What I would measure next: offer the classifier as a tool in the site
+### What I would measure next
+
+Offer the classifier as a tool in the site
 note and see whether the model calls it, and ask for "Curve type (your
 assessment)" to remove the ambiguity above.
 
-## Where can you see it?
+## My Benchmark
 
 - **Kaggle benchmark:** https://www.kaggle.com/benchmarks/danielnwaneri/ves-label-check
 - **Code, items, preregistration and every raw reply:** https://github.com/dannwaneri/ves-label-benchmark

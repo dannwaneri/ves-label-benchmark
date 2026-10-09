@@ -218,7 +218,30 @@ def slices_chart(fname="chart_slices.png"):
     return OUT / fname
 
 
+def cover(fname="cover.png"):
+    """DEV cover image, 1000x420 (2x for sharpness). Numbers from final_tables (real slice)."""
+    import sys
+    sys.path.insert(0, str(ROOT))
+    from scripts.final_tables import full_runs
+    F = full_runs()
+    u = F[("Flash", "real")]["deference_uncued"]
+    rep = u["deference"] / u["own_right"]
+    fig = plt.figure(figsize=(10, 4.2), dpi=200)
+    fig.patch.set_facecolor(SURFACE)
+    fig.text(0.05, 0.80, "VES Label Check", fontsize=15, color=INK2, fontweight="bold")
+    fig.text(0.05, 0.56, "Asked directly, 3 AI models caught", fontsize=27, color=INK, fontweight="bold")
+    fig.text(0.05, 0.41, "every wrong label. In a site note,", fontsize=27, color=INK, fontweight="bold")
+    fig.text(0.05, 0.26, "they copied it.", fontsize=27, color=INK, fontweight="bold")
+    fig.text(0.05, 0.09, f"Gemini 3.7 Flash, 19 real groundwater survey stations: caught 100% when asked, "
+             f"repeated {rep * 100:.0f}% in the site note.", fontsize=11, color=INK2)
+    fig.add_artist(plt.Line2D([0.05, 0.13], [0.74, 0.74], color=AQUA, linewidth=4))
+    fig.savefig(OUT / fname, facecolor=SURFACE)
+    plt.close(fig)
+    return OUT / fname
+
+
 if __name__ == "__main__":
     print(ladder())
     print(choba_diagram())
     print(slices_chart())
+    print(cover())
