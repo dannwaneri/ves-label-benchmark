@@ -1,7 +1,7 @@
 ---
 title: "Asked directly, 3 AI models caught a wrong label. In a site note, they copied it."
 published: false
-tags: kagglechallenge, ai, machinelearning, benchmark
+tags: devchallenge, kagglechallenge, ai, machinelearning
 cover_image: https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/cover.png
 ---
 
