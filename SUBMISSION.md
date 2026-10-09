@@ -38,7 +38,7 @@ So the curve is KHA. "A-type" would mean the values rise at every step,
 and they do not.
 
 Published papers still get it wrong. In three papers I had already
-transcribed, three stations are printed as A-type when their own numbers
+transcribed, three stations (in two of the papers) are printed as A-type when their own numbers
 say otherwise. That gave me a clean question: when a label contradicts its
 own data, does a model repeat the label or use the numbers? And does the
 answer change between "is this label correct?" and "write the site note"?
@@ -133,8 +133,8 @@ where the model's own no-label answer, in the same repeat, was right.
 ![Three panels, one per model; rows real, held-out, synthetic-a, synthetic-b; share of wrong labels repeated in a plain site note and with the rule. Flash: 100, 100, 100, 98 percent; with rule 28, 50, 12, 27. Sonnet: 91, 93, 59, 57; with rule 46, 42, 27. Gemma with rule: 95, 100, 94, 90.](https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/chart_slices.png)
 
 My predictions vs the results: before Sonnet's first full run I
-committed three numbers to the repo (a "preregistration"): how often it
-would repeat the wrong label.
+committed three numbers of my own to the repo: how often it would repeat
+the wrong label.
 
 | | Predicted | Real | Held-out | Synthetic-a | Synthetic-b |
 |---|---|---|---|---|---|
@@ -142,7 +142,9 @@ would repeat the wrong label.
 | Site note + rule | 35% | 46% | 42% | 27% | not run |
 | Asked directly | 5% | 0% | 0% | 0% | not run |
 
-The preregistration has 28 numeric predictions. 26 were met. The two
+Separately, the preregistration (predictions committed before the runs
+they predict) has 28 numeric predictions with thresholds, written by
+Claude Code before the confirmatory runs. 26 were met. The two
 misses are the same one: Sonnet's site-note rate on the two synthetic
 slices (predicted 70% or more). Full table: `results/final.md`.
 
@@ -186,8 +188,7 @@ I do not know the cause.
   pilot failed.
 - My scorer had two bugs. One crashed on replies with no JSON line; one
   read the wrong object when a reply had nested JSON. Tests caught both
-  before any full run. The scorer has 235 tests now, and deliberate bugs
-  that a test must catch.
+  before any full run.
 - My first strong model did not work on Kaggle. Most of Claude Opus 5's
   report replies came back empty, mostly on two stations. I replaced it
   with Sonnet 5 after a 5-item check. I do not know the cause.
@@ -223,14 +224,14 @@ It does not show what the model will do with a label already on file.
 ### How this relates to other entries
 
 The general pattern is not new, and other entries in this challenge show
-it well. Soumyadeep Dey's benchmark found that security agents notice
+it well. [Soumyadeep Dey's benchmark](https://dev.to/soumyadeepdey/i-gave-15-ai-models-proof-their-hacking-target-was-a-real-company-73-of-the-ones-that-noticed-1h81) found that security agents notice
 their target is a real company, but usually do not report it: 73% of the
 answers that called the target real stopped without a report ("the Silent
-Stop"). Shaban Umar's found that when models see buggy code, their tests
+Stop"). [Shaban Umar's](https://dev.to/shaban_umar_eb956a5f684ce/i-showed-ai-the-buggy-code-its-tests-started-protecting-the-bug-48a3) found that when models see buggy code, their tests
 often protect the bug: Claude Sonnet 5 caught the planted bug in 33% of
-suites when shown the code, and in 100% when warned. Lewis Sawe's found
+suites when shown the code, and in 100% when warned. [Lewis Sawe's](https://dev.to/lewisawe/ai-models-have-a-spine-until-you-give-them-a-manager-1fbj) found
 models that keep a correct answer under pressure, then give it up when a
-"senior reviewer" says otherwise. Daniel Balcarek's found that most models
+"senior reviewer" says otherwise. [Daniel Balcarek's](https://dev.to/gramli/to-retry-or-not-to-retry-that-is-the-question-1j2l) found that most models
 retry a payment because a `Retry-After` header says so, even when retrying
 could charge twice: 6 of 24 attempts got it right. What this benchmark adds: a
 scientific domain, real errors printed in published papers, a ground truth
