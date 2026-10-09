@@ -9,18 +9,33 @@ cover_image: https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/ma
 
 ## What I Benchmarked
 
-The Choba station paper prints "A-type". The layer values in the same paper
-say KHA. I gave three models the layers and the label. Asked "is this label
-correct?", all three said no, in every repeat. Asked to write a normal site
-note, all three wrote "A-type", in every repeat. Two of them (Gemini 3.7
+A published paper on Choba, one survey point (a "station") in Port
+Harcourt, prints its curve type as "A-type". The layer values in the same
+paper say KHA. I gave three models the layers and the label. Asked "is this
+label correct?", all three said no, in every repeat. Asked to write a
+normal site note (the short note a drilling team works from: station,
+curve type, water depth, recommendation), all three wrote "A-type", in
+every repeat. Two of them (Gemini 3.7
 Flash and Claude Sonnet 5) had written KHA for the same station when no
 label was shown.
 
 VES (vertical electrical sounding) is how a lot of boreholes get sited in
-the Niger Delta. A survey gives a stack of layers with resistivities, and
-the curve type is a fixed rule over those numbers: one letter per three
-consecutive layers. A means rising, Q falling, H a dip, K a peak. So a
-curve-type label is not an opinion. It can be checked with arithmetic.
+the Niger Delta. You pass a current into the ground and measure how
+strongly each layer below resists it (its resistivity, in ohm-m). Clay,
+sand and water-filled sand give different values. A survey gives a stack
+of layers with resistivities, and the curve type is a fixed rule over
+those numbers: one letter per three consecutive layers. A means rising,
+Q falling, H a dip, K a peak. So a curve-type label is not an opinion. It
+can be checked with arithmetic.
+
+Choba, top to bottom: 91, 380, 43, 474, 597 ohm-m.
+
+- Layers 1 to 3 (91, 380, 43) go up, then down: a peak, K.
+- Layers 2 to 4 (380, 43, 474) go down, then up: a dip, H.
+- Layers 3 to 5 (43, 474, 597) keep rising: A.
+
+So the curve is KHA. "A-type" would mean the values rise at every step,
+and they do not.
 
 Published papers still get it wrong. In three papers I had already
 transcribed, three stations are printed as A-type when their own numbers
@@ -29,6 +44,10 @@ own data, does a model repeat the label or use the numbers? And does the
 answer change between "is this label correct?" and "write the site note"?
 
 ### The design: one wrong label, five ways to meet it
+
+"Cued" means the prompt asks the model to check the label. "Uncued" means
+it does not: the label is only there as the value on file, as it would be
+in real work.
 
 | Condition | What the model sees | What is scored |
 |---|---|---|
@@ -65,8 +84,9 @@ The results kept them apart: Flash read the curve and copied the label
 anyway, Sonnet sometimes caught the error, and Gemma mostly could not
 classify the curve until it had the rule.
 
-Three slices, reported separately: 22 real stations, 32 synthetic ones
-built from real patterns, and 8 held-out stations I labelled by hand and
+Three slices (sets of stations), reported separately: 22 real stations,
+32 synthetic ones (made up, built from real patterns), and 8 held-out
+stations I labelled by hand and
 froze before any model saw them. Three repeats each.
 
 ## Findings
@@ -112,8 +132,9 @@ where the model's own no-label answer, in the same repeat, was right.
 
 ![Three panels, one per model; rows real, held-out, synthetic-a, synthetic-b; share of wrong labels repeated in a plain site note and with the rule. Flash: 100, 100, 100, 98 percent; with rule 28, 50, 12, 27. Sonnet: 91, 93, 59, 57; with rule 46, 42, 27. Gemma with rule: 95, 100, 94, 90.](https://raw.githubusercontent.com/dannwaneri/ves-label-benchmark/main/results/figures/chart_slices.png)
 
-My predictions vs the results. Before Sonnet's first full run I
-committed three numbers: how often it would repeat the wrong label.
+My predictions vs the results: before Sonnet's first full run I
+committed three numbers to the repo (a "preregistration"): how often it
+would repeat the wrong label.
 
 | | Predicted | Real | Held-out | Synthetic-a | Synthetic-b |
 |---|---|---|---|---|---|
