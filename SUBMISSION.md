@@ -253,6 +253,10 @@ could have got it right.
   or the writer's own assessment. A model may read it as "copy from the
   file". The no-label control shows it could compute another answer; it
   does not show which reading it used.
+- The label always sat in the same place (after the layer table, just
+  before the template) with the same wording ("on file"). I did not test
+  other positions or wordings, so part of the effect may come from where
+  and how the label appears.
 - The cued report ends with a JSON flag line, which may itself prompt
   checking.
 - My preregistration was committed after the first Flash runs had
@@ -276,6 +280,10 @@ could have got it right.
 Offer the classifier as a tool in the site
 note and see whether the model calls it, and ask for "Curve type (your
 assessment)" to remove the ambiguity above.
+
+Move the label above the layer table, and reword it (for example "the
+client's report says"), to see whether position or wording drives the
+copying.
 
 ## My Benchmark
 
