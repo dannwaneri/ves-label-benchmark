@@ -288,6 +288,12 @@ copying.
 ## My Benchmark
 
 - Kaggle benchmark: https://www.kaggle.com/benchmarks/danielnwaneri/ves-label-check
+- Full runs on Kaggle, all five conditions, including the direct question:
+  [ves-real](https://www.kaggle.com/benchmarks/tasks/danielnwaneri/ves-real/1),
+  [ves-heldout](https://www.kaggle.com/benchmarks/tasks/danielnwaneri/ves-heldout/1),
+  [ves-synthetic-a](https://www.kaggle.com/benchmarks/tasks/danielnwaneri/ves-synthetic-a/1),
+  [ves-synthetic-b](https://www.kaggle.com/benchmarks/tasks/danielnwaneri/ves-synthetic-b/1)
+  (Sonnet 5 has no full run on synthetic-b)
 - Code, items, preregistration and every raw reply: https://github.com/dannwaneri/ves-label-benchmark
 - Where the real stations come from: my Sanity Challenge entry, [10 Internal Inconsistencies in 3 Published Groundwater Surveys](https://dev.to/dannwaneri/10-internal-inconsistencies-in-3-published-groundwater-surveys-4634)
 
